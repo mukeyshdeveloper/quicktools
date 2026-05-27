@@ -39,7 +39,6 @@ export const metadata: Metadata = {
 export default function PasswordGeneratorPage(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-text">
-      <Navbar />
       <main className="mx-auto max-w-2xl px-4 py-10 sm:px-6">
         <script
           type="application/ld+json"
@@ -107,7 +106,6 @@ export default function PasswordGeneratorPage(): React.ReactElement {
           </ul>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

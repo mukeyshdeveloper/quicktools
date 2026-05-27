@@ -1,0 +1,16 @@
+👨‍💻 Developer & IT (High Time-on-Page)
+Base64 Encoder/Decoder: Developers use this daily.
+JWT Decoder: Essential for modern web developers.
+CSS Gradient Generator: Highly visual, keeps users on the page tweaking colors for a long time (which boosts Ad impressions!).
+Regex (Regular Expression) Tester: Very high repeat-visitor rate.
+📝 Content & Text (High Traffic Volume)
+Case Converter: (UPPERCASE, lowercase, Title Case) - Massive daily search volume.
+Diff Checker / Text Compare: To see the difference between two blocks of text.
+Lorem Ipsum Generator: For designers needing dummy text.
+Markdown to HTML Converter: Instant preview editor.
+🖼️ Image & Media (High Perceived Value)
+We can actually manipulate images entirely inside the browser using the HTML5 Canvas API without a server!
+
+Image Resizer / Compressor: Shrink JPEGs and PNGs.
+Color Palette Generator: Generate color schemes from uploaded images.
+ICO / Favicon Generator: Converts images to .ico for websites.

@@ -7,13 +7,11 @@ import ToolGrid from '@/components/homepage/ToolGrid';
 export default function Home(): React.ReactElement {
   return (
     <div className="min-h-screen bg-background text-text">
-      <Navbar />
       <main>
         <StatsBar />
         <HomeHero />
         <ToolGrid />
       </main>
-      <Footer />
     </div>
   );
 }

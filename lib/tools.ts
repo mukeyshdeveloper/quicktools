@@ -7,62 +7,54 @@ import { meta as passwordGeneratorMeta } from '@/tools/password-generator/meta';
 import { meta as qrCodeGeneratorMeta } from '@/tools/qr-code-generator/meta';
 import { meta as unitConverterMeta } from '@/tools/unit-converter/meta';
 import { meta as wordCounterMeta } from '@/tools/word-counter/meta';
+import { meta as colorPickerMeta } from '@/tools/color-picker/meta';
+import { meta as jsonFormatterMeta } from '@/tools/json-formatter/meta';
+import { meta as invoiceGeneratorMeta } from '@/tools/invoice-generator/meta';
+import { meta as resumeBuilderMeta } from '@/tools/resume-builder/meta';
+
+// Sprint 1 — Finance tools
+import { meta as emiCalculatorMeta } from '@/tools/emi-calculator/meta';
+import { meta as compoundInterestMeta } from '@/tools/compound-interest/meta';
+import { meta as salaryCalculatorMeta } from '@/tools/salary-calculator/meta';
+import { meta as sipCalculatorMeta } from '@/tools/sip-calculator/meta';
+import { meta as roiCalculatorMeta } from '@/tools/roi-calculator/meta';
+
+// Sprint 2 — Business / HR
+import { meta as salarySlipMeta } from '@/tools/salary-slip-generator/meta';
+
+// Sprint 2 — Developer / Text
+import { meta as base64Meta } from '@/tools/base64-encoder-decoder/meta';
+import { meta as caseConverterMeta } from '@/tools/case-converter/meta';
+import { meta as loremIpsumMeta } from '@/tools/lorem-ipsum-generator/meta';
+import { meta as jwtDecoderMeta } from '@/tools/jwt-decoder/meta';
+import { meta as diffCheckerMeta } from '@/tools/diff-checker/meta';
 
 export const tools: ToolMeta[] = [
+  // Originals
   ageCalculatorMeta,
   wordCounterMeta,
   bmiCalculatorMeta,
   passwordGeneratorMeta,
   qrCodeGeneratorMeta,
   unitConverterMeta,
-  {
-    slug: 'color-picker',
-    name: 'Color Picker',
-    title: 'Color Picker - Convert HEX RGB and HSL | QuickUtils',
-    description:
-      'Pick colors, generate palettes and convert between HEX, RGB and HSL.',
-    category: 'developer',
-    icon: '🎨',
-    color: 'amber',
-    keywords: ['color picker', 'hex to rgb', 'color palette generator'],
-    canonical: '/color-picker',
-  },
-  {
-    slug: 'json-formatter',
-    name: 'JSON Formatter',
-    title: 'JSON Formatter - Beautify and Validate JSON | QuickUtils',
-    description:
-      'Beautify, minify and validate JSON data for cleaner debugging.',
-    category: 'developer',
-    icon: '{ }',
-    color: 'amber',
-    keywords: ['json formatter', 'json validator', 'json beautifier'],
-    canonical: '/json-formatter',
-  },
-  {
-    slug: 'resume-builder',
-    name: 'Resume Builder',
-    title: 'Resume Builder - Create a Free Resume | QuickUtils',
-    description:
-      'Create a professional resume and prepare it for PDF download.',
-    category: 'business',
-    icon: '📄',
-    color: 'orange',
-    keywords: ['resume builder', 'cv maker', 'free resume'],
-    canonical: '/resume-builder',
-  },
-  {
-    slug: 'invoice-generator',
-    name: 'Invoice Generator',
-    title: 'Invoice Generator - Create Free Invoices | QuickUtils',
-    description:
-      'Create professional invoices for your business and download them as PDF.',
-    category: 'business',
-    icon: '🧾',
-    color: 'orange',
-    keywords: ['invoice generator', 'free invoice', 'bill maker'],
-    canonical: '/invoice-generator',
-  },
+  colorPickerMeta,
+  jsonFormatterMeta,
+  resumeBuilderMeta,
+  invoiceGeneratorMeta,
+  // Finance
+  emiCalculatorMeta,
+  compoundInterestMeta,
+  salaryCalculatorMeta,
+  sipCalculatorMeta,
+  roiCalculatorMeta,
+  // Business / HR
+  salarySlipMeta,
+  // Developer / Text
+  base64Meta,
+  caseConverterMeta,
+  loremIpsumMeta,
+  jwtDecoderMeta,
+  diffCheckerMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {
