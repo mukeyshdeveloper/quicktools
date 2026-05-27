@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar(): React.ReactElement {
   return (
@@ -9,11 +10,11 @@ export default function Navbar(): React.ReactElement {
           className="flex items-center gap-2 font-display text-lg font-extrabold text-text"
           aria-label="QuickUtils homepage"
         >
-          <span className="h-2 w-2 rounded-full bg-brand shadow-[0_0_12px_rgba(45,106,79,0.55)]" />
+          <Image src="/logo.png" alt="QuickUtils" width={32} height={32} />
           QuickUtils
         </Link>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center">
           <Link className="nav-link" href="/">
             Home
           </Link>
