@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? "https://quickutils.in";
+const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? "https://thequickutils.in";
 
 const sans = DM_Sans({
   display: "swap",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -44,6 +46,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <GoogleAnalytics gaId="G-WQX1X1V2B1" />
       </body>
     </html>
   );
