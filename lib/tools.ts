@@ -27,7 +27,15 @@ import { meta as base64Meta } from '@/tools/base64-encoder-decoder/meta';
 import { meta as caseConverterMeta } from '@/tools/case-converter/meta';
 import { meta as loremIpsumMeta } from '@/tools/lorem-ipsum-generator/meta';
 import { meta as jwtDecoderMeta } from '@/tools/jwt-decoder/meta';
+import { meta as regexTesterMeta } from '@/tools/regex-tester/meta';
+import { meta as cssGeneratorMeta } from '@/tools/css-generator/meta';
+import { meta as markdownPreviewerMeta } from '@/tools/markdown-previewer/meta';
 import { meta as diffCheckerMeta } from '@/tools/diff-checker/meta';
+import { meta as urlEncoderDecoderMeta } from '@/tools/url-encoder-decoder/meta';
+import { meta as uuidGeneratorMeta } from '@/tools/uuid-generator/meta';
+import { meta as codeMinifierMeta } from '@/tools/code-minifier/meta';
+import { meta as svgToBase64Meta } from '@/tools/svg-to-base64/meta';
+import { meta as metaTagGeneratorMeta } from '@/tools/meta-tag-generator/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -55,6 +63,14 @@ export const tools: ToolMeta[] = [
   loremIpsumMeta,
   jwtDecoderMeta,
   diffCheckerMeta,
+  regexTesterMeta,
+  cssGeneratorMeta,
+  markdownPreviewerMeta,
+  urlEncoderDecoderMeta,
+  uuidGeneratorMeta,
+  codeMinifierMeta,
+  svgToBase64Meta,
+  metaTagGeneratorMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {
