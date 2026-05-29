@@ -36,6 +36,16 @@ import { meta as uuidGeneratorMeta } from '@/tools/uuid-generator/meta';
 import { meta as codeMinifierMeta } from '@/tools/code-minifier/meta';
 import { meta as svgToBase64Meta } from '@/tools/svg-to-base64/meta';
 import { meta as metaTagGeneratorMeta } from '@/tools/meta-tag-generator/meta';
+import { meta as duplicateRemoverMeta } from '@/tools/duplicate-remover/meta';
+import { meta as listConverterMeta } from '@/tools/list-converter/meta';
+import { meta as findAndReplaceMeta } from '@/tools/find-and-replace/meta';
+import { meta as keywordDensityMeta } from '@/tools/keyword-density/meta';
+import { meta as utmBuilderMeta } from '@/tools/utm-builder/meta';
+import { meta as readabilityGraderMeta } from '@/tools/readability-grader/meta';
+import { meta as slugConverterMeta } from '@/tools/slug-converter/meta';
+import { meta as imageCompressorMeta } from '@/tools/image-compressor/meta';
+import { meta as imageConverterMeta } from '@/tools/image-converter/meta';
+import { meta as colorPaletteExtractorMeta } from '@/tools/color-palette-extractor/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -71,6 +81,17 @@ export const tools: ToolMeta[] = [
   codeMinifierMeta,
   svgToBase64Meta,
   metaTagGeneratorMeta,
+  duplicateRemoverMeta,
+  listConverterMeta,
+  findAndReplaceMeta,
+  keywordDensityMeta,
+  utmBuilderMeta,
+  readabilityGraderMeta,
+  slugConverterMeta,
+  // Image tools
+  imageCompressorMeta,
+  imageConverterMeta,
+  colorPaletteExtractorMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {
