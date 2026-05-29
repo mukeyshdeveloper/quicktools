@@ -6,7 +6,7 @@ import { generateToolSchema } from '@/lib/schema';
 import WordCounter from '@/tools/word-counter/WordCounter';
 import { meta } from '@/tools/word-counter/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,

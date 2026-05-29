@@ -4,7 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import CaseConverter from '@/tools/case-converter/CaseConverter';
 import { meta } from '@/tools/case-converter/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,

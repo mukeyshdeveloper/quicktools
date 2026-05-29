@@ -5,7 +5,7 @@ import FindAndReplace from '@/tools/find-and-replace/FindAndReplace';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,

@@ -3,7 +3,7 @@ import { DM_Mono, DM_Sans } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? "https://thequickutils.in";
+const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.thequickutils.com";
 
 const sans = DM_Sans({
   display: "swap",
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   title: "QuickUtils - Free Online Tools for Everyday Tasks",
   description:
     "Use free browser-based calculators, text tools, generators and developer utilities with no signup.",
+  alternates: { canonical: "/" },
 };
 
 import Navbar from "@/components/layout/Navbar";

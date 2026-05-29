@@ -4,6 +4,7 @@ import { Mail, MessageCircle, Code2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact Us | QuickUtils',
   description: 'Get in touch with the QuickUtils team for support, feedback, or feature requests.',
+  alternates: { canonical: '/contact' },
 };
 
 export default function ContactPage() {
@@ -29,7 +30,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-text">Email</p>
-                    <a href="mailto:hello@quickutils.in" className="hover:text-brand transition">mukeysh.developer@gmail.com</a>
+                    <a href="mailto:hello@www.thequickutils.com" className="hover:text-brand transition">mukeysh.developer@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-muted">

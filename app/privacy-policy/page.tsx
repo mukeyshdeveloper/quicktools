@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy | QuickUtils',
   description: 'Privacy Policy for QuickUtils. Learn how we protect your data and privacy.',
+  alternates: { canonical: '/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {
@@ -19,7 +20,7 @@ export default function PrivacyPolicyPage() {
 
           <p>
             Welcome to QuickUtils ("we", "our", or "us"). We respect your privacy and are committed to protecting it. 
-            This Privacy Policy explains what information we collect, how we use it, and your rights when you use our website (quickutils.in).
+            This Privacy Policy explains what information we collect, how we use it, and your rights when you use our website (www.thequickutils.com).
           </p>
 
           <h2 className="text-xl font-bold text-text mt-8 mb-4">1. Information We Do NOT Collect</h2>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'About Us | QuickUtils',
   description: 'Learn about QuickUtils - your one-stop platform for fast, free, and secure online tools.',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {

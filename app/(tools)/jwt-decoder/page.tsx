@@ -4,7 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import JwtDecoder from '@/tools/jwt-decoder/JwtDecoder';
 import { meta } from '@/tools/jwt-decoder/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,

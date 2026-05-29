@@ -5,7 +5,7 @@ import SlugConverter from '@/tools/slug-converter/SlugConverter';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -57,7 +57,7 @@ export default function SlugConverterPage() {
           <div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">What is a URL Slug?</h2>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              A URL slug is the exact part of a website address that identifies a particular page on a website in an easy-to-read form. In the URL <code>https://quickutils.in/slug-converter</code>, the string <code>slug-converter</code> is the slug. They are incredibly important for SEO (Search Engine Optimization) because they help search engines understand what the page is about.
+              A URL slug is the exact part of a website address that identifies a particular page on a website in an easy-to-read form. In the URL <code>https://www.thequickutils.com/slug-converter</code>, the string <code>slug-converter</code> is the slug. They are incredibly important for SEO (Search Engine Optimization) because they help search engines understand what the page is about.
             </p>
           </div>
 

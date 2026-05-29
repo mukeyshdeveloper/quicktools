@@ -6,7 +6,7 @@ import { generateToolSchema } from '@/lib/schema';
 import QrCodeGenerator from '@/tools/qr-code-generator/QrCodeGenerator';
 import { meta } from '@/tools/qr-code-generator/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,

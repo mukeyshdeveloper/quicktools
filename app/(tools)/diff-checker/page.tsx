@@ -4,7 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import DiffChecker from '@/tools/diff-checker/DiffChecker';
 import { meta } from '@/tools/diff-checker/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,

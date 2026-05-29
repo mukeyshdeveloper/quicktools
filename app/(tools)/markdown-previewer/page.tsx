@@ -5,7 +5,7 @@ import MarkdownPreviewer from '@/tools/markdown-previewer/MarkdownPreviewer';
 import { meta } from '@/tools/markdown-previewer/meta';
 import AdBanner from '@/components/layout/AdBanner';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,

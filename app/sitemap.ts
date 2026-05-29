@@ -3,7 +3,7 @@ import { getAllTools } from '@/lib/tools';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const tools = await getAllTools();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
   const toolEntries: MetadataRoute.Sitemap = tools.map((tool) => ({
     url: `${siteUrl}${tool.canonical}`,

@@ -5,7 +5,7 @@ import CssGenerator from '@/tools/css-generator/CssGenerator';
 import { meta } from '@/tools/css-generator/meta';
 import AdBanner from '@/components/layout/AdBanner';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://quickutils.in';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
 export const metadata: Metadata = {
   title: meta.title,
