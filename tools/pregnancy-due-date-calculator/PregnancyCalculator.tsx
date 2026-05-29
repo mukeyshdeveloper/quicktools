@@ -57,7 +57,7 @@ export default function PregnancyCalculator() {
                 type="date" 
                 value={dateStr} 
                 onChange={e => setDateStr(e.target.value)} 
-                className="input w-full" 
+                className="tool-input w-full" 
               />
             </div>
 
@@ -69,7 +69,7 @@ export default function PregnancyCalculator() {
                   min="20" max="45" 
                   value={cycleLength} 
                   onChange={e => setCycleLength(e.target.value)} 
-                  className="input w-full" 
+                  className="tool-input w-full" 
                 />
                 <p className="text-[10px] text-muted">Most women have a 28-day cycle.</p>
               </div>

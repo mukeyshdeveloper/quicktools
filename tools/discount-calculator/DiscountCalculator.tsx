@@ -24,20 +24,20 @@ export default function DiscountCalculator() {
             <label className="text-sm font-bold text-text">Original Price</label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted font-bold">$</span>
-              <input type="number" min="0" value={price} onChange={e => setPrice(e.target.value)} className="input w-full pl-8" />
+              <input type="number" min="0" value={price} onChange={e => setPrice(e.target.value)} className="tool-input w-full pl-8" />
             </div>
           </div>
           <div className="space-y-1.5">
             <label className="text-sm font-bold text-text">Discount %</label>
             <div className="relative">
-              <input type="number" min="0" max="100" value={discount} onChange={e => setDiscount(e.target.value)} className="input w-full pr-8" />
+              <input type="number" min="0" max="100" value={discount} onChange={e => setDiscount(e.target.value)} className="tool-input w-full pr-8" />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted font-bold">%</span>
             </div>
           </div>
           <div className="space-y-1.5">
             <label className="text-sm font-bold text-text">Sales Tax % <span className="text-muted font-normal">(Optional)</span></label>
             <div className="relative">
-              <input type="number" min="0" max="100" value={tax} onChange={e => setTax(e.target.value)} className="input w-full pr-8" />
+              <input type="number" min="0" max="100" value={tax} onChange={e => setTax(e.target.value)} className="tool-input w-full pr-8" />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted font-bold">%</span>
             </div>
           </div>

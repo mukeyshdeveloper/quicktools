@@ -29,9 +29,9 @@ export default function PercentageCalculator() {
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <div className="flex items-center gap-2 w-full">
             <span className="font-bold">What is</span>
-            <input type="number" value={m1X} onChange={e => setM1X(e.target.value)} className="input w-24 text-center" />
+            <input type="number" value={m1X} onChange={e => setM1X(e.target.value)} className="tool-input w-24 text-center" />
             <span className="font-bold">% of</span>
-            <input type="number" value={m1Y} onChange={e => setM1Y(e.target.value)} className="input w-32 text-center" />
+            <input type="number" value={m1Y} onChange={e => setM1Y(e.target.value)} className="tool-input w-32 text-center" />
             <span className="font-bold text-xl ml-2">=</span>
           </div>
           <div className="w-full sm:w-48 bg-teal-50 dark:bg-teal-900/20 border-2 border-teal-500 rounded-2xl p-3 text-center">
@@ -47,9 +47,9 @@ export default function PercentageCalculator() {
         <h2 className="text-sm font-bold uppercase tracking-widest text-muted mb-4">X is what percent of Y?</h2>
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <div className="flex items-center gap-2 w-full">
-            <input type="number" value={m2X} onChange={e => setM2X(e.target.value)} className="input w-24 text-center" />
+            <input type="number" value={m2X} onChange={e => setM2X(e.target.value)} className="tool-input w-24 text-center" />
             <span className="font-bold">is what % of</span>
-            <input type="number" value={m2Y} onChange={e => setM2Y(e.target.value)} className="input w-32 text-center" />
+            <input type="number" value={m2Y} onChange={e => setM2Y(e.target.value)} className="tool-input w-32 text-center" />
             <span className="font-bold text-xl ml-2">=</span>
           </div>
           <div className="w-full sm:w-48 bg-teal-50 dark:bg-teal-900/20 border-2 border-teal-500 rounded-2xl p-3 text-center">
@@ -66,9 +66,9 @@ export default function PercentageCalculator() {
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <div className="flex items-center gap-2 w-full">
             <span className="font-bold">From</span>
-            <input type="number" value={m3X} onChange={e => setM3X(e.target.value)} className="input w-24 text-center" />
+            <input type="number" value={m3X} onChange={e => setM3X(e.target.value)} className="tool-input w-24 text-center" />
             <span className="font-bold">To</span>
-            <input type="number" value={m3Y} onChange={e => setM3Y(e.target.value)} className="input w-32 text-center" />
+            <input type="number" value={m3Y} onChange={e => setM3Y(e.target.value)} className="tool-input w-32 text-center" />
             <span className="font-bold text-xl ml-2">=</span>
           </div>
           <div className="w-full sm:w-48 bg-teal-50 dark:bg-teal-900/20 border-2 border-teal-500 rounded-2xl p-3 text-center">

@@ -58,15 +58,15 @@ export default function TdeeCalculator() {
           <div className="grid grid-cols-3 gap-4">
             <div className="space-y-1.5">
               <label className="text-sm font-bold text-text">Age</label>
-              <input type="number" min="1" max="120" value={age} onChange={e => setAge(e.target.value)} className="input text-center" />
+              <input type="number" min="1" max="120" value={age} onChange={e => setAge(e.target.value)} className="tool-input text-center" />
             </div>
             <div className="space-y-1.5">
               <label className="text-sm font-bold text-text">Weight (kg)</label>
-              <input type="number" min="1" max="300" step="0.1" value={weight} onChange={e => setWeight(e.target.value)} className="input text-center" />
+              <input type="number" min="1" max="300" step="0.1" value={weight} onChange={e => setWeight(e.target.value)} className="tool-input text-center" />
             </div>
             <div className="space-y-1.5">
               <label className="text-sm font-bold text-text">Height (cm)</label>
-              <input type="number" min="50" max="250" value={height} onChange={e => setHeight(e.target.value)} className="input text-center" />
+              <input type="number" min="50" max="250" value={height} onChange={e => setHeight(e.target.value)} className="tool-input text-center" />
             </div>
           </div>
 

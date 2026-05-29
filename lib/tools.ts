@@ -53,6 +53,12 @@ import { meta as percentageCalculatorMeta } from '@/tools/percentage-calculator/
 import { meta as discountCalculatorMeta } from '@/tools/discount-calculator/meta';
 import { meta as tipCalculatorMeta } from '@/tools/tip-calculator/meta';
 import { meta as dateDifferenceMeta } from '@/tools/date-difference-calculator/meta';
+import { meta as faviconGeneratorMeta } from '@/tools/favicon-generator/meta';
+import { meta as memeGeneratorMeta } from '@/tools/meme-generator/meta';
+import { meta as base64ToImageMeta } from '@/tools/base64-to-image/meta';
+import { meta as youtubeThumbnailDownloaderMeta } from '@/tools/youtube-thumbnail-downloader/meta';
+import { meta as passwordStrengthMeterMeta } from '@/tools/password-strength-meter/meta';
+import { meta as periodCalculatorMeta } from '@/tools/period-calculator/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -107,6 +113,12 @@ export const tools: ToolMeta[] = [
   discountCalculatorMeta,
   tipCalculatorMeta,
   dateDifferenceMeta,
+  faviconGeneratorMeta,
+  memeGeneratorMeta,
+  base64ToImageMeta,
+  youtubeThumbnailDownloaderMeta,
+  passwordStrengthMeterMeta,
+  periodCalculatorMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {

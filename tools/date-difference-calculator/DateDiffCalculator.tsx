@@ -33,7 +33,7 @@ export default function DateDiffCalculator() {
         <div className="bg-card border border-border rounded-3xl p-6 shadow-sm flex flex-col justify-center space-y-6">
           <div className="space-y-1.5">
             <label className="text-sm font-bold uppercase tracking-widest text-muted">Start Date</label>
-            <input type="date" value={date1} onChange={e => setDate1(e.target.value)} className="input w-full" />
+            <input type="date" value={date1} onChange={e => setDate1(e.target.value)} className="tool-input w-full" />
           </div>
           
           <div className="flex justify-center text-cyan-500">
@@ -42,7 +42,7 @@ export default function DateDiffCalculator() {
 
           <div className="space-y-1.5">
             <label className="text-sm font-bold uppercase tracking-widest text-muted">End Date</label>
-            <input type="date" value={date2} onChange={e => setDate2(e.target.value)} className="input w-full" />
+            <input type="date" value={date2} onChange={e => setDate2(e.target.value)} className="tool-input w-full" />
           </div>
         </div>
 

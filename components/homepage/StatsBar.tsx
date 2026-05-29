@@ -4,7 +4,7 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: '30+', label: 'Free Tools' },
+  { value: '50+', label: 'Free Tools' },
   { value: '₹0', label: 'Cost to Use' },
   { value: '100%', label: 'No Signup' },
   { value: 'Fast', label: 'Browser Based' },
