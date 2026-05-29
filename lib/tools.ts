@@ -46,6 +46,13 @@ import { meta as slugConverterMeta } from '@/tools/slug-converter/meta';
 import { meta as imageCompressorMeta } from '@/tools/image-compressor/meta';
 import { meta as imageConverterMeta } from '@/tools/image-converter/meta';
 import { meta as colorPaletteExtractorMeta } from '@/tools/color-palette-extractor/meta';
+import { meta as tdeeCalculatorMeta } from '@/tools/tdee-calculator/meta';
+import { meta as pregnancyCalculatorMeta } from '@/tools/pregnancy-due-date-calculator/meta';
+import { meta as sleepCycleMeta } from '@/tools/sleep-cycle-calculator/meta';
+import { meta as percentageCalculatorMeta } from '@/tools/percentage-calculator/meta';
+import { meta as discountCalculatorMeta } from '@/tools/discount-calculator/meta';
+import { meta as tipCalculatorMeta } from '@/tools/tip-calculator/meta';
+import { meta as dateDifferenceMeta } from '@/tools/date-difference-calculator/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -92,6 +99,14 @@ export const tools: ToolMeta[] = [
   imageCompressorMeta,
   imageConverterMeta,
   colorPaletteExtractorMeta,
+  // New Calculators & Health
+  tdeeCalculatorMeta,
+  pregnancyCalculatorMeta,
+  sleepCycleMeta,
+  percentageCalculatorMeta,
+  discountCalculatorMeta,
+  tipCalculatorMeta,
+  dateDifferenceMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {
