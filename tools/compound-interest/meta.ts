@@ -3,18 +3,23 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'compound-interest-calculator',
   name: 'Compound Interest Calculator',
-  title: 'Compound Interest Calculator - Investment Growth | QuickUtils',
+  title: 'Compound Interest Calculator – See Investment Growth Over Time | QuickUtils',
   description:
-    'Calculate compound interest and see how your investment grows over time. Visualize wealth growth with monthly compounding.',
+    'Free compound interest calculator. See how your money grows with different compounding frequencies, monthly contributions, and time horizons.',
   category: 'calculator',
   icon: '📈',
   color: 'green',
   keywords: [
     'compound interest calculator',
-    'investment calculator',
-    'interest calculator',
-    'savings calculator',
-    'wealth calculator',
+    'investment growth calculator',
+    'compound interest formula',
+    'savings calculator with interest',
   ],
   canonical: '/compound-interest-calculator',
+  faqs: [
+    {
+      question: 'What is the power of compounding?',
+      answer: 'Compounding means your returns start earning returns. Over long periods this dramatically increases final wealth compared to simple interest.',
+    },
+  ],
 };

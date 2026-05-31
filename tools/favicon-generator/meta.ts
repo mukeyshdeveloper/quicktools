@@ -3,11 +3,25 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'favicon-generator',
   name: 'Favicon / ICO Generator',
-  title: 'Favicon Generator — Convert Image to ICO | QuickUtils',
-  description: 'Convert any square PNG, JPG, or WebP image into a .ico favicon file for your website. Free, fast, and entirely browser-based.',
+  title: 'Favicon Generator – Convert Image to .ico for Websites | QuickUtils',
+  description:
+    'Free favicon generator. Convert PNG, JPG, or WebP images into proper .ico favicon files for your website. Multiple sizes supported.',
   category: 'developer',
   icon: '🖼️',
   color: 'blue',
-  keywords: ['favicon generator', 'image to ico', 'create favicon', 'convert png to ico', 'website icon maker', 'ico converter'],
+  keywords: [
+    'favicon generator',
+    'image to ico',
+    'create favicon online',
+    'png to ico converter',
+    'website icon maker',
+  ],
   canonical: '/favicon-generator',
+  ogImage: '/og/favicon-generator.jpg',
+  faqs: [
+    {
+      question: 'What size should my favicon be?',
+      answer: 'Modern browsers support multiple sizes. We generate a standard .ico that includes 16×16, 32×32, and 48×48 for best compatibility.',
+    },
+  ],
 };

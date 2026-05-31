@@ -3,11 +3,26 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'image-compressor',
   name: 'Image Compressor',
-  title: 'Image Compressor & Resizer — Free, No Upload | QuickUtils',
-  description: 'Compress and resize images locally in your browser. Reduce JPG, PNG and WebP file sizes by up to 90% without uploading to any server. Fast, private, and free.',
+  title: 'Image Compressor – Reduce JPG, PNG & WebP Size (No Upload) | QuickUtils',
+  description:
+    'Free image compressor that runs entirely in your browser. Compress and resize JPG, PNG, and WebP images by up to 90% with no upload required.',
   category: 'generator',
   icon: '🖼️',
   color: 'orange',
-  keywords: ['image compressor', 'compress image online', 'resize image', 'reduce image size', 'image optimizer', 'jpg compressor', 'png compressor'],
+  keywords: [
+    'image compressor',
+    'compress image online',
+    'jpg compressor',
+    'png compressor',
+    'image optimizer',
+    'reduce image size',
+  ],
   canonical: '/image-compressor',
+  ogImage: '/og/image-compressor.jpg',
+  faqs: [
+    {
+      question: 'Is my image uploaded anywhere?',
+      answer: 'No. All compression happens locally in your browser using JavaScript. Your photos never leave your device.',
+    },
+  ],
 };

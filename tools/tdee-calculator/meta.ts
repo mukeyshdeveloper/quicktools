@@ -3,11 +3,26 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'tdee-calculator',
   name: 'TDEE & Macro Calculator',
-  title: 'TDEE & Macro Calculator — Daily Calorie Needs | QuickUtils',
-  description: 'Calculate your Total Daily Energy Expenditure (TDEE) and optimal macronutrient split for weight loss, maintenance, or muscle gain. Free and private.',
+  title: 'TDEE Calculator – Daily Calories & Macro Split (Free) | QuickUtils',
+  description:
+    'Free TDEE calculator. Find your Total Daily Energy Expenditure and get personalized protein, carbs, and fat recommendations for weight loss, maintenance, or muscle gain.',
   category: 'health',
   icon: '🔥',
   color: 'red',
-  keywords: ['tdee calculator', 'macro calculator', 'daily calories', 'energy expenditure', 'weight loss calculator', 'bulking calculator', 'cutting macros'],
+  keywords: [
+    'tdee calculator',
+    'macro calculator',
+    'daily calorie needs',
+    'tdee and macros',
+    'weight loss calorie calculator',
+    'bulking macros',
+  ],
   canonical: '/tdee-calculator',
+  ogImage: '/og/tdee-calculator.jpg',
+  faqs: [
+    {
+      question: 'What is the difference between BMR and TDEE?',
+      answer: 'BMR is the calories you burn at complete rest. TDEE multiplies BMR by your activity level to estimate real-world daily calorie needs.',
+    },
+  ],
 };

@@ -3,9 +3,9 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'unit-converter',
   name: 'Unit Converter',
-  title: 'Unit Converter - Convert Units Instantly | QuickUtils',
+  title: 'Unit Converter – Convert Length, Weight, Temperature & More | QuickUtils',
   description:
-    'Convert length, weight, temperature, area, volume, speed, time, data and more with this free unit converter.',
+    'Free unit converter for length, weight, temperature, volume, speed, time, data, pressure, energy and more. Fast and accurate conversions.',
   category: 'calculator',
   icon: '📐',
   color: 'green',
@@ -15,7 +15,13 @@ export const meta: ToolMeta = {
     'length converter',
     'weight converter',
     'temperature converter',
-    'speed converter',
+    'speed converter online',
   ],
   canonical: '/unit-converter',
+  faqs: [
+    {
+      question: 'How accurate are the conversions?',
+      answer: 'We use standard conversion factors. For everyday use the results are highly accurate. Some specialized units may use common approximations.',
+    },
+  ],
 };

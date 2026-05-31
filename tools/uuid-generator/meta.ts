@@ -3,11 +3,26 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'uuid-generator',
   name: 'UUID / GUID Generator',
-  title: 'UUID / GUID Generator – Bulk Database ID Builder | QuickUtils',
-  description: 'Generate high-quality, secure UUID v4, v1, and modern v7 identifiers in bulk. Customize hyphens, casing, braces, and delimiters instantly.',
+  title: 'UUID Generator – Create Bulk v4 & v7 IDs (Free) | QuickUtils',
+  description:
+    'Free UUID generator. Create secure v4, v7, and other UUIDs in bulk with custom formatting options. Perfect for databases, APIs, and development.',
   category: 'developer',
   icon: '🆔',
   color: 'indigo',
-  keywords: ['uuid generator', 'guid generator', 'uuid v4', 'uuid v7', 'bulk uuid', 'unique identifier', 'database id generator'],
+  keywords: [
+    'uuid generator',
+    'guid generator',
+    'uuid v4 generator',
+    'uuid v7',
+    'bulk uuid generator',
+    'unique id generator',
+  ],
   canonical: '/uuid-generator',
+  ogImage: '/og/uuid-generator.jpg',
+  faqs: [
+    {
+      question: 'What is the difference between UUID v4 and v7?',
+      answer: 'v4 is fully random. v7 is time-based (sortable) and recommended for databases as it improves indexing performance.',
+    },
+  ],
 };

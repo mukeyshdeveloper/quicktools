@@ -3,11 +3,24 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'slug-converter',
   name: 'URL Slug Converter',
-  title: 'String to URL Slug Converter | QuickUtils',
-  description: 'Convert any text string into a clean, SEO-friendly URL slug. Remove special characters, handle spaces, and generate clean URLs instantly.',
+  title: 'URL Slug Generator – Convert Text to SEO-Friendly Slugs | QuickUtils',
+  description:
+    'Free URL slug generator. Convert titles and text into clean, SEO-optimized URL slugs. Handles special characters, spaces, and multiple formats instantly.',
   category: 'developer',
   icon: '🔗',
   color: 'sky',
-  keywords: ['slug converter', 'url slug generator', 'text to slug', 'seo friendly url', 'string to url'],
+  keywords: [
+    'url slug generator',
+    'slug converter',
+    'seo slug generator',
+    'text to url slug',
+    'clean url maker',
+  ],
   canonical: '/slug-converter',
+  faqs: [
+    {
+      question: 'What makes a good URL slug?',
+      answer: 'Short, descriptive, lowercase, uses hyphens instead of underscores or spaces, and contains the main keyword.',
+    },
+  ],
 };

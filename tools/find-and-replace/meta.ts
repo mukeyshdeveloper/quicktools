@@ -3,11 +3,25 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'find-and-replace',
   name: 'Find & Replace Text',
-  title: 'Find & Replace Text with Regex Support | QuickUtils',
-  description: 'Advanced browser-based find and replace tool. Use standard text or Regular Expressions (Regex) to instantly find, highlight, and replace words in large documents.',
+  title: 'Find and Replace – Regex Bulk Editor for Text & Code | QuickUtils',
+  description:
+    'Powerful browser-based find & replace with full regex support. Do bulk replacements, highlight matches, and clean large documents instantly. 100% private.',
   category: 'text',
   icon: '🔍',
   color: 'blue',
-  keywords: ['find and replace', 'regex replace', 'replace text online', 'word swapper', 'text manipulator', 'bulk text replace'],
+  keywords: [
+    'find and replace',
+    'regex replace online',
+    'bulk text replace',
+    'find replace with regex',
+    'text editor online',
+  ],
   canonical: '/find-and-replace',
+  ogImage: '/og/find-and-replace.jpg',
+  faqs: [
+    {
+      question: 'Can I use regular expressions?',
+      answer: 'Yes. Enable Regex mode to use full JavaScript regular expression syntax for advanced pattern matching and replacements.',
+    },
+  ],
 };

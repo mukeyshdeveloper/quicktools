@@ -3,12 +3,24 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'lorem-ipsum-generator',
   name: 'Lorem Ipsum Generator',
-  title: 'Lorem Ipsum Generator – Free Placeholder Text | QuickUtils',
-  description: 'Generate custom Lorem Ipsum placeholder text by paragraphs, sentences, or words. Copy instantly for design mockups and prototypes.',
+  title: 'Lorem Ipsum Generator – Free Placeholder Text for Designs | QuickUtils',
+  description:
+    'Free Lorem Ipsum generator. Create placeholder text by paragraphs, sentences, or words. Perfect for design mockups, prototypes, and layouts.',
   category: 'text',
   icon: '📄',
   color: 'amber',
-  keywords: ['lorem ipsum generator', 'placeholder text', 'dummy text generator', 'lorem ipsum online', 'fake text generator'],
+  keywords: [
+    'lorem ipsum generator',
+    'placeholder text generator',
+    'dummy text',
+    'lorem ipsum paragraphs',
+    'fake text generator',
+  ],
   canonical: '/lorem-ipsum-generator',
-  ogImage: '/og-default.png',
+  faqs: [
+    {
+      question: 'Can I generate a specific number of paragraphs?',
+      answer: 'Yes. Choose paragraphs, sentences, or words and enter the exact amount you need.',
+    },
+  ],
 };

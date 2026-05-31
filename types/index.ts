@@ -1,1 +1,1 @@
-export type { ToolCategory, ToolMeta } from './tool';
+export type { ToolCategory, ToolMeta, FAQ } from './tool';

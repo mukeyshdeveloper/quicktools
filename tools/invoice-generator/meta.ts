@@ -10,4 +10,15 @@ export const meta: ToolMeta = {
   color: 'emerald',
   keywords: ['invoice generator', 'free invoice maker', 'download pdf invoice', 'create invoice online', 'receipt maker'],
   canonical: '/invoice-generator',
+  ogImage: '/og/invoice-generator.jpg',
+  faqs: [
+    {
+      question: 'Is my invoice data saved?',
+      answer: 'No. Everything is generated locally in your browser. Nothing is stored on our servers.',
+    },
+    {
+      question: 'Can I add my company logo?',
+      answer: 'The current version focuses on clean text-based invoices. Logo support is planned for a future update.',
+    },
+  ],
 }

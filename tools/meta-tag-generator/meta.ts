@@ -3,11 +3,26 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'meta-tag-generator',
   name: 'Meta Tag & OpenGraph Generator',
-  title: 'Meta Tag & OpenGraph Generator – Live SEO Preview | QuickUtils',
-  description: 'Create perfect SEO meta tags, OpenGraph cards, and Twitter cards. See a live preview of how your site will look on Google, Facebook, and Twitter.',
+  title: 'Meta Tag Generator – OpenGraph & Twitter Card Builder | QuickUtils',
+  description:
+    'Free meta tag generator with live preview. Create optimized title, description, OpenGraph, and Twitter Card tags for better SEO and social sharing.',
   category: 'developer',
   icon: '🔍',
   color: 'orange',
-  keywords: ['meta tag generator', 'opengraph generator', 'seo tags', 'twitter card generator', 'html meta tags', 'seo preview'],
+  keywords: [
+    'meta tag generator',
+    'opengraph generator',
+    'twitter card generator',
+    'seo meta tags',
+    'og tags creator',
+    'social media tags',
+  ],
   canonical: '/meta-tag-generator',
+  ogImage: '/og/meta-tag-generator.jpg',
+  faqs: [
+    {
+      question: 'Do these tags actually improve rankings?',
+      answer: 'Meta tags don’t directly boost rankings, but great titles + descriptions improve CTR, and OpenGraph tags improve how your content appears when shared.',
+    },
+  ],
 };
