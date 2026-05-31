@@ -3,9 +3,7 @@ import Link from 'next/link';
 import { generateToolSchema } from '@/lib/schema';
 import RegexTester from '@/tools/regex-tester/RegexTester';
 import { meta } from '@/tools/regex-tester/meta';
-import AdBanner from '@/components/layout/AdBanner';
-
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
+import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -15,8 +13,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.description,
-    url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    url: absoluteUrl(meta.canonical),
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -26,16 +24,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RegexTesterPage(): React.ReactElement {
+export default function RegexTesterPage() {
   return (
-    <div className="min-h-screen bg-background text-text">
-      <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
-        />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
+      />
 
-        <div className="mb-8 text-center sm:text-left">
+      <div className="mb-8 text-center sm:text-left">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-brand">
             Developer Tool
           </p>
@@ -47,49 +44,47 @@ export default function RegexTesterPage(): React.ReactElement {
           </p>
         </div>
 
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_TOP!} className="mb-8" />
-
         <RegexTester />
 
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_BOTTOM!} className="mt-12" />
-
         {/* SEO Content */}
-        <section className="prose-section mt-16 max-w-3xl">
-          <h2>What is a Regular Expression (Regex)?</h2>
+        <section className="prose-section mt-12">
+          <h2>What is a Regular Expression?</h2>
           <p>
-            A Regular Expression, often abbreviated as "Regex" or "RegExp", is a sequence of characters that 
-            specifies a search pattern. It is an extremely powerful tool used in software development for 
-            searching, matching, and replacing text strings. Whether you are validating an email address, 
-            extracting data from a log file, or replacing specific words in a document, regular expressions 
-            make complex text processing fast and efficient.
+            A Regular Expression (Regex) is a powerful pattern-matching language used to search, validate, and manipulate text. It is one of the most essential tools in a developer's toolkit for tasks ranging from input validation to complex data extraction.
           </p>
 
-          <h2>How to use this Regex Tester</h2>
+          <h2>How to Use This Regex Tester</h2>
           <p>
-            Our Regex Tester provides a live, interactive environment to build and debug your expressions safely:
+            The tester provides a real-time environment powered by JavaScript's native RegExp engine:
           </p>
           <ul>
-            <li><strong>Pattern:</strong> Type your regular expression without the forward slashes (e.g., <code>[a-z0-9]+</code>).</li>
-            <li><strong>Flags:</strong> Add flags like <code>g</code> (global search to find all matches) or <code>i</code> (case-insensitive search).</li>
-            <li><strong>Test String:</strong> Paste the text you want to search through. The matches will instantly highlight in the result box below.</li>
-            <li><strong>Capture Groups:</strong> If your regex contains capture groups using parentheses <code>( )</code>, they will automatically be extracted and listed in the match details.</li>
+            <li>Enter your pattern in the top field (without slashes)</li>
+            <li>Choose flags (g for global, i for case-insensitive, m for multiline, etc.)</li>
+            <li>Paste your test text below — matches highlight instantly</li>
+            <li>View detailed capture groups and match information on the right</li>
           </ul>
 
-          <h2>Privacy and Security</h2>
+          <h2>Common Use Cases</h2>
+          <ul>
+            <li>Validating emails, phone numbers, URLs, and passwords</li>
+            <li>Extracting specific data from logs or large text files</li>
+            <li>Performing bulk find-and-replace operations with complex rules</li>
+            <li>Parsing structured data (CSV, logs, API responses)</li>
+            <li>Testing and debugging regex before using it in production code</li>
+          </ul>
+
+          <h2>Complete Privacy</h2>
           <p>
-            This tool is 100% client-side. Your text strings and regular expressions are evaluated directly 
-            within your web browser using JavaScript's native RegExp engine. We never send your data to any server, 
-            ensuring complete privacy for sensitive logs, API keys, or proprietary code you might be testing.
+            All regex evaluation happens 100% in your browser. Your test strings and patterns are never sent to any server — ideal for working with sensitive data or proprietary patterns.
           </p>
 
           <h2>Related Developer Tools</h2>
           <ul>
+            <li><Link href="/find-and-replace">Find & Replace Tool</Link></li>
             <li><Link href="/jwt-decoder">JWT Decoder</Link></li>
-            <li><Link href="/base64-encoder-decoder">Base64 Encoder / Decoder</Link></li>
             <li><Link href="/diff-checker">Diff Checker</Link></li>
           </ul>
         </section>
-      </main>
-    </div>
-  );
-}
+      </>
+    );
+  }

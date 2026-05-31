@@ -1,13 +1,12 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL, absoluteUrl } from '@/lib/site';
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://thequickutils.com';
-
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: absoluteUrl('/sitemap.xml'),
   };
 }

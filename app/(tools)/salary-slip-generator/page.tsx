@@ -4,7 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import SalarySlipGenerator from '@/tools/salary-slip-generator/SalarySlipGenerator';
 import { meta } from '@/tools/salary-slip-generator/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
+import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.description,
-    url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    url: absoluteUrl(meta.canonical),
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -25,16 +25,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SalarySlipGeneratorPage(): React.ReactElement {
+export default function SalarySlipGeneratorPage() {
   return (
-    <div className="min-h-screen bg-background text-text">
-      <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
-        />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
+      />
 
-        <div className="mb-8">
+      <div className="mb-8">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-brand">
             Free tool — no sign-up
           </p>
@@ -81,17 +80,15 @@ export default function SalarySlipGeneratorPage(): React.ReactElement {
           <h2>Frequently Asked Questions</h2>
           <h3>Is this salary slip legally valid?</h3>
           <p>
-            This generator creates a professional, formatted payslip that contains all standard information.
-            However, for it to be legally valid, it must be issued by a registered employer and reflect
-            accurate employment data. This tool is perfect for SMBs, startups, and HR professionals who
-            need to generate compliant payslips quickly.
+            This generator creates a professional, formatted payslip containing all standard Indian salary components.
+            For legal validity, it must be issued by a registered employer with accurate data. This tool is ideal for startups, SMBs, freelancers, and HR teams needing quick, compliant payslips.
           </p>
           <h3>Can I customize the salary components?</h3>
-          <p>
-            Yes — you can add, edit, or remove any earning or deduction row to match your company&rsquo;s
-            exact pay structure. The tool comes pre-filled with the most common Indian payroll components
-            as a starting point.
-          </p>
+          <p>Yes. You can add, edit, or remove any earning or deduction row to match your company’s exact pay structure. The tool comes pre-filled with the most common Indian payroll components as a starting point.</p>
+
+          <h3>Why do employees need salary slips?</h3>
+          <p>Salary slips are required for home loans, personal loans, visa applications, income tax returns, and employment background checks. They serve as official proof of income and employment.</p>
+
           <h3>Is my data stored anywhere?</h3>
           <p>
             No. All processing happens entirely in your browser. No employee data is sent to any server.
@@ -105,7 +102,6 @@ export default function SalarySlipGeneratorPage(): React.ReactElement {
             <li><Link href="/emi-calculator">EMI Calculator</Link></li>
           </ul>
         </section>
-      </main>
-    </div>
-  );
-}
+      </>
+    );
+  }

@@ -3,9 +3,7 @@ import Link from 'next/link';
 import { generateToolSchema } from '@/lib/schema';
 import CssGenerator from '@/tools/css-generator/CssGenerator';
 import { meta } from '@/tools/css-generator/meta';
-import AdBanner from '@/components/layout/AdBanner';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
+import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -15,20 +13,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.description,
-    url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    url: absoluteUrl(meta.canonical),
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: { card: 'summary_large_image', title: meta.title, description: meta.description },
 };
 
-export default function CssGeneratorPage(): React.ReactElement {
+export default function CssGeneratorPage() {
   return (
-    <div className="min-h-screen bg-background text-text">
-      <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }} />
 
-        <div className="mb-8 text-center sm:text-left">
+      <div className="mb-8 text-center sm:text-left">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-brand">Developer Tool</p>
           <h1 className="font-display text-3xl font-bold tracking-tight text-text sm:text-4xl">
             CSS Box-Shadow & Gradient Generator
@@ -36,11 +33,7 @@ export default function CssGeneratorPage(): React.ReactElement {
           <p className="mt-3 text-sm leading-6 text-muted sm:text-base max-w-2xl">{meta.description}</p>
         </div>
 
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_TOP!} className="mb-8" />
-
         <CssGenerator />
-
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_BOTTOM!} className="mt-12" />
 
         <section className="prose-section mt-16 max-w-3xl">
           <h2>About this CSS Generator</h2>
@@ -72,7 +65,6 @@ export default function CssGeneratorPage(): React.ReactElement {
             <li><Link href="/base64-encoder-decoder">Base64 Encoder / Decoder</Link></li>
           </ul>
         </section>
-      </main>
-    </div>
-  );
-}
+      </>
+    );
+  }

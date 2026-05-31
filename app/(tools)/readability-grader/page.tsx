@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -77,6 +77,19 @@ export default function ReadabilityGraderPage() {
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Tips to Improve Your Score</h2>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               If your score is too high (indicating overly complex text), try breaking long, run-on sentences into two smaller ones. Additionally, look for highly complex vocabulary words (4+ syllables) and replace them with simpler, more common synonyms where appropriate.
+            </p>
+            <ul className="list-disc pl-5 mt-3 text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li>Keep sentences under 20 words on average</li>
+              <li>Use shorter paragraphs</li>
+              <li>Choose common words over jargon</li>
+              <li>Break up dense blocks of text with bullet points and subheadings</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Why Readability Matters for SEO</h2>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Google increasingly rewards content that is easy for real humans to read. Lower readability scores often correlate with higher bounce rates and lower time-on-page — both negative ranking signals.
             </p>
           </div>
 

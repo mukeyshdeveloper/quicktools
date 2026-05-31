@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -96,6 +96,15 @@ export default function CodeMinifierPage() {
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               By shrinking these assets by 30% to 60%, you drastically lower time-to-first-byte (TTFB), accelerate rendering timelines, decrease data usage for mobile visitors, and significantly elevate your SEO positioning.
             </p>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Minification is one of the highest-ROI performance optimizations available, especially when combined with proper caching, compression (GZIP/Brotli), and a good CDN.
+            </p>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Pro tip: Always keep your original source files unminified for development. Only minify the versions that go to production.
+            </p>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Many modern build tools (Vite, Webpack, esbuild, Rollup) can handle minification automatically during production builds.
+            </p>
           </div>
 
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
@@ -131,12 +140,17 @@ export default function CodeMinifierPage() {
               </li>
               <li>
                 <Link href="/regex-tester" className="text-brand underline hover:text-brand-hover">
-                  Regex Pattern Tester
+                  Regex Tester
+                </Link>
+              </li>
+              <li>
+                <Link href="/css-generator" className="text-brand underline hover:text-brand-hover">
+                  CSS Generator
                 </Link>
               </li>
               <li>
                 <Link href="/url-encoder-decoder" className="text-brand underline hover:text-brand-hover">
-                  URL Percent Encoder / Decoder
+                  URL Encoder / Decoder
                 </Link>
               </li>
             </ul>

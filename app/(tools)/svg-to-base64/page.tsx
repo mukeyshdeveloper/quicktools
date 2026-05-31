@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -76,11 +76,21 @@ export default function SvgToBase64Page() {
             </ul>
           </div>
 
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Best Practices for SVG Data URIs</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-2">
+              <li>Prefer the URL-encoded (percent-encoded) version over Base64 — it compresses significantly better with GZIP/Brotli.</li>
+              <li>Strip unnecessary attributes (width, height, XML declarations, comments) from your SVG before converting for the smallest possible output.</li>
+              <li>Ideal for small icons and logos — completely eliminates an extra HTTP request, which is excellent for performance budgets.</li>
+              <li>Always test the final Data URI in the target browsers, as extremely long URIs can hit URL length limits in some older browsers.</li>
+            </ul>
+          </div>
+
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Utilities</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Developer Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
-              <li><Link href="/css-generator" className="text-brand underline hover:text-brand-hover">CSS Box-Shadow Generator</Link></li>
-              <li><Link href="/base64-encoder-decoder" className="text-brand underline hover:text-brand-hover">General Base64 Encoder</Link></li>
+              <li><Link href="/css-generator" className="text-brand underline hover:text-brand-hover">CSS Generator</Link></li>
+              <li><Link href="/base64-encoder-decoder" className="text-brand underline hover:text-brand-hover">Base64 Encoder / Decoder</Link></li>
               <li><Link href="/code-minifier" className="text-brand underline hover:text-brand-hover">Code Minifier</Link></li>
             </ul>
           </div>

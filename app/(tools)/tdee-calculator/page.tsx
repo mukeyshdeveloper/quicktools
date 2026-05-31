@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: meta.canonical,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: { card: 'summary_large_image', title: meta.title, description: meta.description },
@@ -53,8 +53,30 @@ export default function TdeeCalculatorPage() {
               Our calculator provides a balanced macronutrient split of 30% Protein, 35% Fats, and 35% Carbohydrates. This is widely considered an optimal starting point for body composition changes. Remember that 1 gram of protein = 4 calories, 1 gram of carbs = 4 calories, and 1 gram of fat = 9 calories.
             </p>
           </div>
+          <div>
+            <h2 className="text-xl font-bold text-text">Why TDEE Matters for Your Goals</h2>
+            <p className="mt-2 text-sm text-muted leading-relaxed">
+              Your TDEE represents the total number of calories you burn each day. Knowing this number is the foundation of any successful nutrition plan — whether your goal is fat loss, muscle gain, or maintenance.
+            </p>
+            <ul className="list-disc pl-5 mt-3 text-sm text-muted space-y-1">
+              <li><strong>Fat Loss:</strong> Eat in a 300–500 calorie deficit below your TDEE.</li>
+              <li><strong>Muscle Gain (Bulking):</strong> Eat in a 250–500 calorie surplus above your TDEE with high protein.</li>
+              <li><strong>Maintenance:</strong> Eat close to your TDEE for stable body weight.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-text">Understanding Your Results</h2>
+            <p className="mt-2 text-sm text-muted leading-relaxed">
+              Your TDEE is the foundation of any nutrition plan. Once you know this number, you can create a sustainable calorie deficit for fat loss or a controlled surplus for muscle building while keeping protein high.
+            </p>
+            <p className="mt-2 text-sm text-muted leading-relaxed">
+              Remember that TDEE is an estimate. Track your weight and adjust calories weekly based on real results for the best outcomes.
+            </p>
+          </div>
+
           <div className="pt-4 border-t border-border">
-            <h2 className="text-xl font-bold text-text">Related Health Tools</h2>
+            <h2 className="text-xl font-bold text-text">Related Health & Fitness Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/bmi-calculator" className="text-brand underline">BMI Calculator</Link></li>
               <li><Link href="/sleep-cycle-calculator" className="text-brand underline">Sleep Cycle Calculator</Link></li>

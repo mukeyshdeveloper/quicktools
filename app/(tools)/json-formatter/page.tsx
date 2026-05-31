@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: `${process.env.NEXT_PUBLIC_SITE_URL}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -32,51 +32,61 @@ export default function JsonFormatterPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
       />
 
-      <main className="mx-auto max-w-6xl px-4 py-10">
-        <h1 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <div className="mb-8">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-brand">Developer Tool</p>
+        <h1 className="font-display text-3xl font-bold tracking-tight text-text sm:text-4xl">
           JSON Formatter & Validator
         </h1>
-        <p className="mb-8 text-gray-500 dark:text-gray-400">{meta.description}</p>
+        <p className="mt-3 text-sm leading-6 text-muted sm:text-base">{meta.description}</p>
+      </div>
 
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_TOP!} className="mb-8" />
+      <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_TOP!} className="mb-8" />
 
-        <JsonFormatter />
+      <JsonFormatter />
 
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_BOTTOM!} className="mt-8" />
-
-        <section className="mt-12 space-y-4 text-sm text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            What is a JSON Formatter?
-          </h2>
+      <section className="prose-section mt-12">
+          <h2>Why Use Our JSON Formatter?</h2>
           <p>
-            JSON (JavaScript Object Notation) is an incredibly popular data format used to transmit information between servers and web applications. However, unformatted, minified JSON is extremely difficult for humans to read. 
-          </p>
-          <p>
-            Our <strong>Free Online JSON Formatter</strong> automatically parses your raw JSON payload and structures it with proper indentation, line breaks, and formatting, making it incredibly easy to scan, read, and debug.
-          </p>
-          
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mt-8">
-            Secure, Private & Offline-Ready
-          </h2>
-          <p>
-            Unlike other tools, our JSON formatter evaluates and processes your data <strong>100% locally in your browser</strong>. Your sensitive API payloads and configuration files are never uploaded to our servers or stored anywhere. This guarantees maximum privacy and security for your development workflow.
+            JSON is the standard data format for modern APIs and configuration. When responses arrive minified as one giant line, they become nearly impossible to understand. Our tool instantly beautifies JSON with proper indentation and structure.
           </p>
 
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mt-8">
-            Built-in JSON Validator
-          </h2>
+          <h2>Powerful Features</h2>
+          <ul>
+            <li>One-click beautify and minify toggle</li>
+            <li>Real-time syntax validation with clear error locations</li>
+            <li>Collapsible tree view for large nested objects</li>
+            <li>Copy to clipboard and download as .json file</li>
+          </ul>
+
+          <h2>Maximum Privacy</h2>
           <p>
-            Finding a missing comma or bracket in thousands of lines of JSON can be a nightmare. When you paste your payload into the editor, we immediately validate its syntax. If your JSON is invalid, you will receive a descriptive error message along with the approximate line number where the issue occurred, saving you hours of troubleshooting.
+            Everything runs 100% in your browser. Your API responses, tokens, and data are never sent anywhere — perfect for sensitive or production data.
           </p>
 
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mt-8">Related Tools</h2>
+          <h2>Common Use Cases</h2>
+          <ul>
+            <li>Debugging API responses from curl, Postman, or browser dev tools</li>
+            <li>Cleaning minified JSON from logs and error reports</li>
+            <li>Making configuration files human-readable before committing</li>
+            <li>Validating structure before sending requests</li>
+          </ul>
+
+          <h2>Frequently Asked Questions</h2>
+          {meta.faqs?.map((faq, i) => (
+            <div key={i}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
+
+          <h2>Related Developer Tools</h2>
           <ul className="list-disc pl-5 space-y-1">
-            <li><Link href="/color-picker" className="text-brand hover:underline">Color Picker</Link></li>
-            <li><Link href="/password-generator" className="text-brand hover:underline">Password Generator</Link></li>
-            <li><Link href="/unit-converter" className="text-brand hover:underline">Unit Converter</Link></li>
+            <li><Link href="/jwt-decoder">JWT Decoder</Link></li>
+            <li><Link href="/base64-encoder-decoder">Base64 Encoder / Decoder</Link></li>
+            <li><Link href="/diff-checker">Diff Checker</Link></li>
           </ul>
         </section>
-      </main>
-    </>
-  )
-}
+      </>
+    );
+  }
+

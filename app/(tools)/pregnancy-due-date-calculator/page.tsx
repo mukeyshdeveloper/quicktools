@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: meta.canonical,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: { card: 'summary_large_image', title: meta.title, description: meta.description },
@@ -48,9 +48,12 @@ export default function PregnancyCalculatorPage() {
             </p>
           </div>
           <div>
-            <h2 className="text-xl font-bold text-text">Accuracy of the Due Date</h2>
+            <h2 className="text-xl font-bold text-text">How Accurate Is the Due Date?</h2>
             <p className="mt-2 text-sm text-muted leading-relaxed">
-              It is important to remember that an estimated due date is just that — an estimate. Only about 4% to 5% of babies are born on their exact due date. Most pregnancies last between 37 and 42 weeks, and any birth within this window is considered full-term.
+              An estimated due date (EDD) is just that — an estimate. Only about 4–5% of babies are born on their exact due date. Most pregnancies last between 37 and 42 weeks, and any birth in that window is considered full-term.
+            </p>
+            <p className="mt-2 text-sm text-muted leading-relaxed">
+              Your healthcare provider may adjust the due date after the first ultrasound if the measurements differ significantly from the LMP-based calculation.
             </p>
           </div>
           <div className="pt-4 border-t border-border">

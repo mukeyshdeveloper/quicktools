@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: meta.canonical,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: { card: 'summary_large_image', title: meta.title, description: meta.description },
@@ -50,11 +50,22 @@ export default function MemeGeneratorPage() {
               Unlike many online meme generators that upload your personal photos to their servers, our Meme Text Generator uses the HTML5 Canvas API to render the text directly over your image inside your own web browser. Your images never leave your computer.
             </p>
           </div>
+          <div>
+            <h2 className="text-xl font-bold text-text">Tips for Creating Better Memes</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-2">
+              <li>Use high-contrast images so the white Impact text with black outline remains readable.</li>
+              <li>Keep the text short, punchy, and easy to read at a glance — that's what makes classic memes effective.</li>
+              <li>For social platforms, square (1:1) or vertical (4:5) images tend to perform better in feeds.</li>
+              <li>You can use the Image Compressor tool afterward to reduce file size before posting.</li>
+            </ul>
+          </div>
+
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/image-compressor" className="text-brand underline">Image Compressor</Link></li>
               <li><Link href="/color-palette-extractor" className="text-brand underline">Color Palette Extractor</Link></li>
+              <li><Link href="/image-converter" className="text-brand underline">Image Format Converter</Link></li>
             </ul>
           </div>
         </section>

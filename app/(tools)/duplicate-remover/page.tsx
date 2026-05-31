@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -67,8 +67,18 @@ export default function DuplicateRemoverPage() {
           <div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Security & Privacy First</h2>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              We know that you might be pasting sensitive data like client emails, internal company domains, or private API identifiers. That's why this tool processes everything 100% locally in your browser. Absolutely zero data is sent to our servers or saved in any database.
+              All processing happens 100% locally in your browser using JavaScript. Your lists, emails, keywords, or data never leave your device — making this tool safe for sensitive or proprietary information.
             </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Common Use Cases</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li>Cleaning keyword research exports from multiple tools</li>
+              <li>Deduplicating email lists before campaigns</li>
+              <li>Removing repeated lines from logs or data exports</li>
+              <li>Preparing clean lists for SQL IN clauses or spreadsheets</li>
+            </ul>
           </div>
 
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">

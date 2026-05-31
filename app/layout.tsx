@@ -1,41 +1,64 @@
-import type { Metadata } from "next";
-import { DM_Mono, DM_Sans } from "next/font/google";
-import { GoogleAnalytics } from '@next/third-parties/google'
-import Script from 'next/script'
-import "./globals.css";
-
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.thequickutils.com";
+import type { Metadata } from 'next';
+import { DM_Mono, DM_Sans } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
+import './globals.css';
+import {
+  SITE_URL,
+  SITE_METADATA_BASE,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  GA_ID,
+  ADSENSE_ID,
+} from '@/lib/site';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import { generateOrganizationSchema } from '@/lib/schema';
 
 const sans = DM_Sans({
-  display: "swap",
-  subsets: ["latin"],
-  variable: "--font-sans",
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-sans',
 });
 
 const mono = DM_Mono({
-  display: "swap",
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500"],
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: ['400', '500'],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "QuickUtils - Free Online Tools for Everyday Tasks",
-  description:
-    "Use free browser-based calculators, text tools, generators and developer utilities with no signup.",
-  alternates: { canonical: "/" },
+  metadataBase: SITE_METADATA_BASE,
+  title: {
+    default: `${SITE_NAME} – Free Online Tools`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: `${SITE_NAME} – Free Online Tools for Everyday Tasks`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630 }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME} – Free Online Tools`,
+    description: SITE_DESCRIPTION,
+  },
 };
-
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgSchema = generateOrganizationSchema();
+
   return (
     <html
       lang="en"
@@ -43,20 +66,31 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7773629016889948"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
+        {/* AdSense - only load if we have a real publisher ID */}
+        {ADSENSE_ID && (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
+
+        {/* Organization structured data (global) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-slate-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100" suppressHydrationWarning>
+
+      <body className="min-h-full flex flex-col bg-background text-text">
         <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
+
+        <main className="flex-1">{children}</main>
+
         <Footer />
-        <GoogleAnalytics gaId="G-WQX1X1V2B1" />
+
+        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
       </body>
     </html>
   );

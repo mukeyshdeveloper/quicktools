@@ -4,7 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import JwtDecoder from '@/tools/jwt-decoder/JwtDecoder';
 import { meta } from '@/tools/jwt-decoder/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
+import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.description,
-    url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    url: absoluteUrl(meta.canonical),
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -25,13 +25,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function JwtDecoderPage(): React.ReactElement {
+export default function JwtDecoderPage() {
   return (
-    <div className="min-h-screen bg-background text-text">
-      <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
         />
 
         <div className="mb-8 text-center sm:text-left">
@@ -81,7 +80,6 @@ export default function JwtDecoderPage(): React.ReactElement {
             <li><Link href="/qr-code-generator">QR Code Generator</Link></li>
           </ul>
         </section>
-      </main>
-    </div>
-  );
-}
+      </>
+    );
+  }

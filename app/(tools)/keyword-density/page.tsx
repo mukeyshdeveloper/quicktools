@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -34,53 +34,52 @@ export default function KeywordDensityPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
       />
 
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-        <div className="mb-8 text-center sm:text-left">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-brand">
-            SEO & Content Utility
-          </p>
-          <h1 className="font-display text-3xl font-bold tracking-tight text-text sm:text-4xl">
-            Keyword Density Checker
-          </h1>
-          <p className="mt-3 text-sm leading-6 text-muted sm:text-base max-w-2xl">
-            {meta.description}
-          </p>
-        </div>
+      <div className="mb-8">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-brand">
+          SEO & Content Tool
+        </p>
+        <h1 className="font-display text-3xl font-bold tracking-tight text-text sm:text-4xl">
+          Keyword Density Checker
+        </h1>
+        <p className="mt-3 text-sm leading-6 text-muted sm:text-base">
+          {meta.description}
+        </p>
+      </div>
 
         <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_TOP!} className="mb-8" />
 
         <KeywordDensity />
 
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_BOTTOM!} className="mt-12" />
+        <section className="prose-section mt-12">
+          <h2>Why Keyword Density Analysis Matters</h2>
+          <p>
+            Modern search engines are sophisticated, but they still use term frequency signals to understand topical relevance. Too little of your target keyword and the page may not rank for it. Too much ("keyword stuffing") and you risk penalties or poor user experience.
+          </p>
+          <p>
+            Our tool gives you precise data: single-word density + 2-word and 3-word phrase frequency after intelligently removing stop words.
+          </p>
 
-        <section className="prose-section mt-16 max-w-4xl space-y-6">
-          <div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Why Check Keyword Density?</h2>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Keyword density refers to the percentage of times a specific word or phrase appears on a web page compared to the total number of words. For SEO writers, keeping your target keywords around an optimal 1% to 2% density ensures search engines understand what your content is about without penalizing you for "keyword stuffing."
-            </p>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Our advanced density checker instantly tokenizes your article, strips out common conversational words (stop words), and calculates exact frequency scores for single words as well as 2-word and 3-word combinations (long-tail keywords).
-            </p>
-          </div>
+          <h2>Best Practices for Keyword Density</h2>
+          <ul>
+            <li>Primary keyword: usually 0.8–2.0%</li>
+            <li>Secondary / long-tail keywords: 0.4–1.2%</li>
+            <li>Always prioritize natural language over hitting exact percentages</li>
+            <li>Place important keywords in headings, first 100 words, and conclusion</li>
+          </ul>
 
-          <div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">What are Stop Words?</h2>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Stop words are extremely common filler words like "the", "and", "is", and "in". Search engines generally ignore these words when trying to understand the core topic of an article. By toggling on <strong>"Ignore Stop Words"</strong>, our tool filters out over 100 common English fillers, allowing your true subject matter keywords to rise to the top of the density list.
-            </p>
-          </div>
+          <h2>Stop Words & Why We Filter Them</h2>
+          <p>
+            Common words like "the", "and", "of", "in", "to" add noise. By removing them (toggle available), you see the real keywords that matter for SEO.
+          </p>
 
-          <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Content Tools</h2>
-            <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
-              <li><Link href="/word-counter" className="text-brand underline hover:text-brand-hover">Word & Character Counter</Link></li>
-              <li><Link href="/meta-tag-generator" className="text-brand underline hover:text-brand-hover">Meta Tag & OpenGraph Generator</Link></li>
-              <li><Link href="/find-and-replace" className="text-brand underline hover:text-brand-hover">Find & Replace Text Engine</Link></li>
-            </ul>
-          </div>
+          <h2>Related Content & SEO Tools</h2>
+          <ul className="list-disc pl-5">
+            <li><Link href="/word-counter">Word & Character Counter</Link></li>
+            <li><Link href="/readability-grader">Readability Grader</Link></li>
+            <li><Link href="/find-and-replace">Find & Replace Tool</Link></li>
+          </ul>
         </section>
-      </main>
-    </>
-  );
-}
+      </>
+    );
+  }
+

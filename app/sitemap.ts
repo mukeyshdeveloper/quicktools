@@ -1,41 +1,66 @@
 import type { MetadataRoute } from 'next';
 import { getAllTools } from '@/lib/tools';
+import { SITE_URL, absoluteUrl } from '@/lib/site';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const tools = await getAllTools();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
   const toolEntries: MetadataRoute.Sitemap = tools.map((tool) => ({
-    url: `${siteUrl}${tool.canonical}`,
+    url: absoluteUrl(tool.canonical),
     lastModified: new Date(),
     changeFrequency: 'weekly',
-    priority: 0.8,
+    priority: 0.75,
   }));
 
   return [
     {
-      url: siteUrl,
+      url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: `${siteUrl}/about`,
+      url: absoluteUrl('/about'),
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: absoluteUrl('/contact'),
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${siteUrl}/contact`,
+      url: absoluteUrl('/privacy-policy'),
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    // Category hubs for better topical SEO
+    {
+      url: absoluteUrl('/finance-calculators'),
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     {
-      url: `${siteUrl}/privacy-policy`,
+      url: absoluteUrl('/health-calculators'),
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: absoluteUrl('/text-tools'),
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: absoluteUrl('/developer-tools'),
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     ...toolEntries,
   ];

@@ -4,7 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import DiffChecker from '@/tools/diff-checker/DiffChecker';
 import { meta } from '@/tools/diff-checker/meta';
 
-const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
+import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.description,
-    url: `${siteUrl}${meta.canonical}`,
-    images: [{ url: meta.ogImage ?? '/og-default.png', width: 1200, height: 630 }],
+    url: absoluteUrl(meta.canonical),
+    images: [{ url: meta.ogImage ?? '/og-default.jpg', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -25,13 +25,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DiffCheckerPage(): React.ReactElement {
+export default function DiffCheckerPage() {
   return (
-    <div className="min-h-screen bg-background text-text">
-      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateToolSchema(meta)) }}
         />
 
         <div className="mb-8 text-center sm:text-left">
@@ -52,36 +51,45 @@ export default function DiffCheckerPage(): React.ReactElement {
         <section className="prose-section mt-16 max-w-3xl">
           <h2>What is a Diff Checker?</h2>
           <p>
-            A Diff Checker (or text comparison tool) is an essential utility that compares two blocks of text
-            line-by-line and highlights the exact differences. It helps you quickly identify what was added,
-            removed, or changed between an original document and a modified version.
+            A Diff Checker is a powerful tool that compares two versions of text and visually highlights exactly what changed. It shows additions in green and deletions in red, making it trivial to spot modifications at a glance.
           </p>
 
-          <h2>How to use the Diff Checker</h2>
+          <h2>How to Use the Diff Checker</h2>
           <p>
-            Paste your original text into the left panel and the modified text into the right panel. The tool
-            will automatically compute the differences in real-time. You can toggle between two viewing modes:
+            Simply paste the original version on the left and the updated version on the right. The tool instantly calculates the differences. You can switch between:
           </p>
           <ul>
-            <li><strong>Split View:</strong> Shows the original and modified text side-by-side, making it easy to see parallel changes.</li>
-            <li><strong>Unified View:</strong> Shows all changes inline in a single list, similar to standard Git commit diffs.</li>
+            <li><strong>Split View</strong> – Best for side-by-side comparison</li>
+            <li><strong>Unified View</strong> – Best for seeing a clean changelog-style diff</li>
           </ul>
 
           <h2>Common Use Cases</h2>
+          <ul>
+            <li>Code reviews before committing to Git</li>
+            <li>Tracking revisions in legal documents, contracts, or proposals</li>
+            <li>Comparing configuration files or database exports</li>
+            <li>Reviewing changes in marketing copy or blog posts</li>
+            <li>Debugging differences between API responses</li>
+          </ul>
+
+          <h2>Why Use Our Diff Checker?</h2>
           <p>
-            This tool is widely used by developers to review code changes before committing, by writers and
-            editors to track revisions in articles, and by data analysts to compare configuration files or
-            dataset outputs.
+            Unlike many online diff tools, ours runs entirely in your browser. Your sensitive documents, code, or data never leave your device — perfect for confidential work.
+          </p>
+          <p>
+            It also supports two viewing modes (Split and Unified) so you can choose the format that works best for your review process.
+          </p>
+          <p>
+            The tool is completely private — your documents never leave your browser. This makes it safe to use with sensitive code, legal documents, or internal data.
           </p>
 
           <h2>Related Tools</h2>
           <ul>
             <li><Link href="/word-counter">Word Counter</Link></li>
-            <li><Link href="/case-converter">Case Converter</Link></li>
+            <li><Link href="/find-and-replace">Find & Replace Tool</Link></li>
             <li><Link href="/json-formatter">JSON Formatter</Link></li>
           </ul>
         </section>
-      </main>
-    </div>
-  );
-}
+      </>
+    );
+  }
