@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Mono, DM_Sans } from "next/font/google";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import "./globals.css";
 
 const siteUrl: string = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.thequickutils.com";
@@ -41,6 +42,14 @@ export default function RootLayout({
       className={`${sans.variable} ${mono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7773629016889948"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-slate-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100" suppressHydrationWarning>
         <Navbar />
         <main className="flex-1">
