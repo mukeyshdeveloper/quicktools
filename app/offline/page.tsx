@@ -1,10 +1,7 @@
+'use client';
+
 import Link from 'next/link';
 import { WifiOff } from 'lucide-react';
-
-export const metadata = {
-  title: 'You\'re Offline | QuickUtils',
-  description: 'You are currently offline. Some tools you have previously used may still be available.',
-};
 
 export default function OfflinePage() {
   return (

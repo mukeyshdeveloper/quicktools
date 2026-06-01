@@ -12,6 +12,14 @@ interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
 }
 
+// iOS Safari adds `navigator.standalone` when the web app is installed to the home screen.
+// This is a non-standard property, so we extend the Navigator interface here.
+declare global {
+  interface Navigator {
+    standalone?: boolean;
+  }
+}
+
 export default function InstallPwaButton() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
@@ -21,8 +29,7 @@ export default function InstallPwaButton() {
     const checkInstalled = () => {
       const isStandalone =
         window.matchMedia('(display-mode: standalone)').matches ||
-        // @ts-expect-error — iOS specific
-        (window.navigator as { standalone?: boolean }).standalone === true;
+        window.navigator.standalone === true;
       setIsInstalled(isStandalone);
     };
 
