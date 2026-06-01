@@ -18,6 +18,7 @@ export const meta: ToolMeta = {
     'speed converter online',
   ],
   canonical: '/unit-converter',
+  ogImage: '/og/unit-converter.jpg',
   faqs: [
     {
       question: 'How accurate are the conversions?',

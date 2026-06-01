@@ -18,6 +18,7 @@ export const meta: ToolMeta = {
     'what percent is x of y',
   ],
   canonical: '/percentage-calculator',
+  ogImage: '/og/percentage-calculator.jpg',
   faqs: [
     {
       question: 'How do I calculate percentage increase?',

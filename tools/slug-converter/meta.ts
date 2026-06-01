@@ -17,6 +17,7 @@ export const meta: ToolMeta = {
     'clean url maker',
   ],
   canonical: '/slug-converter',
+  ogImage: '/og/slug-converter.jpg',
   faqs: [
     {
       question: 'What makes a good URL slug?',

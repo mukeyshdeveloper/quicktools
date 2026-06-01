@@ -16,6 +16,7 @@ export const meta: ToolMeta = {
     'savings calculator with interest',
   ],
   canonical: '/compound-interest-calculator',
+  ogImage: '/og/compound-interest-calculator.jpg',
   faqs: [
     {
       question: 'What is the power of compounding?',

@@ -17,6 +17,7 @@ export const meta: ToolMeta = {
     'fake text generator',
   ],
   canonical: '/lorem-ipsum-generator',
+  ogImage: '/og/lorem-ipsum-generator.jpg',
   faqs: [
     {
       question: 'Can I generate a specific number of paragraphs?',

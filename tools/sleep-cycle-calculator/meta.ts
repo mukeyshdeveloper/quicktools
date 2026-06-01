@@ -18,6 +18,7 @@ export const meta: ToolMeta = {
     '90 minute sleep cycles',
   ],
   canonical: '/sleep-cycle-calculator',
+  ogImage: '/og/sleep-cycle-calculator.jpg',
   faqs: [
     {
       question: 'Why are 90-minute cycles important?',

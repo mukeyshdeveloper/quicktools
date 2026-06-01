@@ -15,6 +15,7 @@ import {
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import PwaRegistration from '@/components/layout/PwaRegistration';
+import ShareRail from '@/components/layout/ShareRail';
 import { generateOrganizationSchema } from '@/lib/schema';
 
 const sans = DM_Sans({
@@ -105,6 +106,7 @@ export default function RootLayout({
 
       <body className="min-h-full flex flex-col bg-background text-text">
         <Navbar />
+        <ShareRail />
 
         <main className="flex-1">{children}</main>
 

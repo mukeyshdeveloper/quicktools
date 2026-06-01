@@ -17,6 +17,7 @@ export const meta: ToolMeta = {
     'reading time calculator',
   ],
   canonical: '/word-counter',
+  ogImage: '/og/word-counter.jpg',
   faqs: [
     {
       question: 'Does it count words in real time?',

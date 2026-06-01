@@ -18,6 +18,7 @@ export const meta: ToolMeta = {
     'shopping price calculator',
   ],
   canonical: '/discount-calculator',
+  ogImage: '/og/discount-calculator.jpg',
   faqs: [
     {
       question: 'How do I calculate price after discount and tax?',

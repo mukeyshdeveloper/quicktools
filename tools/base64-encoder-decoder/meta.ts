@@ -18,6 +18,7 @@ export const meta: ToolMeta = {
     'decode base64',
   ],
   canonical: '/base64-encoder-decoder',
+  ogImage: '/og/base64-encoder-decoder.jpg',
   faqs: [
     {
       question: 'Can I encode files to Base64?',
