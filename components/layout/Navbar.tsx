@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import InstallPwaButton from './InstallPwaButton';
 
 export default function Navbar(): React.ReactElement {
   return (
@@ -14,7 +15,8 @@ export default function Navbar(): React.ReactElement {
           QuickUtils
         </Link>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-1">
+          <InstallPwaButton />
           <Link className="nav-link" href="/">
             Home
           </Link>

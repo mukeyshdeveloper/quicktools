@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { DM_Mono, DM_Sans } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
@@ -14,6 +14,7 @@ import {
 } from '@/lib/site';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import PwaRegistration from '@/components/layout/PwaRegistration';
 import { generateOrganizationSchema } from '@/lib/schema';
 
 const sans = DM_Sans({
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: SITE_KEYWORDS,
+  applicationName: SITE_NAME,
   alternates: { canonical: '/' },
   openGraph: {
     title: `${SITE_NAME} – Free Online Tools for Everyday Tasks`,
@@ -50,6 +52,24 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} – Free Online Tools`,
     description: SITE_DESCRIPTION,
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: SITE_NAME,
+  },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#2d6a4f' },
+    { media: '(prefers-color-scheme: dark)', color: '#1a3d30' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -91,6 +111,9 @@ export default function RootLayout({
         <Footer />
 
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+
+        {/* PWA Service Worker registration (client-only) */}
+        <PwaRegistration />
       </body>
     </html>
   );

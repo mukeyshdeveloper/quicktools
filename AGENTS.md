@@ -874,6 +874,22 @@ import dateFns from 'date-fns'
 
 **Run PageSpeed after every new tool deploy.** Do not skip this step.
 
+### PWA Setup (Progressive Web App)
+
+QuickUtils is a full PWA:
+- **Manifest**: `app/manifest.ts` (Next.js native export)
+- **Icons**: `public/icons/icon-192.png` + `icon-512.png` (generated from `app/icon.png`)
+- **Service Worker**: `public/sw.js` (cache-first for static, network-first for pages → full offline use of visited tools)
+- **Registration**: `components/layout/PwaRegistration.tsx`
+- **Install UI**: `components/layout/InstallPwaButton.tsx` (appears in Navbar when `beforeinstallprompt` fires)
+- **Offline page**: `app/offline/page.tsx`
+
+**Rules:**
+- All tools must remain 100% client-side so they work offline after first visit.
+- Never add external network calls inside tool components.
+- When adding large assets, consider updating the SW precache list in `public/sw.js`.
+- Test "Add to Home Screen" on Chrome (Android + desktop) before major releases.
+
 ---
 
 ## 12. Google AdSense Rules
