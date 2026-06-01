@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'diff-checker',
   name: 'Diff Checker',
-  title: 'Diff Checker – Compare Text & Code Side-by-Side | QuickUtils',
+  title: 'Diff Checker – Compare Text & Code Side-by-Side',
   description:
     'Free diff checker. Instantly compare two blocks of text or code with clear line-by-line highlighting. Ideal for developers, writers, and data analysts.',
   category: 'text',

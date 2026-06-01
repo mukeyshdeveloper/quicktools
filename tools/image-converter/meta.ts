@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'image-converter',
   name: 'Image Format Converter',
-  title: 'Image Format Converter – JPG, PNG, WebP & More (No Upload) | QuickUtils',
+  title: 'Image Format Converter – JPG, PNG, WebP & More (No Upload)',
   description:
     'Free image format converter. Convert between JPG, PNG, WebP, AVIF, GIF and other formats instantly in your browser. No upload, no signup, private.',
   category: 'generator',

@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types/tool'
 export const meta: ToolMeta = {
   slug: 'resume-builder',
   name: 'Resume Builder',
-  title: 'Free ATS Resume Builder – Create & Download Professional CVs | QuickUtils',
+  title: 'Free ATS Resume Builder – Create & Download Professional CVs',
   description:
     'Free ATS-friendly resume builder. Create a professional CV with live preview and download as PDF. No signup required.',
   category: 'business',

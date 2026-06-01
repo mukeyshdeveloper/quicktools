@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'bmi-calculator',
   name: 'BMI Calculator',
-  title: 'BMI Calculator – Free Body Mass Index Checker with Healthy Range | QuickUtils',
+  title: 'BMI Calculator – Free Body Mass Index Checker with Healthy Range',
   description:
     'Free BMI calculator. Check your Body Mass Index instantly, see weight category, and healthy weight range. Metric & imperial supported.',
   category: 'health',

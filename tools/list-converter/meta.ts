@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'list-converter',
   name: 'List to Comma Converter',
-  title: 'List Converter – Comma, Pipe, SQL, Array Formatter | QuickUtils',
+  title: 'List Converter – Comma, Pipe, SQL, Array Formatter',
   description:
     'Convert vertical lists to comma-separated, pipe, tab, or custom delimited strings. Add quotes, escape for SQL, and prepare data for code or spreadsheets.',
   category: 'text',

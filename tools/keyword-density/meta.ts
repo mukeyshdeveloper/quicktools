@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'keyword-density',
   name: 'Keyword Density Checker',
-  title: 'Keyword Density Checker – Analyze Word Frequency & SEO | QuickUtils',
+  title: 'Keyword Density Checker – Analyze Word Frequency & SEO',
   description:
     'Free keyword density tool. Analyze word frequency, keyword usage, and stop words in your content to optimize for SEO without overstuffing.',
   category: 'text',

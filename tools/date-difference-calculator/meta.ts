@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'date-difference-calculator',
   name: 'Date Difference Calculator',
-  title: 'Date Difference Calculator – Days, Months & Years Between Dates | QuickUtils',
+  title: 'Date Difference Calculator – Days, Months & Years Between Dates',
   description:
     'Free date difference calculator. Find the exact number of days, weeks, months, and years between any two dates. Useful for age, deadlines, and timelines.',
   category: 'calculator',

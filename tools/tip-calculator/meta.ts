@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'tip-calculator',
   name: 'Tip Calculator & Bill Splitter',
-  title: 'Tip Calculator & Bill Splitter – Calculate Tips & Split the Check | QuickUtils',
+  title: 'Tip Calculator & Bill Splitter – Calculate Tips & Split the Check',
   description:
     'Free tip calculator with bill splitter. Calculate tip amount, total bill, and split the cost evenly among friends. Supports custom tip percentages.',
   category: 'calculator',

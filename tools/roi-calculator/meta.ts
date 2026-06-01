@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'roi-calculator',
   name: 'ROI Calculator',
-  title: 'ROI Calculator – Return on Investment & Profit Margin | QuickUtils',
+  title: 'ROI Calculator – Return on Investment & Profit Margin',
   description:
     'Free ROI calculator. Calculate return on investment, profit margin, and net profit for any investment or business project.',
   category: 'calculator',

@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'compound-interest-calculator',
   name: 'Compound Interest Calculator',
-  title: 'Compound Interest Calculator – See Investment Growth Over Time | QuickUtils',
+  title: 'Compound Interest Calculator – See Investment Growth Over Time',
   description:
     'Free compound interest calculator. See how your money grows with different compounding frequencies, monthly contributions, and time horizons.',
   category: 'calculator',

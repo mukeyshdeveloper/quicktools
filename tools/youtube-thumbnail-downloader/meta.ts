@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'youtube-thumbnail-downloader',
   name: 'YouTube Thumbnail Downloader',
-  title: 'YouTube Thumbnail Downloader – Get HD, SD & Max Quality | QuickUtils',
+  title: 'YouTube Thumbnail Downloader – Get HD, SD & Max Quality',
   description:
     'Free YouTube thumbnail downloader. Paste any video URL to instantly download HD, SD, or maximum resolution thumbnails. No signup required.',
   category: 'business',

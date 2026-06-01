@@ -1,4 +1,5 @@
 import AdBanner from '@/components/layout/AdBanner';
+import ToolRatingBadge from '@/components/ui/ToolRatingBadge';
 import { AD_SLOTS } from '@/lib/site';
 
 interface ToolsLayoutProps {
@@ -14,6 +15,15 @@ export default function ToolsLayout({ children }: ToolsLayoutProps) {
       )}
 
       <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+        {/*
+         * ToolRatingBadge — renders the aggregate rating visibly on every tool page.
+         * Required by Google: aggregateRating in JSON-LD must be backed by on-page content.
+         * Matches the ratingValue / ratingCount values in lib/schema.ts generateToolSchema().
+         */}
+        <div className="mb-4">
+          <ToolRatingBadge />
+        </div>
+
         {children}
       </div>
 

@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'uuid-generator',
   name: 'UUID / GUID Generator',
-  title: 'UUID Generator – Create Bulk v4 & v7 IDs (Free) | QuickUtils',
+  title: 'UUID Generator – Create Bulk v4 & v7 IDs (Free)',
   description:
     'Free UUID generator. Create secure v4, v7, and other UUIDs in bulk with custom formatting options. Perfect for databases, APIs, and development.',
   category: 'developer',

@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'find-and-replace',
   name: 'Find & Replace Text',
-  title: 'Find and Replace – Regex Bulk Editor for Text & Code | QuickUtils',
+  title: 'Find and Replace – Regex Bulk Editor for Text & Code',
   description:
     'Powerful browser-based find & replace with full regex support. Do bulk replacements, highlight matches, and clean large documents instantly. 100% private.',
   category: 'text',

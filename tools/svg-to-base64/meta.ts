@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'svg-to-base64',
   name: 'SVG to Base64 Converter',
-  title: 'SVG to Base64 & Data URI Converter – Free Online Tool | QuickUtils',
+  title: 'SVG to Base64 & Data URI Converter – Free Online Tool',
   description:
     'Free SVG to Base64 converter. Turn SVG code into Data URIs for CSS backgrounds or inline HTML. Fast and private.',
   category: 'developer',

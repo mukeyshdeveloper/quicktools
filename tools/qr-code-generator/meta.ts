@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'qr-code-generator',
   name: 'QR Code Generator',
-  title: 'QR Code Generator – Create Custom QR Codes for Free (PNG + SVG) | QuickUtils',
+  title: 'QR Code Generator – Create Custom QR Codes for Free (PNG + SVG)',
   description:
     'Free QR code generator for URLs, Wi-Fi, vCard, SMS, email, and plain text. Customize colors, size, and error correction. Download PNG or SVG.',
   category: 'generator',

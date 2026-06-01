@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'utm-builder',
   name: 'UTM Link Builder',
-  title: 'UTM Builder – Free Google Analytics Campaign Link Creator | QuickUtils',
+  title: 'UTM Builder – Free Google Analytics Campaign Link Creator',
   description:
     'Free UTM link builder for Google Analytics. Generate clean, trackable URLs with source, medium, campaign, term, and content parameters instantly.',
   category: 'business',

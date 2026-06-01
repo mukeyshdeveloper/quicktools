@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'css-generator',
   name: 'CSS Shadow & Gradient',
-  title: 'CSS Box-Shadow & Gradient Generator – Visual Editor | QuickUtils',
+  title: 'CSS Box-Shadow & Gradient Generator – Visual Editor',
   description:
     'Free visual CSS generator. Create beautiful box-shadows and linear/radial gradients with live preview. Copy ready-to-use CSS instantly.',
   category: 'developer',

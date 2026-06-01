@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'password-strength-meter',
   name: 'Secure Password Strength Meter',
-  title: 'Password Strength Checker – Test Security & Crack Time | QuickUtils',
+  title: 'Password Strength Checker – Test Security & Crack Time',
   description:
     'Free password strength meter. Instantly analyze password entropy, estimated crack time, and security score. 100% private — nothing is sent anywhere.',
   category: 'generator',

@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'jwt-decoder',
   name: 'JWT Decoder',
-  title: 'JWT Decoder – Decode & Inspect JSON Web Tokens Instantly | QuickUtils',
+  title: 'JWT Decoder – Decode & Inspect JSON Web Tokens Instantly',
   description:
     'Free JWT decoder. Paste a token to instantly see the header, payload, expiry, issued time, and all claims. Runs 100% in your browser — nothing is logged or sent anywhere.',
   category: 'developer',

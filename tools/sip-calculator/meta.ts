@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'sip-calculator',
   name: 'SIP Calculator',
-  title: 'SIP Calculator – Mutual Fund SIP Future Value & Returns | QuickUtils',
+  title: 'SIP Calculator – Mutual Fund SIP Future Value & Returns',
   description:
     'Free SIP calculator. Project the future value of your monthly mutual fund investments with expected rate of return and total wealth gain.',
   category: 'calculator',

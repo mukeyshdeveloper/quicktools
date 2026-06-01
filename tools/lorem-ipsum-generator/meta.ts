@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'lorem-ipsum-generator',
   name: 'Lorem Ipsum Generator',
-  title: 'Lorem Ipsum Generator – Free Placeholder Text for Designs | QuickUtils',
+  title: 'Lorem Ipsum Generator – Free Placeholder Text for Designs',
   description:
     'Free Lorem Ipsum generator. Create placeholder text by paragraphs, sentences, or words. Perfect for design mockups, prototypes, and layouts.',
   category: 'text',

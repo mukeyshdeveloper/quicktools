@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'sleep-cycle-calculator',
   name: 'Sleep Cycle Calculator',
-  title: 'Sleep Cycle Calculator – Best Time to Wake Up or Sleep | QuickUtils',
+  title: 'Sleep Cycle Calculator – Best Time to Wake Up or Sleep',
   description:
     'Free sleep cycle calculator. Find the best times to go to bed or wake up so you finish a full 90-minute REM cycle and feel more refreshed.',
   category: 'health',

@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'meta-tag-generator',
   name: 'Meta Tag & OpenGraph Generator',
-  title: 'Meta Tag Generator – OpenGraph & Twitter Card Builder | QuickUtils',
+  title: 'Meta Tag Generator – OpenGraph & Twitter Card Builder',
   description:
     'Free meta tag generator with live preview. Create optimized title, description, OpenGraph, and Twitter Card tags for better SEO and social sharing.',
   category: 'developer',

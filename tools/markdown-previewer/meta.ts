@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'markdown-previewer',
   name: 'Markdown Previewer',
-  title: 'Markdown Previewer – Live HTML Editor with Split View | QuickUtils',
+  title: 'Markdown Previewer – Live HTML Editor with Split View',
   description:
     'Free Markdown to HTML previewer. Write Markdown on the left and see live rendered HTML on the right. Supports GFM, tables, code highlighting, and export.',
   category: 'developer',

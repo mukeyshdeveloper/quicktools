@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'duplicate-remover',
   name: 'Duplicate Line Remover',
-  title: 'Remove Duplicate Lines – Clean, Sort & Deduplicate Text | QuickUtils',
+  title: 'Remove Duplicate Lines – Clean, Sort & Deduplicate Text',
   description:
     'Free duplicate line remover. Instantly clean lists by removing duplicates, empty lines, and sort alphabetically, by length, or in reverse order.',
   category: 'text',

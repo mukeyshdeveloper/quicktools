@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'age-calculator',
   name: 'Age Calculator',
-  title: 'Age Calculator – Find Exact Age in Years, Months & Days | QuickUtils',
+  title: 'Age Calculator – Find Exact Age in Years, Months & Days',
   description:
     'Free age calculator to find your exact age in years, months, and days. Calculate age as of any date. 100% private and instant.',
   category: 'calculator',

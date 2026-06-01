@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'salary-calculator',
   name: 'Salary Calculator',
-  title: 'Salary Calculator – Hourly to Annual & Take-Home Pay | QuickUtils',
+  title: 'Salary Calculator – Hourly to Annual & Take-Home Pay',
   description:
     'Free salary calculator. Convert hourly rate to yearly or monthly salary and estimate take-home pay after taxes and deductions.',
   category: 'calculator',

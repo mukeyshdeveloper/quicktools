@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'base64-to-image',
   name: 'Base64 to Image Decoder',
-  title: 'Base64 to Image – Decode & Download Instantly (Free) | QuickUtils',
+  title: 'Base64 to Image – Decode & Download Instantly (Free)',
   description:
     'Free Base64 to image converter. Paste any Base64 string and instantly preview + download the image. 100% private and offline.',
   category: 'developer',

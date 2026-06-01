@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'favicon-generator',
   name: 'Favicon / ICO Generator',
-  title: 'Favicon Generator – Convert Image to .ico for Websites | QuickUtils',
+  title: 'Favicon Generator – Convert Image to .ico for Websites',
   description:
     'Free favicon generator. Convert PNG, JPG, or WebP images into proper .ico favicon files for your website. Multiple sizes supported.',
   category: 'developer',

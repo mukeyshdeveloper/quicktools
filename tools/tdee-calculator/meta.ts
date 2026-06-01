@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'tdee-calculator',
   name: 'TDEE & Macro Calculator',
-  title: 'TDEE Calculator – Daily Calories & Macro Split (Free) | QuickUtils',
+  title: 'TDEE Calculator – Daily Calories & Macro Split (Free)',
   description:
     'Free TDEE calculator. Find your Total Daily Energy Expenditure and get personalized protein, carbs, and fat recommendations for weight loss, maintenance, or muscle gain.',
   category: 'health',

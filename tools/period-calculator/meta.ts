@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'period-calculator',
   name: 'Period & Ovulation Tracker',
-  title: 'Period Tracker & Ovulation Calculator – Predict Your Cycle | QuickUtils',
+  title: 'Period Tracker & Ovulation Calculator – Predict Your Cycle',
   description:
     'Free period and ovulation tracker. Calculate your next period date, fertile window, and ovulation based on your average cycle length.',
   category: 'health',

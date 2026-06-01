@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types/tool'
 export const meta: ToolMeta = {
   slug: 'invoice-generator',
   name: 'Invoice Generator',
-  title: 'Free Invoice Generator – Create & Download PDF Invoices | QuickUtils',
+  title: 'Free Invoice Generator – Create & Download PDF Invoices',
   description: 'Create professional invoices instantly for your business. Customize details, calculate taxes, and download as a PDF for free, entirely in your browser.',
   category: 'business',
   icon: '🧾',

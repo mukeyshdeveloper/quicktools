@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'password-generator',
   name: 'Password Generator',
-  title: 'Password Generator – Create Strong Secure Passwords Instantly | QuickUtils',
+  title: 'Password Generator – Create Strong Secure Passwords Instantly',
   description:
     'Free strong password generator with custom length, symbols, numbers, and ambiguous character exclusion. Check strength in real time.',
   category: 'generator',

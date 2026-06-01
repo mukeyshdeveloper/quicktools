@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'salary-slip-generator',
   name: 'Salary Slip Generator',
-  title: 'Salary Slip Generator – Free Payslip Maker (India) | QuickUtils',
+  title: 'Salary Slip Generator – Free Payslip Maker (India)',
   description:
     'Generate professional salary slips online for free. Add earnings, deductions, PF, TDS, and HRA. Download or print a fully formatted payslip instantly — no sign-up needed.',
   category: 'business',

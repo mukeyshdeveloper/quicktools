@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'emi-calculator',
   name: 'EMI Calculator',
-  title: 'EMI Calculator – Home, Car & Personal Loan EMI (India) | QuickUtils',
+  title: 'EMI Calculator – Home, Car & Personal Loan EMI (India)',
   description:
     'Free EMI calculator for Indian loans. Get monthly EMI, total interest, and full repayment schedule for home, car, and personal loans using reducing balance method.',
   category: 'calculator',

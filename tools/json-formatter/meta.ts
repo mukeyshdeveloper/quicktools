@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types/tool'
 export const meta: ToolMeta = {
   slug: 'json-formatter',
   name: 'JSON Formatter',
-  title: 'JSON Formatter – Beautify, Minify & Validate JSON Online | QuickUtils',
+  title: 'JSON Formatter – Beautify, Minify & Validate JSON Online',
   description:
     'Free JSON formatter and validator. Beautify, minify, and fix JSON with instant error highlighting. Works offline and private.',
   category: 'developer',

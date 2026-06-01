@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'color-palette-extractor',
   name: 'Color Palette Extractor',
-  title: 'Color Palette Extractor – Get HEX from Any Image | QuickUtils',
+  title: 'Color Palette Extractor – Get HEX from Any Image',
   description:
     'Free color palette extractor. Upload an image and instantly get its dominant colors as HEX, RGB, and HSL. Great for design, branding, and UI work.',
   category: 'generator',

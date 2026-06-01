@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'unit-converter',
   name: 'Unit Converter',
-  title: 'Unit Converter – Convert Length, Weight, Temperature & More | QuickUtils',
+  title: 'Unit Converter – Convert Length, Weight, Temperature & More',
   description:
     'Free unit converter for length, weight, temperature, volume, speed, time, data, pressure, energy and more. Fast and accurate conversions.',
   category: 'calculator',

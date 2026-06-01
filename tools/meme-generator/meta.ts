@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'meme-generator',
   name: 'Meme Text Generator',
-  title: 'Meme Generator – Create Custom Memes Instantly (No Upload) | QuickUtils',
+  title: 'Meme Generator – Create Custom Memes Instantly (No Upload)',
   description:
     'Free meme generator. Add Impact font text to your own images instantly in the browser. Create custom memes privately with no upload required.',
   category: 'generator',

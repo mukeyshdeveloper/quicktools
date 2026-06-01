@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'regex-tester',
   name: 'Regex Tester & Matcher',
-  title: 'Regex Tester – Test & Debug Regular Expressions Live | QuickUtils',
+  title: 'Regex Tester – Test & Debug Regular Expressions Live',
   description:
     'Free regex tester with live highlighting. Test JavaScript regular expressions, see matches, groups, and flags in real time. Perfect for developers.',
   category: 'developer',

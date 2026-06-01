@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'percentage-calculator',
   name: 'Percentage Calculator',
-  title: 'Percentage Calculator – Calculate % of, Increase, Decrease & More | QuickUtils',
+  title: 'Percentage Calculator – Calculate % of, Increase, Decrease & More',
   description:
     'Free percentage calculator. Calculate what X% of Y is, percentage increase or decrease, and what percent one number is of another — instantly.',
   category: 'calculator',

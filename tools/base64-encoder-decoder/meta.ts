@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'base64-encoder-decoder',
   name: 'Base64 Encoder / Decoder',
-  title: 'Base64 Encoder & Decoder – Text & File Conversion | QuickUtils',
+  title: 'Base64 Encoder & Decoder – Text & File Conversion',
   description:
     'Free Base64 encoder and decoder. Convert text or files to Base64 and decode them back instantly. 100% private – everything runs in your browser.',
   category: 'developer',

@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'code-minifier',
   name: 'Code Minifier (HTML/CSS/JS)',
-  title: 'Code Minifier – Minify HTML, CSS & JavaScript | QuickUtils',
+  title: 'Code Minifier – Minify HTML, CSS & JavaScript',
   description:
     'Free online code minifier. Compress HTML, CSS, and JavaScript by removing whitespace and comments. See before/after size comparison.',
   category: 'developer',

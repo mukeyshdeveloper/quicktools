@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'word-counter',
   name: 'Word Counter',
-  title: 'Word Counter – Free Word, Character & Sentence Counter | QuickUtils',
+  title: 'Word Counter – Free Word, Character & Sentence Counter',
   description:
     'Free word counter. Count words, characters, sentences, paragraphs, and reading time instantly. Paste text or type directly.',
   category: 'text',

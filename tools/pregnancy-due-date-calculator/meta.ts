@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'pregnancy-due-date-calculator',
   name: 'Pregnancy Due Date Calculator',
-  title: 'Pregnancy Due Date Calculator – Find Your Baby’s EDD | QuickUtils',
+  title: 'Pregnancy Due Date Calculator – Find Your Baby’s EDD',
   description:
     'Free pregnancy due date calculator. Estimate your baby’s arrival based on last menstrual period, conception date, or ultrasound.',
   category: 'health',

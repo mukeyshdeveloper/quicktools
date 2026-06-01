@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types';
 export const meta: ToolMeta = {
   slug: 'case-converter',
   name: 'Case Converter',
-  title: 'Case Converter – UPPER, lower, Title, camelCase & More | QuickUtils',
+  title: 'Case Converter – UPPER, lower, Title, camelCase & More',
   description: 'Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, and sentence case instantly. No ads, no sign-up.',
   category: 'text',
   icon: '🔡',

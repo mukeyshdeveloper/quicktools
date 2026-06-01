@@ -3,7 +3,7 @@ import type { ToolMeta } from '@/types/tool'
 export const meta: ToolMeta = {
   slug: 'color-picker',
   name: 'Color Picker',
-  title: 'Color Picker – HEX, RGB, HSL Converter & Palette Tool | QuickUtils',
+  title: 'Color Picker – HEX, RGB, HSL Converter & Palette Tool',
   description:
     'Free online color picker. Pick colors, convert between HEX / RGB / HSL / HSV, generate harmonious palettes, and copy values instantly.',
   category: 'developer',
