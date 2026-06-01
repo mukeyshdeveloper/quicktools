@@ -52,6 +52,12 @@ import { meta as sleepCycleMeta } from '@/tools/sleep-cycle-calculator/meta';
 import { meta as percentageCalculatorMeta } from '@/tools/percentage-calculator/meta';
 import { meta as discountCalculatorMeta } from '@/tools/discount-calculator/meta';
 import { meta as tipCalculatorMeta } from '@/tools/tip-calculator/meta';
+import { meta as gstCalculatorMeta } from '@/tools/gst-calculator/meta';
+import { meta as taxRegimeComparatorMeta } from '@/tools/tax-regime-comparator/meta';
+import { meta as epfGratuityCalculatorMeta } from '@/tools/epf-gratuity-calculator/meta';
+import { meta as homeLoanEligibilityMeta } from '@/tools/home-loan-eligibility-calculator/meta';
+import { meta as hraExemptionMeta } from '@/tools/hra-exemption-calculator/meta';
+import { meta as smallSavingsMeta } from '@/tools/small-savings-calculator/meta';
 import { meta as dateDifferenceMeta } from '@/tools/date-difference-calculator/meta';
 import { meta as faviconGeneratorMeta } from '@/tools/favicon-generator/meta';
 import { meta as memeGeneratorMeta } from '@/tools/meme-generator/meta';
@@ -112,6 +118,12 @@ export const tools: ToolMeta[] = [
   percentageCalculatorMeta,
   discountCalculatorMeta,
   tipCalculatorMeta,
+  gstCalculatorMeta,
+  taxRegimeComparatorMeta,
+  epfGratuityCalculatorMeta,
+  homeLoanEligibilityMeta,
+  hraExemptionMeta,
+  smallSavingsMeta,
   dateDifferenceMeta,
   faviconGeneratorMeta,
   memeGeneratorMeta,
