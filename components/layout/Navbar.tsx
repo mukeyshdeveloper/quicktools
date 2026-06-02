@@ -26,6 +26,9 @@ export default function Navbar(): React.ReactElement {
           <Link className="nav-link" href="/contact">
             Contact
           </Link>
+          <Link className="nav-link" href="/request-tool">
+            Request Tool
+          </Link>
         </div>
       </div>
     </nav>

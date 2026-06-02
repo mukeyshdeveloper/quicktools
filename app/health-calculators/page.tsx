@@ -12,7 +12,13 @@ export const metadata: Metadata = {
 
 const healthTools = [
   { href: '/bmi-calculator', name: 'BMI Calculator', desc: 'Check Body Mass Index and healthy weight range.' },
-  { href: '/tdee-calculator', name: 'TDEE Calculator', desc: 'Calculate total daily energy expenditure and macros.' },
+  { href: '/body-fat-percentage-calculator', name: 'Body Fat Percentage Calculator', desc: 'US Navy & YMCA tape-measure body fat estimates.' },
+  { href: '/ideal-body-weight-calculator', name: 'Ideal Body Weight Calculator', desc: 'Devine, Robinson & Miller medical formulas.' },
+  { href: '/tdee-calculator', name: 'TDEE & Macro Calculator', desc: 'Calculate total daily energy expenditure and macros.' },
+  { href: '/daily-water-intake-calculator', name: 'Daily Water Intake Calculator', desc: 'Personalized hydration based on weight, activity & climate.' },
+  { href: '/heart-rate-zones-calculator', name: 'Heart Rate Zones Calculator', desc: '5-zone cardio training targets (Karvonen & %max).' },
+  { href: '/vo2-max-estimator', name: 'VO2 Max Estimator', desc: 'Rockport walk test or non-exercise aerobic fitness estimate.' },
+  { href: '/calorie-deficit-planner', name: 'Calorie Deficit Planner', desc: 'Safe weight loss timeline with daily targets & visuals.' },
   { href: '/pregnancy-due-date-calculator', name: 'Pregnancy Due Date Calculator', desc: 'Estimate baby arrival date from last menstrual period.' },
   { href: '/sleep-cycle-calculator', name: 'Sleep Cycle Calculator', desc: 'Plan optimal bedtime or wake-up time for better rest.' },
   { href: '/period-calculator', name: 'Period Calculator', desc: 'Predict next period dates and fertile window.' },

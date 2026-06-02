@@ -66,6 +66,14 @@ import { meta as youtubeThumbnailDownloaderMeta } from '@/tools/youtube-thumbnai
 import { meta as passwordStrengthMeterMeta } from '@/tools/password-strength-meter/meta';
 import { meta as periodCalculatorMeta } from '@/tools/period-calculator/meta';
 
+// Sprint 3 — Advanced Health & Fitness
+import { meta as bodyFatMeta } from '@/tools/body-fat-percentage-calculator/meta';
+import { meta as waterIntakeMeta } from '@/tools/daily-water-intake-calculator/meta';
+import { meta as idealWeightMeta } from '@/tools/ideal-body-weight-calculator/meta';
+import { meta as heartRateMeta } from '@/tools/heart-rate-zones-calculator/meta';
+import { meta as vo2MaxMeta } from '@/tools/vo2-max-estimator/meta';
+import { meta as calorieDeficitMeta } from '@/tools/calorie-deficit-planner/meta';
+
 export const tools: ToolMeta[] = [
   // Originals
   ageCalculatorMeta,
@@ -131,6 +139,13 @@ export const tools: ToolMeta[] = [
   youtubeThumbnailDownloaderMeta,
   passwordStrengthMeterMeta,
   periodCalculatorMeta,
+  // Advanced Health & Fitness (new)
+  bodyFatMeta,
+  waterIntakeMeta,
+  idealWeightMeta,
+  heartRateMeta,
+  vo2MaxMeta,
+  calorieDeficitMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {
