@@ -56,6 +56,11 @@ export default function DailyWaterIntakePage() {
             <li><strong>Planned exercise:</strong> We add ~550 ml per hour of moderate-to-hard exercise, a conservative, evidence-aligned figure.</li>
           </ul>
 
+          <h2>Built-in Daily Tracker &amp; Reminders</h2>
+          <p>
+            The calculator also includes a practical daily intake logger. Log glasses as you drink, watch live progress toward your personalized goal, and optionally turn on gentle in-tab reminders (every 30–90 minutes). Reminders use the browser Notification API and only fire while this page is open — perfect for a focused hydration session. For always-on phone reminders, install the site as a PWA or use your phone’s Health app.
+          </p>
+
           <h2>Tips for Staying Hydrated</h2>
           <ul>
             <li>Start the day with 400–500 ml of water.</li>

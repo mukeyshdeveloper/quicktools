@@ -91,3 +91,71 @@ export const climateLabels: Record<Climate, string> = {
   hot: 'Hot (31–35°C or high humidity)',
   'very-hot': 'Very Hot / Humid (>35°C or extreme)',
 };
+
+// ===== Daily Intake Tracker (client-side only, persisted in localStorage) =====
+
+export interface IntakeLog {
+  ts: number; // timestamp
+  ml: number; // amount added in ml
+}
+
+const LS_KEY_PREFIX = 'quickutils_water_';
+
+export function getTodayKey(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function getStorageKey(dateKey: string): string {
+  return `${LS_KEY_PREFIX}${dateKey}`;
+}
+
+export function loadDailyLogs(dateKey?: string): IntakeLog[] {
+  const key = getStorageKey(dateKey ?? getTodayKey());
+  try {
+    const raw = typeof window !== 'undefined' ? window.localStorage.getItem(key) : null;
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      return parsed.filter((l): l is IntakeLog => typeof l.ts === 'number' && typeof l.ml === 'number' && l.ml > 0);
+    }
+  } catch {}
+  return [];
+}
+
+export function saveDailyLogs(logs: IntakeLog[], dateKey?: string): void {
+  const key = getStorageKey(dateKey ?? getTodayKey());
+  try {
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(key, JSON.stringify(logs));
+    }
+  } catch {}
+}
+
+export function addIntake(logs: IntakeLog[], ml: number): IntakeLog[] {
+  if (ml <= 0) return logs;
+  const newLog: IntakeLog = { ts: Date.now(), ml: Math.round(ml) };
+  return [...logs, newLog];
+}
+
+export function removeLastIntake(logs: IntakeLog[]): IntakeLog[] {
+  if (logs.length === 0) return logs;
+  return logs.slice(0, -1);
+}
+
+export function getTotalMl(logs: IntakeLog[]): number {
+  return logs.reduce((sum, l) => sum + l.ml, 0);
+}
+
+export function getProgress(goalMl: number, currentMl: number): number {
+  if (goalMl <= 0) return 0;
+  return Math.min(Math.max(Math.round((currentMl / goalMl) * 100), 0), 150); // cap at 150% for UI
+}
+
+export function formatMl(ml: number): string {
+  if (ml >= 1000) return `${(ml / 1000).toFixed(1)} L`;
+  return `${ml} ml`;
+}
+
+export const REMINDER_INTERVALS = [0, 30, 45, 60, 90] as const; // minutes, 0 = off
+export type ReminderInterval = (typeof REMINDER_INTERVALS)[number];
