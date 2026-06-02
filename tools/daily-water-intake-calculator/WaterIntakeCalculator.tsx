@@ -36,29 +36,36 @@ export default function WaterIntakeCalculator() {
   }, [weight, activity, climate, exerciseMin]);
 
   // ========== Daily Intake Tracker State ==========
-  const [logs, setLogs] = useState<IntakeLog[]>(() => {
-    if (typeof window === 'undefined') return [];
-    return loadDailyLogs();
-  });
+  const [logs, setLogs] = useState<IntakeLog[]>([]);
   const [glassSize, setGlassSize] = useState(250); // ml per quick log
   const [reminderInterval, setReminderInterval] = useState<ReminderInterval>(0);
-  const [reminderPermission, setReminderPermission] = useState<NotificationPermission>(() => {
-    if (typeof window !== 'undefined' && 'Notification' in window) {
-      return Notification.permission;
-    }
-    return 'default';
-  });
+  const [reminderPermission, setReminderPermission] = useState<NotificationPermission>('default');
   const [nextReminderIn, setNextReminderIn] = useState<number | null>(null); // seconds countdown
   const [showReminderBanner, setShowReminderBanner] = useState(false);
 
   const reminderTimerRef = useRef<number | null>(null);
   const countdownTimerRef = useRef<number | null>(null);
-  const todayKeyRef = useRef(getTodayKey());
+  const todayKeyRef = useRef('');
+  const hasLoadedRef = useRef(false);
+
+  // Initialize client-only states on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'Notification' in window) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setReminderPermission(Notification.permission);
+    }
+
+    const currentKey = getTodayKey();
+    todayKeyRef.current = currentKey;
+    const fresh = loadDailyLogs(currentKey);
+    setLogs(fresh);
+    hasLoadedRef.current = true;
+  }, []);
 
   // Handle day rollover (legitimate external "system" change — date advanced)
   useEffect(() => {
     const currentKey = getTodayKey();
-    if (todayKeyRef.current !== currentKey) {
+    if (todayKeyRef.current && todayKeyRef.current !== currentKey) {
       todayKeyRef.current = currentKey;
       const fresh = loadDailyLogs(currentKey);
       setLogs(fresh);
@@ -67,8 +74,8 @@ export default function WaterIntakeCalculator() {
 
   // Persist logs whenever they change
   useEffect(() => {
-    if (logs.length > 0 || loadDailyLogs().length > 0) {
-      saveDailyLogs(logs);
+    if (hasLoadedRef.current) {
+      saveDailyLogs(logs, todayKeyRef.current);
     }
   }, [logs]);
 
@@ -91,7 +98,7 @@ export default function WaterIntakeCalculator() {
 
   function resetLogs() {
     setLogs([]);
-    saveDailyLogs([]);
+    saveDailyLogs([], todayKeyRef.current);
   }
 
   // Change glass size (quick buttons)
