@@ -74,6 +74,16 @@ import { meta as heartRateMeta } from '@/tools/heart-rate-zones-calculator/meta'
 import { meta as vo2MaxMeta } from '@/tools/vo2-max-estimator/meta';
 import { meta as calorieDeficitMeta } from '@/tools/calorie-deficit-planner/meta';
 
+// Productivity tools
+import { meta as pomodoroMeta } from '@/tools/pomodoro-timer/meta';
+import { meta as habitMeta } from '@/tools/habit-tracker/meta';
+import { meta as decisionMeta } from '@/tools/decision-maker/meta';
+import { meta as meetingCostMeta } from '@/tools/meeting-cost-calculator/meta';
+
+// Travel & Group Finance
+import { meta as tripPlannerMeta } from '@/tools/trip-planner/meta';
+import { meta as billSplitterMeta } from '@/tools/bill-splitter/meta';
+
 export const tools: ToolMeta[] = [
   // Originals
   ageCalculatorMeta,
@@ -146,6 +156,14 @@ export const tools: ToolMeta[] = [
   heartRateMeta,
   vo2MaxMeta,
   calorieDeficitMeta,
+  // Productivity
+  pomodoroMeta,
+  habitMeta,
+  decisionMeta,
+  meetingCostMeta,
+  // Travel & Group Finance
+  tripPlannerMeta,
+  billSplitterMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {

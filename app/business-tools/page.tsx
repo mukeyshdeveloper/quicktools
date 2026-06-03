@@ -4,9 +4,9 @@ import { generateWebPageSchema } from '@/lib/schema';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free Business Tools – Resume Builder, Invoice & Salary Slip Generator',
+  title: 'Free Business Tools – Resume, Invoice, Trip Planner, Bill Splitter & More',
   description:
-    'Free professional business tools: Resume Builder, Invoice Generator, Salary Slip Generator, and UTM Link Builder. Create documents and marketing links instantly in your browser.',
+    'Free professional business tools: Resume Builder, Invoice Generator, Advanced Trip Planner with bill splitter, Bill Splitter, Meeting Cost Calculator, Decision Maker, and more. All run in your browser.',
   alternates: { canonical: '/business-tools' },
   openGraph: {
     title: 'Free Business Tools – Resume, Invoice & Payslip Generators | QuickUtils',
@@ -19,6 +19,10 @@ const businessTools = [
   { href: '/resume-builder', name: 'Resume Builder', desc: 'Create modern, ATS-friendly professional resumes with live preview and PDF export.' },
   { href: '/invoice-generator', name: 'Invoice Generator', desc: 'Generate clean, professional invoices and download as PDF instantly.' },
   { href: '/salary-slip-generator', name: 'Salary Slip Generator', desc: 'Create formatted salary slips / payslips for employees and contractors.' },
+  { href: '/trip-planner', name: 'Advanced Trip Planner', desc: 'Itinerary + expenses + smart group bill splitter with share links.' },
+  { href: '/bill-splitter', name: 'Advanced Bill Splitter', desc: 'Itemized splits, taxes, tips, custom shares & optimal settlements for any group.' },
+  { href: '/meeting-cost-calculator', name: 'Meeting Cost Calculator', desc: 'Calculate the real salary cost of team meetings with projections.' },
+  { href: '/decision-maker', name: 'Decision Maker', desc: 'Make fair random or weighted decisions for choices, raffles and votes.' },
   { href: '/utm-builder', name: 'UTM Link Builder', desc: 'Create trackable campaign URLs with UTM parameters for Google Analytics.' },
 ];
 
