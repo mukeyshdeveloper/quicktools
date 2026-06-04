@@ -58,12 +58,14 @@ export default function ColorPaletteExtractorPage() {
               <li><strong>CSS Theming:</strong> Copy hex codes directly into your stylesheet or CSS custom properties for pixel-perfect accuracy.</li>
             </ul>
           </div>
+
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Design & Image Tools</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Design &amp; Image Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
-              <li><Link href="/color-picker" className="text-brand underline hover:text-brand-hover">Color Picker & Converter</Link></li>
-              <li><Link href="/image-compressor" className="text-brand underline hover:text-brand-hover">Image Compressor & Resizer</Link></li>
-              <li><Link href="/image-converter" className="text-brand underline hover:text-brand-hover">Image Format Converter</Link></li>
+              <li><Link href="/color-picker" className="text-brand underline">Color Picker &amp; Converter</Link></li>
+              <li><Link href="/image-converter" className="text-brand underline">Image to WebP/AVIF Converter</Link></li>
+              <li><Link href="/image-watermark" className="text-brand underline">Image Watermark Tool</Link></li>
+              <li><Link href="/mockup-generator" className="text-brand underline">Mockup Generator</Link></li>
             </ul>
           </div>
         </section>

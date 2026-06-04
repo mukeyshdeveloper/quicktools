@@ -68,7 +68,6 @@ export default function RegexTesterPage() {
           <ul>
             <li>Validating emails, phone numbers, URLs, and passwords</li>
             <li>Extracting specific data from logs or large text files</li>
-            <li>Performing bulk find-and-replace operations with complex rules</li>
             <li>Parsing structured data (CSV, logs, API responses)</li>
             <li>Testing and debugging regex before using it in production code</li>
           </ul>
@@ -80,7 +79,7 @@ export default function RegexTesterPage() {
 
           <h2>Related Developer Tools</h2>
           <ul>
-            <li><Link href="/find-and-replace">Find & Replace Tool</Link></li>
+            <li><Link href="/json-formatter">JSON Formatter</Link></li>
             <li><Link href="/jwt-decoder">JWT Decoder</Link></li>
             <li><Link href="/diff-checker">Diff Checker</Link></li>
           </ul>

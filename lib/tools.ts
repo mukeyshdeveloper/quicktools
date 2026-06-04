@@ -24,8 +24,6 @@ import { meta as salarySlipMeta } from '@/tools/salary-slip-generator/meta';
 
 // Sprint 2 — Developer / Text
 import { meta as base64Meta } from '@/tools/base64-encoder-decoder/meta';
-import { meta as caseConverterMeta } from '@/tools/case-converter/meta';
-import { meta as loremIpsumMeta } from '@/tools/lorem-ipsum-generator/meta';
 import { meta as jwtDecoderMeta } from '@/tools/jwt-decoder/meta';
 import { meta as regexTesterMeta } from '@/tools/regex-tester/meta';
 import { meta as cssGeneratorMeta } from '@/tools/css-generator/meta';
@@ -36,13 +34,7 @@ import { meta as uuidGeneratorMeta } from '@/tools/uuid-generator/meta';
 import { meta as codeMinifierMeta } from '@/tools/code-minifier/meta';
 import { meta as svgToBase64Meta } from '@/tools/svg-to-base64/meta';
 import { meta as metaTagGeneratorMeta } from '@/tools/meta-tag-generator/meta';
-import { meta as duplicateRemoverMeta } from '@/tools/duplicate-remover/meta';
-import { meta as listConverterMeta } from '@/tools/list-converter/meta';
-import { meta as findAndReplaceMeta } from '@/tools/find-and-replace/meta';
-import { meta as keywordDensityMeta } from '@/tools/keyword-density/meta';
 import { meta as utmBuilderMeta } from '@/tools/utm-builder/meta';
-import { meta as readabilityGraderMeta } from '@/tools/readability-grader/meta';
-import { meta as slugConverterMeta } from '@/tools/slug-converter/meta';
 import { meta as imageCompressorMeta } from '@/tools/image-compressor/meta';
 import { meta as imageConverterMeta } from '@/tools/image-converter/meta';
 import { meta as colorPaletteExtractorMeta } from '@/tools/color-palette-extractor/meta';
@@ -60,10 +52,7 @@ import { meta as hraExemptionMeta } from '@/tools/hra-exemption-calculator/meta'
 import { meta as smallSavingsMeta } from '@/tools/small-savings-calculator/meta';
 import { meta as dateDifferenceMeta } from '@/tools/date-difference-calculator/meta';
 import { meta as faviconGeneratorMeta } from '@/tools/favicon-generator/meta';
-import { meta as memeGeneratorMeta } from '@/tools/meme-generator/meta';
 import { meta as base64ToImageMeta } from '@/tools/base64-to-image/meta';
-import { meta as youtubeThumbnailDownloaderMeta } from '@/tools/youtube-thumbnail-downloader/meta';
-import { meta as passwordStrengthMeterMeta } from '@/tools/password-strength-meter/meta';
 import { meta as periodCalculatorMeta } from '@/tools/period-calculator/meta';
 
 // Sprint 3 — Advanced Health & Fitness
@@ -96,6 +85,23 @@ import { meta as regexGenMeta } from '@/tools/regex-generator/meta';
 import { meta as tsConvMeta } from '@/tools/timestamp-converter/meta';
 import { meta as b64ImgMeta } from '@/tools/base64-image-optimizer/meta';
 import { meta as gitignoreMeta } from '@/tools/gitignore-generator/meta';
+import { meta as bulkResizerMeta } from '@/tools/bulk-image-resizer/meta';
+import { meta as mockupMeta } from '@/tools/mockup-generator/meta';
+import { meta as watermarkMeta } from '@/tools/image-watermark/meta';
+import { meta as breakEvenMeta } from '@/tools/break-even-calculator/meta';
+import { meta as profitMarginMeta } from '@/tools/profit-margin-calculator/meta';
+import { meta as quotationMeta } from '@/tools/quotation-generator/meta';
+import { meta as leadTrackerMeta } from '@/tools/lead-tracker/meta';
+import { meta as invoiceNumMeta } from '@/tools/invoice-number-generator/meta';
+
+// New Batch — Name, Converters, Licenses & Advanced Health
+import { meta as nameNumerologyMeta } from '@/tools/name-meaning-numerology/meta';
+import { meta as indianNumMeta } from '@/tools/indian-numbering-converter/meta';
+import { meta as licenseMeta } from '@/tools/license-generator/meta';
+import { meta as healthDashboardMeta } from '@/tools/health-metrics-dashboard/meta';
+import { meta as pregWeekMeta } from '@/tools/pregnancy-week-tracker/meta';
+import { meta as sleepDebtMeta } from '@/tools/sleep-debt-calculator/meta';
+import { meta as stressMeta } from '@/tools/stress-level-assessment/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -119,8 +125,6 @@ export const tools: ToolMeta[] = [
   salarySlipMeta,
   // Developer / Text
   base64Meta,
-  caseConverterMeta,
-  loremIpsumMeta,
   jwtDecoderMeta,
   diffCheckerMeta,
   regexTesterMeta,
@@ -131,13 +135,7 @@ export const tools: ToolMeta[] = [
   codeMinifierMeta,
   svgToBase64Meta,
   metaTagGeneratorMeta,
-  duplicateRemoverMeta,
-  listConverterMeta,
-  findAndReplaceMeta,
-  keywordDensityMeta,
   utmBuilderMeta,
-  readabilityGraderMeta,
-  slugConverterMeta,
   // Image tools
   imageCompressorMeta,
   imageConverterMeta,
@@ -157,10 +155,7 @@ export const tools: ToolMeta[] = [
   smallSavingsMeta,
   dateDifferenceMeta,
   faviconGeneratorMeta,
-  memeGeneratorMeta,
   base64ToImageMeta,
-  youtubeThumbnailDownloaderMeta,
-  passwordStrengthMeterMeta,
   periodCalculatorMeta,
   // Advanced Health & Fitness (new)
   bodyFatMeta,
@@ -188,6 +183,24 @@ export const tools: ToolMeta[] = [
   tsConvMeta,
   b64ImgMeta,
   gitignoreMeta,
+  // Image Tools batch
+  bulkResizerMeta,
+  mockupMeta,
+  watermarkMeta,
+  // Business Tools batch
+  breakEvenMeta,
+  profitMarginMeta,
+  quotationMeta,
+  leadTrackerMeta,
+  invoiceNumMeta,
+  // Name, Converters, Licenses & Advanced Health
+  nameNumerologyMeta,
+  indianNumMeta,
+  licenseMeta,
+  healthDashboardMeta,
+  pregWeekMeta,
+  sleepDebtMeta,
+  stressMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {

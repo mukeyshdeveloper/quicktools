@@ -59,9 +59,9 @@ export default function PregnancyCalculatorPage() {
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Health Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
+              <li><Link href="/pregnancy-week-tracker" className="text-brand underline">Pregnancy Week-by-Week Tracker</Link></li>
               <li><Link href="/date-difference-calculator" className="text-brand underline">Date Difference Calculator</Link></li>
               <li><Link href="/bmi-calculator" className="text-brand underline">BMI Calculator</Link></li>
-              <li><Link href="/tdee-calculator" className="text-brand underline">TDEE & Macro Calculator</Link></li>
             </ul>
           </div>
         </section>

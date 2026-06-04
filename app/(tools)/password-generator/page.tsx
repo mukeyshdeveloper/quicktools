@@ -62,7 +62,7 @@ export default function PasswordGeneratorPage() {
 
           <h2>Related Tools</h2>
           <ul className="list-disc pl-5">
-            <li><Link href="/password-strength-meter">Password Strength Meter</Link></li>
+            <li><Link href="/hash-generator">Hash Generator</Link></li>
             <li><Link href="/qr-code-generator">QR Code Generator</Link></li>
             <li><Link href="/uuid-generator">UUID Generator</Link></li>
           </ul>

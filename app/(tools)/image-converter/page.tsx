@@ -41,25 +41,29 @@ export default function ImageConverterPage() {
 
         <section className="prose-section mt-16 max-w-4xl space-y-6">
           <div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Why Convert to WebP?</h2>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Why WebP &amp; AVIF Matter</h2>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              WebP is a modern image format developed by Google that provides superior lossless and lossy compression for images on the web. WebP images are 25–34% smaller than comparable JPEG images at equivalent quality, and 26% smaller than PNGs. Google PageSpeed Insights actively recommends serving images in WebP format to improve Core Web Vitals scores.
+              WebP and AVIF deliver dramatically smaller file sizes than JPEG and PNG at the same (or better) visual quality. This tool now supports bulk conversion + on-the-fly resizing so you can modernize an entire library of assets in minutes — everything processed privately in your browser.
             </p>
           </div>
+
           <div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">JPEG vs PNG vs WebP — When to Use Which</h2>
-            <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-2">
-              <li><strong>JPEG:</strong> Best for photographs and complex color scenes. Supports lossy compression but does not support transparency.</li>
-              <li><strong>PNG:</strong> Best for logos, screenshots, and images requiring a transparent background. Lossless but produces larger files than JPEG or WebP.</li>
-              <li><strong>WebP:</strong> The best of both worlds — supports both lossy and lossless compression, transparency (like PNG), and produces significantly smaller files than JPEG or PNG.</li>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Recommended Workflow</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
+              <li>Run images through Bulk Image Resizer first if you need consistent dimensions.</li>
+              <li>Use this converter with WebP at ~85–90% quality for most photos.</li>
+              <li>Try AVIF for hero images and product shots where every kilobyte counts (with JPEG fallback for older browsers).</li>
+              <li>Combine with the Watermark and Mockup tools for a complete client-side creative pipeline.</li>
             </ul>
           </div>
+
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Image Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
-              <li><Link href="/image-compressor" className="text-brand underline hover:text-brand-hover">Image Compressor & Resizer</Link></li>
-              <li><Link href="/color-palette-extractor" className="text-brand underline hover:text-brand-hover">Color Palette Extractor</Link></li>
-              <li><Link href="/svg-to-base64" className="text-brand underline hover:text-brand-hover">SVG to Base64 Converter</Link></li>
+              <li><Link href="/bulk-image-resizer" className="text-brand underline">Bulk Image Resizer</Link></li>
+              <li><Link href="/image-compressor" className="text-brand underline">Image Compressor</Link></li>
+              <li><Link href="/image-watermark" className="text-brand underline">Image Watermark Tool</Link></li>
+              <li><Link href="/mockup-generator" className="text-brand underline">Mockup Generator</Link></li>
             </ul>
           </div>
         </section>

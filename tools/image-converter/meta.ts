@@ -2,27 +2,31 @@ import type { ToolMeta } from '@/types';
 
 export const meta: ToolMeta = {
   slug: 'image-converter',
-  name: 'Image Format Converter',
-  title: 'Image Format Converter – JPG, PNG, WebP & More (No Upload)',
+  name: 'Image to WebP / AVIF Converter',
+  title: 'Image to WebP/AVIF Converter – Bulk Format + Resize (Private)',
   description:
-    'Free image format converter. Convert between JPG, PNG, WebP, AVIF, GIF and other formats instantly in your browser. No upload, no signup, private.',
+    'Convert images to WebP and AVIF (plus JPEG/PNG). Resize in bulk, control quality, and download everything. Zero uploads — all processing happens in your browser.',
   category: 'generator',
   icon: '🔄',
   color: 'blue',
   keywords: [
-    'image format converter',
-    'jpg to webp converter',
-    'png to webp',
-    'convert image online',
     'webp converter',
-    'image format changer',
+    'avif converter',
+    'image to webp',
+    'bulk image converter',
+    'jpg to avif',
+    'convert images online free',
   ],
   canonical: '/image-converter',
   ogImage: '/og/image-converter.jpg',
   faqs: [
     {
-      question: 'Is my image uploaded to a server?',
-      answer: 'No. All conversion happens locally in your browser. Your images never leave your device.',
+      question: 'Does AVIF work in all browsers?',
+      answer: 'AVIF encoding is supported in recent Chromium browsers (Chrome, Edge, Opera). The tool gracefully falls back to WebP when needed.',
+    },
+    {
+      question: 'Can I resize while converting?',
+      answer: 'Yes. Set a Max Width or Max Height and the converter will downscale while changing format for the whole batch.',
     },
   ],
 };

@@ -1,123 +1,116 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { Upload, Download, RefreshCw, Image as ImageIcon } from 'lucide-react';
+import { useState } from 'react';
+import { generateIcons, buildManifestSnippet, WEB_SIZES, APP_SIZES, type GeneratedIcon } from './utils';
+import { Upload, Download, Copy } from 'lucide-react';
 
 export default function FaviconGenerator() {
-  const [image, setImage] = useState<string | null>(null);
+  const [source, setSource] = useState<string | null>(null);
+  const [icons, setIcons] = useState<GeneratedIcon[]>([]);
+  const [manifest, setManifest] = useState('');
   const [loading, setLoading] = useState(false);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [copied, setCopied] = useState(false);
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setImage(event.target?.result as string);
+  function handleUpload(file: File) {
+    const r = new FileReader();
+    r.onload = e => {
+      setSource(e.target?.result as string);
+      setIcons([]);
+      setManifest('');
     };
-    reader.readAsDataURL(file);
-  };
+    r.readAsDataURL(file);
+  }
 
-  const handleGenerate = () => {
-    if (!image || !canvasRef.current) return;
+  async function generateAll() {
+    if (!source) return;
     setLoading(true);
+    try {
+      const allSizes = [...WEB_SIZES, ...APP_SIZES];
+      const generated = await generateIcons(source, allSizes);
+      setIcons(generated);
+      setManifest(buildManifestSnippet(generated));
+    } catch (e) {
+      alert('Failed to generate icons');
+    } finally {
+      setLoading(false);
+    }
+  }
 
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+  function download(icon: GeneratedIcon) {
+    const a = document.createElement('a');
+    a.href = icon.dataUrl;
+    a.download = icon.name;
+    a.click();
+  }
 
-    const img = new Image();
-    img.onload = () => {
-      // Draw to a 32x32 canvas for standard favicon
-      canvas.width = 32;
-      canvas.height = 32;
-      
-      // Clear and draw image scaled to fit
-      ctx.clearRect(0, 0, 32, 32);
-      ctx.drawImage(img, 0, 0, 32, 32);
+  function downloadAll() {
+    icons.forEach((ic, i) => setTimeout(() => download(ic), i * 70));
+  }
 
-      canvas.toBlob((blob) => {
-        if (!blob) return;
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'favicon.ico';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        setLoading(false);
-      }, 'image/x-icon');
-    };
-    img.src = image;
-  };
+  function copyManifest() {
+    if (!manifest) return;
+    navigator.clipboard.writeText(manifest);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1400);
+  }
 
   return (
-    <div className="space-y-6 max-w-3xl mx-auto">
-      <div className="bg-card border border-border rounded-3xl p-6 shadow-sm text-center">
-        {!image ? (
-          <label className="border-2 border-dashed border-border hover:border-blue-400 bg-background transition rounded-2xl p-12 flex flex-col items-center justify-center cursor-pointer group">
-            <div className="p-4 bg-blue-50 dark:bg-blue-900/20 text-blue-500 rounded-full mb-4 group-hover:scale-110 transition-transform">
-              <Upload size={32} />
+    <div className="space-y-6">
+      {!source ? (
+        <label onDrop={e => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) handleUpload(f); }} onDragOver={e => e.preventDefault()}
+          className="border-2 border-dashed border-border rounded-3xl p-12 text-center bg-card cursor-pointer block" onClick={() => document.getElementById('fav-file')?.click()}>
+          <Upload className="mx-auto mb-3" />
+          <p className="font-semibold">Upload a square source image (512×512 or larger recommended)</p>
+          <p className="text-xs text-muted mt-1">PNG with transparency works best for app icons</p>
+          <input id="fav-file" type="file" accept="image/*" className="hidden" onChange={e => e.target.files?.[0] && handleUpload(e.target.files[0])} />
+        </label>
+      ) : (
+        <div className="bg-card border border-border rounded-3xl p-6">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            <img src={source} alt="source" className="w-40 h-40 object-contain rounded-2xl border border-border bg-white" />
+            <div className="flex-1 space-y-3">
+              <p className="text-sm">Source loaded. We will generate web favicons + PWA / Apple touch icons.</p>
+              <button onClick={generateAll} disabled={loading} className="btn-primary">Generate All Icons (16×16 → 512×512)</button>
+              <button onClick={() => { setSource(null); setIcons([]); setManifest(''); }} className="text-xs ml-3 text-muted">Change image</button>
             </div>
-            <h3 className="text-lg font-bold text-text">Upload an Image</h3>
-            <p className="text-sm text-muted mt-1">PNG, JPG, or WebP. Square images work best.</p>
-            <input type="file" accept="image/png, image/jpeg, image/webp" className="hidden" onChange={handleImageUpload} />
-          </label>
-        ) : (
-          <div className="space-y-6">
-            <div className="flex justify-center">
-              <div className="w-48 h-48 rounded-2xl border-4 border-background shadow-lg overflow-hidden relative group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={image} alt="Preview" className="w-full h-full object-cover" />
-                <button 
-                  onClick={() => setImage(null)}
-                  className="absolute inset-0 bg-black/50 text-white font-bold opacity-0 group-hover:opacity-100 transition flex items-center justify-center"
-                >
-                  Change Image
-                </button>
-              </div>
-            </div>
-
-            <div className="flex justify-center gap-4 pt-4 border-t border-border">
-              <div className="flex flex-col items-center gap-2">
-                <p className="text-xs font-bold text-muted uppercase">32x32 Preview</p>
-                <div className="w-8 h-8 rounded border border-border shadow-sm overflow-hidden bg-white">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={image} alt="16x16" className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <p className="text-xs font-bold text-muted uppercase">16x16 Preview</p>
-                <div className="w-4 h-4 rounded-sm border border-border shadow-sm overflow-hidden bg-white mt-2">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={image} alt="32x32" className="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-4">
-               <button 
-                onClick={handleGenerate} 
-                disabled={loading}
-                className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold py-4 px-8 rounded-2xl transition inline-flex items-center gap-2"
-              >
-                {loading ? <RefreshCw size={20} className="animate-spin" /> : <Download size={20} />}
-                Download favicon.ico
-              </button>
-            </div>
-            
-            {/* Hidden canvas for processing */}
-            <canvas ref={canvasRef} className="hidden" />
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
-      <div className="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/30 rounded-2xl p-4 flex gap-3 text-sm text-blue-800 dark:text-blue-300">
-        <ImageIcon className="shrink-0" size={20} />
-        <p><strong>Pro tip:</strong> A favicon is the small icon that appears in the browser tab next to your website title. For the best results, use an image with a transparent background and perfectly square dimensions (like 512x512).</p>
-      </div>
+      {icons.length > 0 && (
+        <>
+          <div className="bg-card border border-border rounded-3xl p-6">
+            <div className="flex justify-between mb-4">
+              <span className="font-semibold">Generated Icons ({icons.length})</span>
+              <button onClick={downloadAll} className="btn-primary text-sm flex items-center gap-2"><Download className="w-4 h-4" /> Download All PNGs</button>
+            </div>
+            <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 gap-4">
+              {icons.map((ic, idx) => (
+                <div key={idx} className="text-center">
+                  <div className="bg-white border border-border rounded-2xl p-2 mb-1.5 flex items-center justify-center" style={{ height: Math.min(92, ic.size + 16) }}>
+                    <img src={ic.dataUrl} alt={ic.name} style={{ width: Math.min(72, ic.size), height: Math.min(72, ic.size) }} />
+                  </div>
+                  <div className="text-[10px] font-mono text-muted">{ic.size}×{ic.size}</div>
+                  <button onClick={() => download(ic)} className="text-xs text-brand mt-0.5">Download</button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {manifest && (
+            <div className="bg-card border border-border rounded-3xl p-6">
+              <div className="flex justify-between mb-2">
+                <span className="font-semibold">PWA manifest.json snippet</span>
+                <button onClick={copyManifest} className="btn-secondary text-xs flex items-center gap-1"><Copy className="w-3.5 h-3.5" /> {copied ? 'Copied!' : 'Copy'}</button>
+              </div>
+              <pre className="bg-background p-4 rounded-2xl text-xs overflow-auto border border-border">{manifest}</pre>
+              <p className="text-[10px] text-muted mt-2">Place the downloaded PNGs in your /public or static folder and reference them from your index.html as well.</p>
+            </div>
+          )}
+        </>
+      )}
+
+      <p className="text-center text-xs text-muted">Generates proper sizes for classic favicons, Apple touch icons, and modern PWA / Android icons. All local.</p>
     </div>
   );
 }

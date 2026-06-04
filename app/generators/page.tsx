@@ -4,12 +4,12 @@ import { generateWebPageSchema } from '@/lib/schema';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free Online Generators – Password, QR Code, Meme, UUID, Favicon & More',
+  title: 'Free Online Generators – Password, QR Code, UUID, Favicon, License & More',
   description:
-    'Powerful free generators for passwords, QR codes, memes, UUIDs, favicons, meta tags, CSS gradients, and lorem ipsum. All tools run 100% in your browser with no signup.',
+    'Powerful free generators for passwords, QR codes, UUIDs, favicons, meta tags, CSS, and open source licenses. All tools run 100% in your browser with no signup.',
   alternates: { canonical: '/generators' },
   openGraph: {
-    title: 'Free Generators – Password, QR, Meme, UUID & More | QuickUtils',
+    title: 'Free Generators – Password, QR, UUID, Favicon & Licenses | QuickUtils',
     description: 'Instant free generators for developers, marketers, and creators. No signup required.',
     url: absoluteUrl('/generators'),
   },
@@ -18,13 +18,11 @@ export const metadata: Metadata = {
 const generatorTools = [
   { href: '/password-generator', name: 'Password Generator', desc: 'Create strong, secure passwords with custom length and symbols.' },
   { href: '/qr-code-generator', name: 'QR Code Generator', desc: 'Generate QR codes for URLs, Wi-Fi, vCard, SMS and more.' },
-  { href: '/meme-generator', name: 'Meme Generator', desc: 'Add classic Impact text to images and create custom memes.' },
   { href: '/uuid-generator', name: 'UUID Generator', desc: 'Generate secure bulk UUID v4 and v7 identifiers instantly.' },
   { href: '/favicon-generator', name: 'Favicon Generator', desc: 'Convert images to multi-size .ico favicons for websites.' },
   { href: '/meta-tag-generator', name: 'Meta Tag Generator', desc: 'Create SEO meta tags, OpenGraph and Twitter cards with preview.' },
   { href: '/css-generator', name: 'CSS Generator', desc: 'Visually create beautiful box-shadows and CSS gradients.' },
-  { href: '/lorem-ipsum-generator', name: 'Lorem Ipsum Generator', desc: 'Generate placeholder text by paragraphs, sentences or words.' },
-  { href: '/youtube-thumbnail-downloader', name: 'YouTube Thumbnail Downloader', desc: 'Download HD thumbnails from any YouTube video.' },
+  { href: '/license-generator', name: 'License Generator', desc: 'Generate MIT, Apache, GPL and other open source licenses.' },
 ];
 
 export default function GeneratorsPage() {
@@ -84,11 +82,9 @@ export default function GeneratorsPage() {
             <ul>
               <li>Creating strong, unique passwords for new accounts and services</li>
               <li>Generating QR codes for Wi-Fi networks, business cards, events, or marketing campaigns</li>
-              <li>Making quick memes for social media posts and personal use</li>
               <li>Producing secure unique IDs (UUIDs) for databases, APIs, and development projects</li>
               <li>Creating professional favicons and OpenGraph meta tags for websites and apps</li>
-              <li>Generating placeholder text (Lorem Ipsum) for design mockups and prototypes</li>
-              <li>Downloading high-quality thumbnails from YouTube videos</li>
+              <li>Generating open source licenses (MIT, Apache, GPL) for your projects</li>
             </ul>
 
             <h2>Benefits of Using Our Generators</h2>

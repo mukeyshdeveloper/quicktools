@@ -39,23 +39,27 @@ export default function FaviconGeneratorPage() {
 
         <section className="prose-section mt-16 max-w-4xl space-y-6">
           <div>
-            <h2 className="text-xl font-bold text-text">What is a Favicon?</h2>
+            <h2 className="text-xl font-bold text-text">Why a Complete Icon Set Matters</h2>
             <p className="mt-2 text-sm text-muted leading-relaxed">
-              A favicon (short for "favorite icon") is a small iconic image that represents your website. Favicons are most commonly found in the tabs of web browsers, next to the page's title, as well as in bookmark lists and browser history. They help users easily identify your website when they have multiple tabs open.
+              A single 32×32 favicon is no longer enough. Modern browsers, iOS home screens, Android install prompts, and PWA manifests expect specific sizes (16, 32, 48, 180, 192, 512). This generator produces the full professional kit from one square source image plus a ready-to-use manifest.json snippet — everything created locally with Canvas, zero uploads.
             </p>
           </div>
+
           <div>
-            <h2 className="text-xl font-bold text-text">How to Use This Tool</h2>
-            <p className="mt-2 text-sm text-muted leading-relaxed">
-              Simply upload a square image (PNG, JPG, or WebP), and this tool will instantly convert it into a standard `.ico` file containing a 32x32 pixel icon perfectly optimized for modern web browsers. All conversion happens securely in your browser—your image is never uploaded to any server.
-            </p>
+            <h2 className="text-xl font-bold text-text">Best Results</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
+              <li>Start with a 512×512 or 1024×1024 square PNG (transparency preferred for app icons).</li>
+              <li>Leave a small safe margin around important content — the generator uses contain fitting.</li>
+              <li>After download, add the PNGs to your static folder and reference them + the manifest in your HTML head.</li>
+            </ul>
           </div>
+
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
-              <li><Link href="/image-converter" className="text-brand underline">Image Format Converter</Link></li>
-              <li><Link href="/svg-to-base64" className="text-brand underline">SVG to Base64 Converter</Link></li>
-              <li><Link href="/base64-to-image" className="text-brand underline">Base64 to Image Decoder</Link></li>
+              <li><Link href="/image-converter" className="text-brand underline">Image to WebP/AVIF Converter</Link></li>
+              <li><Link href="/meta-tag-generator" className="text-brand underline">Meta Tag Generator</Link></li>
+              <li><Link href="/bulk-image-resizer" className="text-brand underline">Bulk Image Resizer</Link></li>
             </ul>
           </div>
         </section>

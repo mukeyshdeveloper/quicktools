@@ -1,191 +1,146 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
-import { extractPalette, formatBytes, type ExtractedColor, type PaletteResult } from './utils';
-import { Upload, Copy, Check, RotateCcw, Palette } from 'lucide-react';
+import { useState } from 'react';
+import { extractPalette, loadImageFromUrl, type PaletteResult } from './utils';
+import { Upload, Download, Copy, RefreshCw, Link as LinkIcon } from 'lucide-react';
 
 export default function ColorPaletteExtractor() {
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [result, setResult] = useState<PaletteResult | null>(null);
-  const [processing, setProcessing] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [dragging, setDragging] = useState(false);
   const [paletteSize, setPaletteSize] = useState(8);
-  const [copiedHex, setCopiedHex] = useState<string | null>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState<string | null>(null);
+  const [urlInput, setUrlInput] = useState('');
 
-  const handleFile = useCallback((f: File) => {
-    if (!f.type.startsWith('image/')) { setError('Please upload a valid image file.'); return; }
+  async function loadFromFile(f: File) {
+    if (!f.type.startsWith('image/')) { setError('Please select a valid image file.'); return; }
     setFile(f); setError(null); setResult(null);
-    setPreview(URL.createObjectURL(f));
-  }, []);
+    const p = URL.createObjectURL(f);
+    setPreview(p);
+  }
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault(); setDragging(false);
-    const f = e.dataTransfer.files[0]; if (f) handleFile(f);
-  }, [handleFile]);
-
-  const handleExtract = async () => {
-    if (!file) return;
-    setProcessing(true); setError(null);
+  async function loadFromUrl() {
+    if (!urlInput.trim()) return;
+    setLoading(true); setError(null); setResult(null);
     try {
-      const r = await extractPalette(file, paletteSize);
-      setResult(r);
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : 'Extraction failed.');
-    } finally { setProcessing(false); }
+      const dataUrl = await loadImageFromUrl(urlInput.trim());
+      setPreview(dataUrl);
+      setFile(null);
+      const res = await extractPalette(dataUrl, paletteSize);
+      setResult(res);
+    } catch (e: any) {
+      setError(e.message || 'Could not load image from URL (CORS often blocks this). Upload the file for best results.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleExtract() {
+    if (!preview) return;
+    setLoading(true); setError(null);
+    try {
+      const src = file || preview;
+      const res = await extractPalette(src as any, paletteSize);
+      setResult(res);
+    } catch (e: any) {
+      setError(e.message || 'Extraction failed (CORS blocked — upload the file instead).');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const copyColor = (hex: string) => {
+    navigator.clipboard.writeText(hex);
+    setCopied(hex);
+    setTimeout(() => setCopied(null), 1200);
   };
 
-  const copyHex = (hex: string) => {
-    navigator.clipboard.writeText(hex).then(() => {
-      setCopiedHex(hex);
-      setTimeout(() => setCopiedHex(null), 2000);
-    });
-  };
-
-  const copyAllHex = () => {
+  const copyAll = () => {
     if (!result) return;
-    navigator.clipboard.writeText(result.colors.map(c => c.hex).join(', ')).then(() => {
-      setCopiedHex('all');
-      setTimeout(() => setCopiedHex(null), 2000);
-    });
+    const text = result.colors.map(c => c.hex).join(', ');
+    navigator.clipboard.writeText(text);
+    setCopied('all');
+    setTimeout(() => setCopied(null), 1200);
   };
 
-  const handleReset = () => { setFile(null); setPreview(null); setResult(null); setError(null); };
+  const downloadPalette = () => {
+    if (!result) return;
+    const css = `:root {\n${result.colors.map((c, i) => `  --color-${i + 1}: ${c.hex};`).join('\n')}\n}`;
+    const txt = result.colors.map(c => `${c.hex}  rgb(${c.rgb.r},${c.rgb.g},${c.rgb.b})  ${c.percentage}%`).join('\n');
+    const blob = new Blob([css + '\n\n' + txt], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'palette.txt'; a.click();
+    URL.revokeObjectURL(url);
+  };
 
-  const getLuminance = (hex: string): number => {
-    const r = parseInt(hex.slice(1, 3), 16) / 255;
-    const g = parseInt(hex.slice(3, 5), 16) / 255;
-    const b = parseInt(hex.slice(5, 7), 16) / 255;
-    return 0.299 * r + 0.587 * g + 0.114 * b;
+  const reset = () => {
+    if (preview && preview.startsWith('blob:')) URL.revokeObjectURL(preview);
+    setFile(null); setPreview(null); setResult(null); setError(null); setUrlInput('');
   };
 
   return (
-    <div className="space-y-6">
-      {!file ? (
-        <div
-          onDrop={handleDrop}
-          onDragOver={e => { e.preventDefault(); setDragging(true); }}
-          onDragLeave={() => setDragging(false)}
-          onClick={() => inputRef.current?.click()}
-          className={`group flex flex-col items-center justify-center gap-4 rounded-3xl border-2 border-dashed transition-all cursor-pointer min-h-[280px] ${dragging ? 'border-pink-500 bg-pink-50 dark:bg-pink-900/20' : 'border-gray-300 dark:border-gray-700 hover:border-pink-400 hover:bg-pink-50/40 dark:hover:bg-pink-900/10'}`}
-        >
-          <div className="p-5 rounded-2xl bg-pink-100 dark:bg-pink-900/30 text-pink-500 group-hover:scale-110 transition-transform">
-            <Palette size={40} />
-          </div>
-          <div className="text-center">
-            <p className="text-base font-bold text-gray-700 dark:text-gray-300">Drop any image here</p>
-            <p className="text-sm text-gray-500 mt-1">or <span className="text-pink-500 font-semibold">click to browse</span></p>
-            <p className="text-xs text-gray-400 mt-2">Extract dominant colors as hex codes — no server upload</p>
-          </div>
-          <input ref={inputRef} type="file" accept="image/*" className="hidden" onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }} />
+    <div className="space-y-6 max-w-3xl mx-auto">
+      <div className="bg-card border border-border rounded-3xl p-6 space-y-4">
+        <div className="flex gap-3">
+          <input value={urlInput} onChange={e => setUrlInput(e.target.value)} placeholder="https://example.com/image.jpg (CORS may block)" className="tool-input flex-1" />
+          <button onClick={loadFromUrl} disabled={loading || !urlInput} className="btn-secondary flex items-center gap-2"><LinkIcon className="w-4 h-4" /> Load URL</button>
         </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-          {/* Left: image + controls */}
-          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm space-y-5">
-            <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Image</span>
-              <button onClick={handleReset} className="text-xs font-bold text-gray-400 hover:text-red-500 transition flex items-center gap-1"><RotateCcw size={12} /> New Image</button>
-            </div>
+        <div
+          onDrop={(e) => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) loadFromFile(f); }}
+          onDragOver={(e) => e.preventDefault()}
+          onClick={() => document.getElementById('palette-file')?.click()}
+          className="border-2 border-dashed border-border hover:border-pink-400 rounded-2xl p-8 cursor-pointer text-center"
+        >
+          <Upload className="mx-auto mb-2" />
+          <p className="text-sm font-medium">Or drop / click to upload an image file (most reliable)</p>
+          <input id="palette-file" type="file" accept="image/*" className="hidden" onChange={e => e.target.files?.[0] && loadFromFile(e.target.files[0])} />
+        </div>
 
-            {preview && (
-              <div className="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video flex items-center justify-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={preview} alt="Source" className="max-h-full max-w-full object-contain" />
+        {preview && (
+          <div className="pt-2">
+            <img src={preview} alt="preview" className="rounded-2xl max-h-72 w-full object-contain border border-border bg-white" />
+            <div className="flex gap-3 mt-4">
+              <div className="flex-1">
+                <label className="text-xs font-bold text-muted">Colors to extract</label>
+                <input type="range" min={3} max={12} value={paletteSize} onChange={e => setPaletteSize(+e.target.value)} className="w-full accent-pink-600" />
+                <div className="text-right text-sm">{paletteSize}</div>
               </div>
-            )}
-
-            <p className="text-xs text-gray-500 bg-gray-50 dark:bg-gray-800 rounded-xl px-3 py-2 flex justify-between">
-              <span className="truncate">{file.name}</span>
-              <span className="font-semibold ml-2 shrink-0">{formatBytes(file.size)}</span>
-            </p>
-
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Colors to Extract</label>
-                <span className="text-sm font-bold text-pink-500">{paletteSize}</span>
+              <div className="flex items-end gap-2">
+                <button onClick={handleExtract} disabled={loading} className="btn-primary">Extract / Re-extract</button>
+                <button onClick={reset} className="btn-secondary"><RefreshCw className="w-4 h-4" /></button>
               </div>
-              <input type="range" min={4} max={16} value={paletteSize} onChange={e => setPaletteSize(Number(e.target.value))} className="w-full accent-pink-500" />
-              <div className="flex justify-between text-[10px] text-gray-400"><span>4 colors</span><span>16 colors</span></div>
             </div>
+          </div>
+        )}
+        {error && <p className="text-sm text-rose-500">{error}</p>}
+      </div>
 
-            <button onClick={handleExtract} disabled={processing} className="w-full py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white font-bold text-sm shadow-sm transition disabled:opacity-60">
-              {processing ? 'Analyzing image…' : 'Extract Color Palette'}
-            </button>
-            {error && <p className="text-xs text-red-500">{error}</p>}
+      {result && result.colors.length > 0 && (
+        <div className="bg-card border border-border rounded-3xl p-6">
+          <div className="flex justify-between mb-4">
+            <span className="font-semibold">Dominant Colors</span>
+            <div className="flex gap-2">
+              <button onClick={copyAll} className="btn-secondary text-xs flex items-center gap-1"><Copy className="w-3.5 h-3.5" /> {copied === 'all' ? 'Copied!' : 'Copy all HEX'}</button>
+              <button onClick={downloadPalette} className="btn-secondary text-xs flex items-center gap-1"><Download className="w-3.5 h-3.5" /> Export</button>
+            </div>
           </div>
 
-          {/* Right: palette */}
-          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm space-y-5">
-            <div className="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
-              <div className="flex items-center gap-2">
-                <Palette size={16} className="text-pink-500" />
-                <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Palette</span>
-              </div>
-              {result && (
-                <button onClick={copyAllHex} className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-500 hover:bg-pink-600 text-white text-xs font-bold transition">
-                  {copiedHex === 'all' ? <Check size={12} /> : <Copy size={12} />}
-                  {copiedHex === 'all' ? 'Copied!' : 'Copy All'}
-                </button>
-              )}
-            </div>
-
-            {!result ? (
-              <div className="flex flex-col items-center justify-center min-h-[300px] text-gray-400 text-sm italic">
-                <Palette size={40} className="opacity-20 mb-3" />
-                Color palette will appear here
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {/* Color strip */}
-                <div className="flex rounded-2xl overflow-hidden h-14 shadow-sm">
-                  {result.colors.map((c, i) => (
-                    <div
-                      key={i}
-                      className="flex-1 cursor-pointer hover:scale-y-110 transition-transform origin-bottom"
-                      style={{ backgroundColor: c.hex }}
-                      onClick={() => copyHex(c.hex)}
-                      title={c.hex}
-                    />
-                  ))}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {result.colors.map((c, i) => (
+              <div key={i} onClick={() => copyColor(c.hex)} className="cursor-pointer group">
+                <div className="h-20 rounded-2xl border border-border mb-2 relative overflow-hidden" style={{ background: c.hex }}>
+                  {copied === c.hex && <div className="absolute inset-0 bg-black/70 text-white text-xs flex items-center justify-center">Copied {c.hex}</div>}
                 </div>
-
-                {/* Color cards */}
-                <div className="grid grid-cols-2 gap-2.5 max-h-[380px] overflow-y-auto pr-1">
-                  {result.colors.map((color: ExtractedColor, i) => {
-                    const dark = getLuminance(color.hex) < 0.5;
-                    return (
-                      <button
-                        key={i}
-                        onClick={() => copyHex(color.hex)}
-                        className="group flex items-center gap-3 p-3 rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/80 hover:border-pink-300 dark:hover:border-pink-700 transition text-left"
-                      >
-                        <div
-                          className="w-10 h-10 rounded-xl shrink-0 shadow-sm flex items-center justify-center"
-                          style={{ backgroundColor: color.hex }}
-                        >
-                          {copiedHex === color.hex && (
-                            <Check size={16} style={{ color: dark ? '#fff' : '#000' }} />
-                          )}
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-sm font-black text-gray-800 dark:text-gray-100 font-mono">{color.hex}</p>
-                          <p className="text-[10px] text-gray-400">
-                            rgb({color.rgb.r}, {color.rgb.g}, {color.rgb.b})
-                          </p>
-                          <p className="text-[10px] font-semibold text-pink-500">{color.percentage}% of image</p>
-                        </div>
-                        <Copy size={12} className="ml-auto text-gray-300 group-hover:text-pink-400 shrink-0 transition" />
-                      </button>
-                    );
-                  })}
-                </div>
+                <div className="font-mono text-xs flex justify-between"><span>{c.hex}</span><span className="text-muted">{c.percentage}%</span></div>
+                <div className="text-[10px] text-muted">rgb({c.rgb.r}, {c.rgb.g}, {c.rgb.b})</div>
               </div>
-            )}
+            ))}
           </div>
+          <p className="text-[10px] text-muted mt-4">Click a swatch to copy HEX. URL loading can be blocked by CORS on many sites — upload is most reliable.</p>
         </div>
       )}
     </div>

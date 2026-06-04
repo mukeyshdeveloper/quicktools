@@ -62,8 +62,8 @@ export default function WordCounterPage() {
 
           <h2>Related Tools</h2>
           <ul className="list-disc pl-5">
-            <li><Link href="/keyword-density">Keyword Density Checker</Link></li>
-            <li><Link href="/readability-grader">Readability Grader</Link></li>
+            <li><Link href="/json-formatter">JSON Formatter</Link></li>
+            <li><Link href="/diff-checker">Diff Checker</Link></li>
             <li><Link href="/resume-builder">Resume Builder</Link></li>
           </ul>
         </section>

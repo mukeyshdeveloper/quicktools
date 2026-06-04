@@ -69,7 +69,7 @@ export default function MarkdownPreviewerPage() {
           <ul>
             <li><Link href="/diff-checker">Diff Checker</Link></li>
             <li><Link href="/word-counter">Word Counter</Link></li>
-            <li><Link href="/case-converter">Case Converter</Link></li>
+            <li><Link href="/css-generator">CSS Generator</Link></li>
           </ul>
         </section>
       </>

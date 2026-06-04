@@ -86,7 +86,7 @@ export default function DiffCheckerPage() {
           <h2>Related Tools</h2>
           <ul>
             <li><Link href="/word-counter">Word Counter</Link></li>
-            <li><Link href="/find-and-replace">Find & Replace Tool</Link></li>
+            <li><Link href="/json-formatter">JSON Formatter</Link></li>
             <li><Link href="/json-formatter">JSON Formatter</Link></li>
           </ul>
         </section>

@@ -53,15 +53,6 @@ Last Updated: June 2026
 - **Base64 Image Optimizer** (compress base64 images)
 - **Git Ignore Generator** (by language/framework)
 
-### Content & SEO Tools
-- **Hashtag Generator** (by niche + platform)
-- **Meta Description Optimizer** (length + keyword suggestions)
-- **Heading Structure Analyzer** (H1-H6 hierarchy checker)
-- **Plagiarism Checker** (basic local fingerprinting)
-- **Content Readability Improver** (suggestions based on score)
-- **Social Media Caption Generator** (multiple tones)
-- **YouTube Title & Description Optimizer**
-
 ### Image & Design Tools
 - **Bulk Image Resizer** (multiple files)
 - **Image to WebP/AVIF Converter** (already have basic converter — make it better)
@@ -186,9 +177,3 @@ Last Updated: June 2026
 3. Create dedicated landing pages with good SEO content.
 4. Cross-link them heavily with existing tools (especially EMI, Salary, TDEE).
 
-Would you like me to:
-- Prioritize a top 10 list with difficulty estimates?
-- Write detailed specs for any specific tool?
-- Create a Notion-style prioritized backlog?
-
-Just say the word.

@@ -4,13 +4,13 @@ import { generateWebPageSchema } from '@/lib/schema';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free Business Tools – Resume, Invoice, Trip Planner, Bill Splitter & More',
+  title: 'Free Business Tools – Quotes, Invoices, Break-Even, CRM & More',
   description:
-    'Free professional business tools: Resume Builder, Invoice Generator, Advanced Trip Planner with bill splitter, Bill Splitter, Meeting Cost Calculator, Decision Maker, and more. All run in your browser.',
+    'Free professional business tools: Quotation & Invoice tools, Pricing calculators, Lead Tracker, License Generator, Number Converters, Name Numerology, and more. All run privately in your browser.',
   alternates: { canonical: '/business-tools' },
   openGraph: {
-    title: 'Free Business Tools – Resume, Invoice & Payslip Generators | QuickUtils',
-    description: 'Professional business document generators and marketing tools. Create resumes, invoices, and salary slips instantly.',
+    title: 'Free Business Tools – Quotes, Invoices, CRM & Calculators | QuickUtils',
+    description: 'Professional tools for small businesses and freelancers: quotes, invoices, pricing calculators, lead tracking and branding name ideas.',
     url: absoluteUrl('/business-tools'),
   },
 };
@@ -18,7 +18,15 @@ export const metadata: Metadata = {
 const businessTools = [
   { href: '/resume-builder', name: 'Resume Builder', desc: 'Create modern, ATS-friendly professional resumes with live preview and PDF export.' },
   { href: '/invoice-generator', name: 'Invoice Generator', desc: 'Generate clean, professional invoices and download as PDF instantly.' },
+  { href: '/quotation-generator', name: 'Quotation / Estimate Generator', desc: 'Professional quotes with line items, taxes, validity dates and print-to-PDF.' },
   { href: '/salary-slip-generator', name: 'Salary Slip Generator', desc: 'Create formatted salary slips / payslips for employees and contractors.' },
+  { href: '/break-even-calculator', name: 'Break-Even Analysis', desc: 'Calculate units and revenue needed to cover costs and hit profit targets.' },
+  { href: '/profit-margin-calculator', name: 'Profit Margin & Markup', desc: 'Advanced margin vs markup calculations and reverse pricing.' },
+  { href: '/lead-tracker', name: 'Simple CRM / Lead Tracker', desc: 'Track leads through stages with values, notes and pipeline totals (local only).' },
+  { href: '/invoice-number-generator', name: 'Invoice Number Tracker', desc: 'Generate and remember sequential invoice/quote numbers with history.' },
+  { href: '/license-generator', name: 'License Generator', desc: 'Generate MIT, Apache, GPL and other standard open source licenses.' },
+  { href: '/indian-numbering-converter', name: 'Indian Numbering Converter', desc: 'Convert between Lakh/Crore and Million/Billion systems.' },
+  { href: '/name-meaning-numerology', name: 'Name Meaning & Numerology', desc: 'Discover name origins and calculate Life Path, Destiny & Soul Urge numbers.' },
   { href: '/trip-planner', name: 'Advanced Trip Planner', desc: 'Itinerary + expenses + smart group bill splitter with share links.' },
   { href: '/bill-splitter', name: 'Advanced Bill Splitter', desc: 'Itemized splits, taxes, tips, custom shares & optimal settlements for any group.' },
   { href: '/meeting-cost-calculator', name: 'Meeting Cost Calculator', desc: 'Calculate the real salary cost of team meetings with projections.' },

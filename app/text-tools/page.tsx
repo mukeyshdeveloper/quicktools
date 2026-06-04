@@ -4,21 +4,17 @@ import { generateWebPageSchema } from '@/lib/schema';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Free Text Tools – Word Counter, Case Converter, Diff Checker, Keyword Density & More',
+  title: 'Free Text Tools – Word Counter, Diff Checker, JSON & Markdown Utilities',
   description:
-    'Powerful free text utilities. Word counter, case converter, diff checker, keyword density analyzer, duplicate remover, and more. All tools work offline.',
+    'Powerful free text utilities. Word counter, diff checker, JSON formatter, Markdown previewer and more. All tools work offline and privately.',
   alternates: { canonical: '/text-tools' },
 };
 
 const textTools = [
   { href: '/word-counter', name: 'Word Counter', desc: 'Count words, characters, sentences and reading time.' },
-  { href: '/case-converter', name: 'Case Converter', desc: 'Convert text to UPPER, lower, Title, or camelCase.' },
   { href: '/diff-checker', name: 'Diff Checker', desc: 'Compare two texts and see line-by-line differences.' },
-  { href: '/keyword-density', name: 'Keyword Density Checker', desc: 'Analyze keyword frequency and density in your content.' },
-  { href: '/duplicate-remover', name: 'Duplicate Remover', desc: 'Remove duplicate lines from lists and text.' },
-  { href: '/find-and-replace', name: 'Find and Replace', desc: 'Bulk find and replace text with regex support.' },
-  { href: '/readability-grader', name: 'Readability Grader', desc: 'Score text readability using multiple formulas.' },
-  { href: '/slug-converter', name: 'Slug Converter', desc: 'Generate clean URL slugs from any title.' },
+  { href: '/json-formatter', name: 'JSON Formatter', desc: 'Beautify, minify and validate JSON.' },
+  { href: '/markdown-previewer', name: 'Markdown Previewer', desc: 'Live preview for Markdown with copy to HTML.' },
 ];
 
 export default function TextToolsPage() {
@@ -37,7 +33,7 @@ export default function TextToolsPage() {
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-brand">Writing & Content</p>
             <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">Free Text Tools</h1>
             <p className="mt-4 max-w-2xl text-lg text-muted">
-              Essential writing and content tools used by writers, marketers, students, and developers.
+              Essential writing, editing and content analysis tools. All run privately in your browser.
             </p>
           </div>
 

@@ -79,7 +79,7 @@ export default function Base64EncoderDecoderPage() {
           <h2>Related Tools</h2>
           <ul>
             <li><Link href="/jwt-decoder">JWT Decoder</Link></li>
-            <li><Link href="/case-converter">Case Converter</Link></li>
+            <li><Link href="/json-formatter">JSON Formatter</Link></li>
             <li><Link href="/diff-checker">Diff Checker</Link></li>
           </ul>
         </section>

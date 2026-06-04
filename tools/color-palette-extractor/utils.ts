@@ -26,18 +26,38 @@ function colorDistance(a: [number, number, number], b: [number, number, number])
  * Simple median-cut inspired extraction using bucketed quantization.
  * Runs fully in browser with Canvas API — no server upload.
  */
+export async function loadImageFromUrl(url: string): Promise<string> {
+  // Try to fetch as blob (better CORS handling in some cases)
+  try {
+    const res = await fetch(url, { mode: 'cors' });
+    if (!res.ok) throw new Error('Fetch failed');
+    const blob = await res.blob();
+    return await new Promise<string>((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result as string);
+      r.onerror = reject;
+      r.readAsDataURL(blob);
+    });
+  } catch (e) {
+    // Fallback to Image (may still be blocked by CORS for canvas extraction)
+    return url;
+  }
+}
+
 export function extractPalette(
-  file: File,
+  source: File | string, // File or dataUrl / remote url (after load)
   paletteSize: number
 ): Promise<PaletteResult> {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    const url = URL.createObjectURL(file);
+    let objectUrl: string | null = null;
+
+    const cleanup = () => { if (objectUrl) URL.revokeObjectURL(objectUrl); };
 
     img.onload = () => {
-      URL.revokeObjectURL(url);
+      cleanup();
 
-      const SAMPLE_SIZE = 400; // scale to max 400px for speed
+      const SAMPLE_SIZE = 400;
       const canvas = document.createElement('canvas');
       const scale = Math.min(1, SAMPLE_SIZE / Math.max(img.naturalWidth, img.naturalHeight));
       canvas.width = Math.round(img.naturalWidth * scale);
@@ -47,15 +67,21 @@ export function extractPalette(
       if (!ctx) return reject(new Error('Canvas context unavailable'));
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-      const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      let imageData: ImageData;
+      try {
+        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      } catch {
+        return reject(new Error('CORS blocked — please upload the image file instead'));
+      }
+      const { data } = imageData;
 
-      // Bucket quantization: reduce each channel to 8 levels (32-step buckets)
+      // Bucket quantization
       const buckets: Record<string, number> = {};
       const STEP = 32;
 
       for (let i = 0; i < data.length; i += 4) {
         const a = data[i + 3]!;
-        if (a < 128) continue; // skip transparent
+        if (a < 128) continue;
 
         const r = Math.round(data[i]! / STEP) * STEP;
         const g = Math.round(data[i + 1]! / STEP) * STEP;
@@ -65,13 +91,9 @@ export function extractPalette(
         buckets[key] = (buckets[key] ?? 0) + 1;
       }
 
-      // Sort by frequency
-      const sorted = Object.entries(buckets)
-        .sort((a, b) => b[1] - a[1]);
-
+      const sorted = Object.entries(buckets).sort((a, b) => b[1] - a[1]);
       const totalPixels = sorted.reduce((s, [, c]) => s + c, 0);
 
-      // Greedily pick top colors that are visually distinct (distance > 64)
       const picked: [number, number, number][] = [];
       const colors: ExtractedColor[] = [];
 
@@ -94,10 +116,17 @@ export function extractPalette(
     };
 
     img.onerror = () => {
-      URL.revokeObjectURL(url);
-      reject(new Error('Failed to load image'));
+      cleanup();
+      reject(new Error('Failed to load image (CORS or invalid URL)'));
     };
-    img.src = url;
+
+    if (typeof source === 'string') {
+      img.crossOrigin = 'anonymous';
+      img.src = source;
+    } else {
+      objectUrl = URL.createObjectURL(source);
+      img.src = objectUrl;
+    }
   });
 }
 

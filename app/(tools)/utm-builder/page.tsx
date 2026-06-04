@@ -86,7 +86,7 @@ export default function UtmBuilderPage() {
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related SEO & Marketing Utilities</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
               <li><Link href="/meta-tag-generator" className="text-brand underline hover:text-brand-hover">Meta Tag & OpenGraph Generator</Link></li>
-              <li><Link href="/keyword-density" className="text-brand underline hover:text-brand-hover">Keyword Density Checker</Link></li>
+              <li><Link href="/word-counter" className="text-brand underline hover:text-brand-hover">Word Counter</Link></li>
               <li><Link href="/url-encoder-decoder" className="text-brand underline hover:text-brand-hover">URL Percent Encoder & Query Parser</Link></li>
             </ul>
           </div>
