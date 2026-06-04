@@ -84,6 +84,19 @@ import { meta as meetingCostMeta } from '@/tools/meeting-cost-calculator/meta';
 import { meta as tripPlannerMeta } from '@/tools/trip-planner/meta';
 import { meta as billSplitterMeta } from '@/tools/bill-splitter/meta';
 
+// New Developer Tools
+import { meta as contrastMeta } from '@/tools/color-contrast-checker/meta';
+import { meta as hashMeta } from '@/tools/hash-generator/meta';
+import { meta as jwtEncoderMeta } from '@/tools/jwt-encoder/meta';
+
+// Batch 6 — More Developer Tools
+import { meta as apiMockMeta } from '@/tools/api-response-mock-generator/meta';
+import { meta as sqlFmtMeta } from '@/tools/sql-formatter-minifier/meta';
+import { meta as regexGenMeta } from '@/tools/regex-generator/meta';
+import { meta as tsConvMeta } from '@/tools/timestamp-converter/meta';
+import { meta as b64ImgMeta } from '@/tools/base64-image-optimizer/meta';
+import { meta as gitignoreMeta } from '@/tools/gitignore-generator/meta';
+
 export const tools: ToolMeta[] = [
   // Originals
   ageCalculatorMeta,
@@ -164,6 +177,17 @@ export const tools: ToolMeta[] = [
   // Travel & Group Finance
   tripPlannerMeta,
   billSplitterMeta,
+  // Developer Tools (new)
+  contrastMeta,
+  hashMeta,
+  jwtEncoderMeta,
+  // Developer Tools batch 6
+  apiMockMeta,
+  sqlFmtMeta,
+  regexGenMeta,
+  tsConvMeta,
+  b64ImgMeta,
+  gitignoreMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {
