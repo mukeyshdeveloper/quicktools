@@ -75,7 +75,6 @@ Last Updated: June 2026
 
 ### Fun & Lifestyle
 - **Love Compatibility Calculator** (fun + shareable)
-- **Name Meaning + Numerology**
 - **Random Password Meme Generator**
 - **Would You Rather Generator**
 - **Bucket List Generator**
@@ -95,10 +94,8 @@ Last Updated: June 2026
 - **License Generator** (MIT, Apache, GPL, etc.)
 
 ### Health (Advanced)
-- **BMI + Body Fat + Ideal Weight Combined Dashboard**
 - **Pregnancy Week-by-Week Tracker** (builds on existing due date tool)
 - **Sleep Debt Calculator**
-- **Stress Level Assessment** (questionnaire-based)
 
 ---
 

@@ -88,20 +88,18 @@ import { meta as gitignoreMeta } from '@/tools/gitignore-generator/meta';
 import { meta as bulkResizerMeta } from '@/tools/bulk-image-resizer/meta';
 import { meta as mockupMeta } from '@/tools/mockup-generator/meta';
 import { meta as watermarkMeta } from '@/tools/image-watermark/meta';
+import { meta as imagesToPdfMeta } from '@/tools/images-to-pdf/meta';
 import { meta as breakEvenMeta } from '@/tools/break-even-calculator/meta';
 import { meta as profitMarginMeta } from '@/tools/profit-margin-calculator/meta';
 import { meta as quotationMeta } from '@/tools/quotation-generator/meta';
 import { meta as leadTrackerMeta } from '@/tools/lead-tracker/meta';
 import { meta as invoiceNumMeta } from '@/tools/invoice-number-generator/meta';
 
-// New Batch — Name, Converters, Licenses & Advanced Health
-import { meta as nameNumerologyMeta } from '@/tools/name-meaning-numerology/meta';
+// Converters, Licenses & Advanced Health
 import { meta as indianNumMeta } from '@/tools/indian-numbering-converter/meta';
 import { meta as licenseMeta } from '@/tools/license-generator/meta';
-import { meta as healthDashboardMeta } from '@/tools/health-metrics-dashboard/meta';
 import { meta as pregWeekMeta } from '@/tools/pregnancy-week-tracker/meta';
 import { meta as sleepDebtMeta } from '@/tools/sleep-debt-calculator/meta';
-import { meta as stressMeta } from '@/tools/stress-level-assessment/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -187,20 +185,18 @@ export const tools: ToolMeta[] = [
   bulkResizerMeta,
   mockupMeta,
   watermarkMeta,
+  imagesToPdfMeta,
   // Business Tools batch
   breakEvenMeta,
   profitMarginMeta,
   quotationMeta,
   leadTrackerMeta,
   invoiceNumMeta,
-  // Name, Converters, Licenses & Advanced Health
-  nameNumerologyMeta,
+  // Converters, Licenses & Advanced Health
   indianNumMeta,
   licenseMeta,
-  healthDashboardMeta,
   pregWeekMeta,
   sleepDebtMeta,
-  stressMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {

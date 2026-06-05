@@ -59,6 +59,7 @@ export default function MockupGeneratorPage() {
               <li><Link href="/image-watermark" className="text-brand underline">Image Watermark Tool</Link></li>
               <li><Link href="/image-converter" className="text-brand underline">Image Format Converter</Link></li>
               <li><Link href="/bulk-image-resizer" className="text-brand underline">Bulk Image Resizer</Link></li>
+              <li><Link href="/images-to-pdf" className="text-brand underline">Images to PDF Generator</Link></li>
             </ul>
           </div>
         </section>

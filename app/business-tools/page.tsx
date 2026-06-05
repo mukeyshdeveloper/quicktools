@@ -6,11 +6,11 @@ import { absoluteUrl } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Free Business Tools – Quotes, Invoices, Break-Even, CRM & More',
   description:
-    'Free professional business tools: Quotation & Invoice tools, Pricing calculators, Lead Tracker, License Generator, Number Converters, Name Numerology, and more. All run privately in your browser.',
+    'Free professional business tools: Quotation & Invoice tools, Pricing calculators, Lead Tracker, License Generator, Number Converters, and more. All run privately in your browser.',
   alternates: { canonical: '/business-tools' },
   openGraph: {
     title: 'Free Business Tools – Quotes, Invoices, CRM & Calculators | QuickUtils',
-    description: 'Professional tools for small businesses and freelancers: quotes, invoices, pricing calculators, lead tracking and branding name ideas.',
+    description: 'Professional tools for small businesses and freelancers: quotes, invoices, pricing calculators, lead tracking and more.',
     url: absoluteUrl('/business-tools'),
   },
 };
@@ -26,7 +26,6 @@ const businessTools = [
   { href: '/invoice-number-generator', name: 'Invoice Number Tracker', desc: 'Generate and remember sequential invoice/quote numbers with history.' },
   { href: '/license-generator', name: 'License Generator', desc: 'Generate MIT, Apache, GPL and other standard open source licenses.' },
   { href: '/indian-numbering-converter', name: 'Indian Numbering Converter', desc: 'Convert between Lakh/Crore and Million/Billion systems.' },
-  { href: '/name-meaning-numerology', name: 'Name Meaning & Numerology', desc: 'Discover name origins and calculate Life Path, Destiny & Soul Urge numbers.' },
   { href: '/trip-planner', name: 'Advanced Trip Planner', desc: 'Itinerary + expenses + smart group bill splitter with share links.' },
   { href: '/bill-splitter', name: 'Advanced Bill Splitter', desc: 'Itemized splits, taxes, tips, custom shares & optimal settlements for any group.' },
   { href: '/meeting-cost-calculator', name: 'Meeting Cost Calculator', desc: 'Calculate the real salary cost of team meetings with projections.' },

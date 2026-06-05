@@ -57,8 +57,7 @@ export default function SleepDebtCalculatorPage() {
             <h2>Related Health Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/daily-water-intake-calculator" className="text-brand underline">Daily Water Intake Calculator</Link></li>
-              <li><Link href="/health-metrics-dashboard" className="text-brand underline">Health Metrics Dashboard</Link></li>
-              <li><Link href="/stress-level-assessment" className="text-brand underline">Stress Level Assessment</Link></li>
+              <li><Link href="/pregnancy-week-tracker" className="text-brand underline">Pregnancy Week-by-Week Tracker</Link></li>
             </ul>
           </div>
         </section>

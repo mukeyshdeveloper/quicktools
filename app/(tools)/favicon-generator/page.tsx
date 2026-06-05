@@ -60,6 +60,7 @@ export default function FaviconGeneratorPage() {
               <li><Link href="/image-converter" className="text-brand underline">Image to WebP/AVIF Converter</Link></li>
               <li><Link href="/meta-tag-generator" className="text-brand underline">Meta Tag Generator</Link></li>
               <li><Link href="/bulk-image-resizer" className="text-brand underline">Bulk Image Resizer</Link></li>
+              <li><Link href="/images-to-pdf" className="text-brand underline">Images to PDF Generator</Link></li>
             </ul>
           </div>
         </section>

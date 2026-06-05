@@ -60,6 +60,7 @@ export default function ImageWatermarkPage() {
               <li><Link href="/mockup-generator" className="text-brand underline">Mockup Generator</Link></li>
               <li><Link href="/bulk-image-resizer" className="text-brand underline">Bulk Image Resizer</Link></li>
               <li><Link href="/image-compressor" className="text-brand underline">Image Compressor</Link></li>
+              <li><Link href="/images-to-pdf" className="text-brand underline">Images to PDF Generator</Link></li>
               <li><Link href="/color-palette-extractor" className="text-brand underline">Color Palette Extractor</Link></li>
             </ul>
           </div>

@@ -67,6 +67,7 @@ export default function Base64ImageOptimizerPage() {
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/image-compressor" className="text-brand underline">Image Compressor</Link></li>
               <li><Link href="/image-converter" className="text-brand underline">Image Converter</Link></li>
+              <li><Link href="/images-to-pdf" className="text-brand underline">Images to PDF Generator</Link></li>
               <li><Link href="/favicon-generator" className="text-brand underline">Favicon Generator</Link></li>
               <li><Link href="/svg-to-base64" className="text-brand underline">SVG to Base64</Link></li>
             </ul>

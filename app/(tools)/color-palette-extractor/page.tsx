@@ -65,6 +65,7 @@ export default function ColorPaletteExtractorPage() {
               <li><Link href="/color-picker" className="text-brand underline">Color Picker &amp; Converter</Link></li>
               <li><Link href="/image-converter" className="text-brand underline">Image to WebP/AVIF Converter</Link></li>
               <li><Link href="/image-watermark" className="text-brand underline">Image Watermark Tool</Link></li>
+              <li><Link href="/images-to-pdf" className="text-brand underline">Images to PDF Generator</Link></li>
               <li><Link href="/mockup-generator" className="text-brand underline">Mockup Generator</Link></li>
             </ul>
           </div>

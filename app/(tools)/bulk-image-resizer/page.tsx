@@ -67,6 +67,7 @@ export default function BulkImageResizerPage() {
               <li><Link href="/image-compressor" className="text-brand underline">Image Compressor</Link></li>
               <li><Link href="/image-converter" className="text-brand underline">Image Format Converter</Link></li>
               <li><Link href="/image-watermark" className="text-brand underline">Image Watermark Tool</Link></li>
+              <li><Link href="/images-to-pdf" className="text-brand underline">Images to PDF Generator</Link></li>
               <li><Link href="/base64-image-optimizer" className="text-brand underline">Base64 Image Optimizer</Link></li>
             </ul>
           </div>

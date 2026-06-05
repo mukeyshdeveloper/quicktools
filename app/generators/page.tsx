@@ -19,6 +19,7 @@ const generatorTools = [
   { href: '/password-generator', name: 'Password Generator', desc: 'Create strong, secure passwords with custom length and symbols.' },
   { href: '/qr-code-generator', name: 'QR Code Generator', desc: 'Generate QR codes for URLs, Wi-Fi, vCard, SMS and more.' },
   { href: '/uuid-generator', name: 'UUID Generator', desc: 'Generate secure bulk UUID v4 and v7 identifiers instantly.' },
+  { href: '/images-to-pdf', name: 'Images to PDF', desc: 'Merge photos into PDF with multi-column layouts, per-image rotation, title pages, captions, quality control & more.' },
   { href: '/favicon-generator', name: 'Favicon Generator', desc: 'Convert images to multi-size .ico favicons for websites.' },
   { href: '/meta-tag-generator', name: 'Meta Tag Generator', desc: 'Create SEO meta tags, OpenGraph and Twitter cards with preview.' },
   { href: '/css-generator', name: 'CSS Generator', desc: 'Visually create beautiful box-shadows and CSS gradients.' },

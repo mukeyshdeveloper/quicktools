@@ -482,3 +482,31 @@ body {
     @apply bg-orange-50 text-orange-700;
   }
 }
+
+/* Global print styles for clean tool PDFs (e.g. Images to PDF, invoices) */
+@media print {
+  /* Hide persistent site UI */
+  nav,
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Extra safety to strip any share/copy/install icons or nav links in print */
+  .nav-link,
+  [aria-label*="copy" i],
+  [aria-label*="share" i],
+  [aria-label*="install" i] {
+    display: none !important;
+  }
+
+  /* Make sure dedicated print areas surface */
+  .pdf-print-area {
+    display: block !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
