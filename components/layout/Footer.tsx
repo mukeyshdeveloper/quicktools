@@ -17,7 +17,17 @@ export default function Footer(): React.ReactElement {
           Contact
         </Link>
       </p>
-      <p className="mt-1">Free tools for everyone · Made in India</p>
+      <p className="mt-1">
+        Free tools for everyone · Made in India ·{' '}
+        <a
+          href="https://twitter.com/thequickutils"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-brand transition"
+        >
+          Twitter @thequickutils
+        </a>
+      </p>
     </footer>
   );
 }

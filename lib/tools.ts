@@ -100,6 +100,7 @@ import { meta as indianNumMeta } from '@/tools/indian-numbering-converter/meta';
 import { meta as licenseMeta } from '@/tools/license-generator/meta';
 import { meta as pregWeekMeta } from '@/tools/pregnancy-week-tracker/meta';
 import { meta as sleepDebtMeta } from '@/tools/sleep-debt-calculator/meta';
+import { meta as pdfToImageMeta } from '@/tools/pdf-to-image/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -197,6 +198,7 @@ export const tools: ToolMeta[] = [
   licenseMeta,
   pregWeekMeta,
   sleepDebtMeta,
+  pdfToImageMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {

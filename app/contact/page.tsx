@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Mail, MessageCircle, Code2 } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact Us | QuickUtils',
@@ -30,7 +30,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-text">Email</p>
-                    <a href="mailto:hello@www.thequickutils.com" className="hover:text-brand transition">mukeysh.developer@gmail.com</a>
+                    <a href="mailto:thequickutils@gmail.com" className="hover:text-brand transition">thequickutils@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-muted">
@@ -39,16 +39,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-text">Twitter / X</p>
-                    <a href="https://twitter.com/quickutils" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition">@quickutils</a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 text-muted">
-                  <div className="p-2 bg-brand/10 text-brand rounded-lg">
-                    <Code2 size={20} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-text">GitHub</p>
-                    <a href="https://github.com/mukeysh/quickutils" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition">github.com/mukeysh</a>
+                    <a href="https://twitter.com/thequickutils" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition">@thequickutils</a>
                   </div>
                 </div>
               </div>
