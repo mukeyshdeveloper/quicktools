@@ -13,7 +13,7 @@ export default function ToolRatingBadge() {
 
   return (
     <div
-      className="inline-flex items-center gap-1.5 text-sm text-muted"
+      className="inline-flex items-center gap-1.5 text-sm text-muted print:hidden"
       aria-label={`Rated ${rating} out of 5 by ${count.toLocaleString()} users`}
     >
       {/* Stars */}
