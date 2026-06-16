@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateToolSchema } from '@/lib/schema';
 import QrCodeGenerator from '@/tools/qr-code-generator/QrCodeGenerator';
 import { meta } from '@/tools/qr-code-generator/meta';
+import FAQSection from '@/components/ui/FAQSection';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -46,26 +47,22 @@ export default function QrCodeGeneratorPage() {
 
         <QrCodeGenerator />
 
-        <section className="prose-section mt-12">
+        <section className="prose-section mt-12 max-w-3xl">
           <h2>How to Use the QR Code Generator</h2>
           <p>
             Choose content type (URL, Wi-Fi, vCard, etc.), fill the fields, customize appearance, then download PNG or SVG.
           </p>
 
-          <h2>Frequently Asked Questions</h2>
-          {meta.faqs?.map((faq, i) => (
-            <div key={i}>
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
-          ))}
+          <FAQSection faqs={meta.faqs} />
 
-          <h2>Related Tools</h2>
+          <div className="pt-8 border-t border-border mt-12">
+            <h2>Related Tools</h2>
           <ul className="list-disc pl-5">
             <li><Link href="/password-generator">Password Generator</Link></li>
             <li><Link href="/base64-encoder-decoder">Base64 Encoder</Link></li>
             <li><Link href="/favicon-generator">Favicon Generator</Link></li>
           </ul>
+          </div>
         </section>
       </>
     );

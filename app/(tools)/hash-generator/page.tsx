@@ -4,6 +4,7 @@ import { meta } from '@/tools/hash-generator/meta';
 import HashGenerator from '@/tools/hash-generator/HashGenerator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -53,7 +54,9 @@ export default function HashGeneratorPage() {
             <li><strong>BLAKE2</strong> — Excellent modern alternative (faster than SHA-3 on many platforms). We focus on the most universally supported algorithms here.</li>
           </ul>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-8 mt-12 border-t border-border">
             <h2>Related Developer Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/jwt-encoder" className="text-brand underline">JWT Encoder</Link></li>

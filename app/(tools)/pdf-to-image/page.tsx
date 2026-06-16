@@ -4,6 +4,7 @@ import { meta } from '@/tools/pdf-to-image/meta';
 import PdfToImage from '@/tools/pdf-to-image/PdfToImage';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -66,21 +67,9 @@ export default function PdfToImagePage() {
             <li>Review the rendered page thumbnails in the grid below, then download individual pages or save all images sequentially.</li>
           </ol>
 
-          <h2>Frequently Asked Questions</h2>
-          <h3 className="font-bold text-text mt-4">Is my data secure?</h3>
-          <p>
-            Yes, completely. This converter does not send your documents to any external server. All processing is executed strictly inside your local web browser, making it completely private and secure.
-          </p>
-          <h3 className="font-bold text-text mt-4">Can I convert large Word or PDF files?</h3>
-          <p>
-            Yes. The converter can handle multi-page documents. Since it uses your device's memory and CPU power to render pages on-the-fly, larger documents may take slightly longer to process.
-          </p>
-          <h3 className="font-bold text-text mt-4">Why does the browser ask for multiple download permissions?</h3>
-          <p>
-            When downloading all pages simultaneously, your browser receives requests to save multiple files. This is a built-in security feature to protect you. Simply click "Allow" to let the browser download all converted page images.
-          </p>
+          <FAQSection faqs={meta.faqs} />
 
-          <div className="pt-4 border-t border-border mt-8">
+          <div className="pt-8 border-t border-border mt-12">
             <h2>Related PDF &amp; Image Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/images-to-pdf" className="text-brand underline">Images to PDF Generator</Link></li>

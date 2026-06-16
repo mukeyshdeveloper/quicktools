@@ -23,5 +23,9 @@ export const meta: ToolMeta = {
       question: 'Does it support GitHub Flavored Markdown?',
       answer: 'Yes. It supports tables, task lists, strikethrough, and most common GFM extensions.',
     },
+    {
+      question: 'Is my content saved?',
+      answer: 'Your Markdown is processed 100% in your browser. We do not store or transmit your content. If you reload the page, the content will reset to the default example.',
+    },
   ],
 };

@@ -4,6 +4,7 @@ import { meta } from '@/tools/url-encoder-decoder/meta';
 import UrlEncoderDecoder from '@/tools/url-encoder-decoder/UrlEncoderDecoder';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
@@ -96,26 +97,10 @@ export default function UrlEncoderDecoderPage() {
             </p>
           </div>
 
-          <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
-            <div className="mt-3 space-y-4">
-              <div>
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Is my data secure on QuickUtils?</h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  Absolutely. Every calculation, parse, encode, and decode action is conducted 100% locally inside your web browser. We do not use any external APIs or servers, ensuring absolute privacy for sensitive API tokens, client secrets, or private URLs.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">What is the difference between encodeURI and encodeURIComponent?</h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  <code>encodeURI</code> is meant to encode a complete, functional URL. It ignores reserved characters like <code>http://</code>, <code>/</code>, and <code>?</code> to preserve the structure. <code>encodeURIComponent</code> is meant to encode individual parameter values, and will convert every special symbol (including slashes and questions) so they can safely sit inside a query parameter without corrupting the parent URL structure.
-                </p>
-              </div>
-            </div>
-          </div>
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Developer Utilities</h2>
+            <h2>Related Developer Utilities</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 dark:text-gray-400 space-y-1">
               <li>
                 <Link href="/jwt-decoder" className="text-brand underline hover:text-brand-hover">

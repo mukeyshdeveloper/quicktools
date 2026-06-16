@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateToolSchema } from '@/lib/schema';
 import DiffChecker from '@/tools/diff-checker/DiffChecker';
 import { meta } from '@/tools/diff-checker/meta';
+import FAQSection from '@/components/ui/FAQSection';
 
 import { absoluteUrl } from '@/lib/site';
 
@@ -72,23 +73,15 @@ export default function DiffCheckerPage() {
             <li>Debugging differences between API responses</li>
           </ul>
 
-          <h2>Why Use Our Diff Checker?</h2>
-          <p>
-            Unlike many online diff tools, ours runs entirely in your browser. Your sensitive documents, code, or data never leave your device — perfect for confidential work.
-          </p>
-          <p>
-            It also supports two viewing modes (Split and Unified) so you can choose the format that works best for your review process.
-          </p>
-          <p>
-            The tool is completely private — your documents never leave your browser. This makes it safe to use with sensitive code, legal documents, or internal data.
-          </p>
+          <FAQSection faqs={meta.faqs} />
 
-          <h2>Related Tools</h2>
+          <div className="pt-8 border-t border-border mt-12">
           <ul>
             <li><Link href="/word-counter">Word Counter</Link></li>
             <li><Link href="/json-formatter">JSON Formatter</Link></li>
             <li><Link href="/json-formatter">JSON Formatter</Link></li>
           </ul>
+          </div>
         </section>
       </>
     );

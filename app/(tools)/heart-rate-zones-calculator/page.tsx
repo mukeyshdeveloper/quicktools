@@ -4,6 +4,7 @@ import { meta } from '@/tools/heart-rate-zones-calculator/meta';
 import HeartRateZonesCalculator from '@/tools/heart-rate-zones-calculator/HeartRateZonesCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -58,7 +59,9 @@ export default function HeartRateZonesPage() {
             <li>Zone 4–5: Quality intervals. 3–8 minutes hard with full recovery. 1–2 sessions per week max for most people.</li>
           </ul>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-4 border-t border-border mt-12">
             <h2>Related Health &amp; Fitness Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/vo2-max-estimator" className="text-brand underline">VO2 Max Estimator</Link></li>

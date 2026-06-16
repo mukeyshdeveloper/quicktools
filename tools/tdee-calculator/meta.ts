@@ -22,7 +22,19 @@ export const meta: ToolMeta = {
   faqs: [
     {
       question: 'What is the difference between BMR and TDEE?',
-      answer: 'BMR is the calories you burn at complete rest. TDEE multiplies BMR by your activity level to estimate real-world daily calorie needs.',
+      answer: 'BMR (Basal Metabolic Rate) is the amount of calories your body burns at complete rest just to keep you alive. TDEE (Total Daily Energy Expenditure) multiplies your BMR by your physical activity level to estimate your actual daily calorie needs.',
+    },
+    {
+      question: 'How accurate is this TDEE calculator?',
+      answer: 'It uses the Mifflin-St Jeor equation, which is widely considered the most accurate formula for estimating BMR and TDEE. However, it is still an estimate. For best results, use these numbers as a starting point and adjust based on how your body weight responds over a few weeks.',
+    },
+    {
+      question: 'Should I eat my TDEE to lose weight?',
+      answer: 'No. Eating your exact TDEE will maintain your current weight. To lose weight, you need to eat in a calorie deficit (usually 300-500 calories below your TDEE).',
+    },
+    {
+      question: 'Do I need to track macros or just calories?',
+      answer: 'Calories dictate weight change (loss or gain), while macronutrients (protein, carbs, fat) dictate body composition. If you only care about weight loss, calories are enough. If you want to lose fat while keeping muscle, you must track protein.',
     },
   ],
 };

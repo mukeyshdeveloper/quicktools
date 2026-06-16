@@ -4,6 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import BmiCalculator from '@/tools/bmi-calculator/BmiCalculator';
 import { meta } from '@/tools/bmi-calculator/meta';
 import { absoluteUrl } from '@/lib/site';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -52,20 +53,16 @@ export default function BmiCalculatorPage() {
             Select metric or imperial units, enter your height and weight. The tool instantly shows your BMI, the corresponding weight category, and a suggested healthy weight range for your height.
           </p>
 
-          <h2>Frequently Asked Questions</h2>
-          {meta.faqs?.map((faq, i) => (
-            <div key={i}>
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
-          ))}
+          <FAQSection faqs={meta.faqs} />
 
-          <h2>Related Tools</h2>
-          <ul className="list-disc pl-5">
-            <li><Link href="/age-calculator">Age Calculator</Link></li>
-            <li><Link href="/tdee-calculator">TDEE Calculator</Link></li>
-            <li><Link href="/sleep-cycle-calculator">Sleep Cycle Calculator</Link></li>
-          </ul>
+          <div className="pt-8 mt-12 border-t border-border">
+            <h2>Related Tools</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
+              <li><Link href="/age-calculator" className="text-brand underline">Age Calculator</Link></li>
+              <li><Link href="/tdee-calculator" className="text-brand underline">TDEE Calculator</Link></li>
+              <li><Link href="/sleep-cycle-calculator" className="text-brand underline">Sleep Cycle Calculator</Link></li>
+            </ul>
+          </div>
         </section>
       </>
     );

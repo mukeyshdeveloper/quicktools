@@ -4,6 +4,7 @@ import { meta } from '@/tools/timestamp-converter/meta';
 import TimestampConverter from '@/tools/timestamp-converter/TimestampConverter';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -62,7 +63,9 @@ export default function TimestampConverterPage() {
             <li>Quick offset buttons let you explore “what time is it +1h in other zones?”</li>
           </ul>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-8 mt-12 border-t border-border">
             <h2>Related Developer Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/cron-expression-parser" className="text-brand underline">Cron Expression Parser</Link></li>

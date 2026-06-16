@@ -4,6 +4,7 @@ import { meta } from '@/tools/favicon-generator/meta';
 import FaviconGenerator from '@/tools/favicon-generator/FaviconGenerator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -49,10 +50,12 @@ export default function FaviconGeneratorPage() {
             <h2 className="text-xl font-bold text-text">Best Results</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li>Start with a 512×512 or 1024×1024 square PNG (transparency preferred for app icons).</li>
-              <li>Leave a small safe margin around important content — the generator uses contain fitting.</li>
+              <li>Leave a small margin around important content — the generator uses contain fitting.</li>
               <li>After download, add the PNGs to your static folder and reference them + the manifest in your HTML head.</li>
             </ul>
           </div>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Tools</h2>

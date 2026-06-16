@@ -4,6 +4,7 @@ import { meta } from '@/tools/uuid-generator/meta';
 import UuidGenerator from '@/tools/uuid-generator/UuidGenerator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
@@ -95,23 +96,7 @@ export default function UuidGeneratorPage() {
             </p>
           </div>
 
-          <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
-            <div className="mt-3 space-y-4">
-              <div>
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Are my generated UUIDs private?</h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  Yes, 100%. All UUID calculations, formatting, and casing are executed directly inside your web browser using client-side JavaScript. No data is transmitted to our servers, ensuring your generated IDs are completely secure, private, and yours alone to use.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Why should I use UUID v7 over UUID v4 for databases?</h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  UUID v4 is completely random, which means inserting new rows creates random insert points. This forces database systems to fragment and restructure B-tree indexes constantly, dragging down performance on large datasets. Because UUID v7 begins with a timestamp, new entries are appended sequentially, preserving high-performance indexing and fast lookups.
-                </p>
-              </div>
-            </div>
-          </div>
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Developer Tools</h2>

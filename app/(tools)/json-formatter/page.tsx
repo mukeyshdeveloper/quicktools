@@ -4,6 +4,7 @@ import { meta } from '@/tools/json-formatter/meta'
 import JsonFormatter from '@/tools/json-formatter/JsonFormatter'
 import AdBanner from '@/components/layout/AdBanner'
 import { generateToolSchema } from '@/lib/schema'
+import FAQSection from '@/components/ui/FAQSection'
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -44,7 +45,7 @@ export default function JsonFormatterPage() {
 
       <JsonFormatter />
 
-      <section className="prose-section mt-12">
+      <section className="prose-section mt-12 max-w-3xl">
           <h2>Why Use Our JSON Formatter?</h2>
           <p>
             JSON is the standard data format for modern APIs and configuration. When responses arrive minified as one giant line, they become nearly impossible to understand. Our tool instantly beautifies JSON with proper indentation and structure.
@@ -71,20 +72,16 @@ export default function JsonFormatterPage() {
             <li>Validating structure before sending requests</li>
           </ul>
 
-          <h2>Frequently Asked Questions</h2>
-          {meta.faqs?.map((faq, i) => (
-            <div key={i}>
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
-          ))}
+          <FAQSection faqs={meta.faqs} />
 
-          <h2>Related Developer Tools</h2>
+          <div className="pt-8 border-t border-border mt-12">
+            <h2>Related Developer Tools</h2>
           <ul className="list-disc pl-5 space-y-1">
             <li><Link href="/jwt-decoder">JWT Decoder</Link></li>
             <li><Link href="/base64-encoder-decoder">Base64 Encoder / Decoder</Link></li>
             <li><Link href="/diff-checker">Diff Checker</Link></li>
           </ul>
+          </div>
         </section>
       </>
     );

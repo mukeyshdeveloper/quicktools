@@ -4,6 +4,7 @@ import { meta } from '@/tools/bulk-image-resizer/meta';
 import BulkImageResizer from '@/tools/bulk-image-resizer/BulkImageResizer';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -61,7 +62,9 @@ export default function BulkImageResizerPage() {
             <li>WebP usually gives the best size/quality balance for photographic content.</li>
           </ul>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-8 mt-12 border-t border-border">
             <h2>Related Image Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/image-compressor" className="text-brand underline">Image Compressor</Link></li>

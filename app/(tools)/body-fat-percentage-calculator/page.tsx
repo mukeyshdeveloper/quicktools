@@ -4,6 +4,7 @@ import { meta } from '@/tools/body-fat-percentage-calculator/meta';
 import BodyFatCalculator from '@/tools/body-fat-percentage-calculator/BodyFatCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -65,7 +66,9 @@ export default function BodyFatCalculatorPage() {
             Essential fat is the minimum needed for basic health. Athletes usually sit in the lower ranges. “Average” varies by age and population. Women naturally carry more essential fat than men. These ranges are guidelines — individual health matters more than a single number.
           </p>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-4 border-t border-border mt-12">
             <h2>Related Health &amp; Fitness Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/bmi-calculator" className="text-brand underline">BMI Calculator</Link></li>

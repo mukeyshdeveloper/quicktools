@@ -4,6 +4,7 @@ import { meta } from '@/tools/jwt-encoder/meta';
 import JwtEncoder from '@/tools/jwt-encoder/JwtEncoder';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -50,8 +51,10 @@ export default function JwtEncoderPage() {
           <p>
             Only use this tool with secrets you are comfortable exposing in a browser tab. For real production tokens, always generate them on a secure backend using environment variables and proper key management. This encoder is intended for development, testing, and learning.
           </p>
+          
+          <FAQSection faqs={meta.faqs} />
 
-          <div className="pt-4 border-t border-border">
+          <div className="pt-8 mt-12 border-t border-border">
             <h2>Related Developer Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/jwt-decoder" className="text-brand underline">JWT Decoder</Link> (the companion tool)</li>

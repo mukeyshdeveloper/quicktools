@@ -4,6 +4,7 @@ import { meta } from '@/tools/tdee-calculator/meta';
 import TdeeCalculator from '@/tools/tdee-calculator/TdeeCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -75,7 +76,9 @@ export default function TdeeCalculatorPage() {
             </p>
           </div>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-8 border-t border-border mt-12">
             <h2 className="text-xl font-bold text-text">Related Health & Fitness Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/bmi-calculator" className="text-brand underline">BMI Calculator</Link></li>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateToolSchema } from '@/lib/schema';
 import SalaryCalculator from '@/tools/salary-calculator/SalaryCalculator';
 import { meta } from '@/tools/salary-calculator/meta';
+import FAQSection from '@/components/ui/FAQSection';
 
 import { absoluteUrl } from '@/lib/site';
 
@@ -31,21 +32,21 @@ export default function SalaryCalculatorPage() {
           <p className="mt-3 text-sm leading-6 text-muted sm:text-base">{meta.description}</p>
         </div>
         <SalaryCalculator />
-        <section className="prose-section mt-12">
+        <section className="prose-section mt-12 max-w-3xl">
           <h2>How to Use the Salary Calculator</h2>
           <p>Select your pay period — hourly, daily, weekly, bi-weekly, monthly, or annual — and enter your wage. The calculator instantly converts it to every other period. Adjust hours per week, days per week, and add an estimated tax rate to see your after-tax take-home pay across all periods.</p>
-          <p>This is especially useful when comparing job offers that quote salaries differently. One company may offer ₹25 per hour while another offers ₹4,00,000 per year — this tool instantly tells you which is better.</p>
-          <h2>Frequently Asked Questions</h2>
-          <h3>How is annual salary calculated from hourly rate?</h3>
-          <p>Annual salary = Hourly Rate × Hours per Week × 52 weeks. The default is 40 hours per week, 5 days per week, giving 2,080 working hours per year.</p>
-          <h3>Is the tax calculation exact?</h3>
-          <p>The tax calculation uses a flat rate you provide. Real taxes involve slabs and deductions. Use this as a quick estimate, and consult a tax professional for exact figures.</p>
-          <h2>Related Tools</h2>
-          <ul>
-            <li><Link href="/emi-calculator">EMI Calculator</Link></li>
-            <li><Link href="/roi-calculator">ROI Calculator</Link></li>
-            <li><Link href="/compound-interest-calculator">Compound Interest Calculator</Link></li>
-          </ul>
+          <p>This is especially useful when comparing job offers that quote salaries differently. One company may offer ₹250 per hour while another offers ₹4,00,000 per year — this tool instantly tells you which is better.</p>
+          
+          <FAQSection faqs={meta.faqs} />
+          
+          <div className="pt-8 mt-12 border-t border-border">
+            <h2>Related Finance Tools</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
+              <li><Link href="/emi-calculator" className="text-brand underline">EMI Calculator</Link></li>
+              <li><Link href="/roi-calculator" className="text-brand underline">ROI Calculator</Link></li>
+              <li><Link href="/compound-interest-calculator" className="text-brand underline">Compound Interest Calculator</Link></li>
+            </ul>
+          </div>
         </section>
       </>
     );

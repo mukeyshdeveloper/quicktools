@@ -4,6 +4,7 @@ import { meta } from '@/tools/period-calculator/meta';
 import PeriodCalculator from '@/tools/period-calculator/PeriodCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -38,23 +39,10 @@ export default function PeriodCalculatorPage() {
         <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_BOTTOM!} className="mt-12" />
 
         <section className="prose-section mt-16 max-w-4xl space-y-6">
-          <div>
-            <h2 className="text-xl font-bold text-text">How We Predict Your Cycle</h2>
-            <p className="mt-2 text-sm text-muted leading-relaxed">
-              This calculator uses standard medical formulas to estimate your future menstrual cycles. Your next period is calculated by adding your average cycle length to the start date of your last period. 
-            </p>
-            <p className="mt-2 text-sm text-muted leading-relaxed">
-              Ovulation typically occurs about 14 days <em>before</em> the start of your next period. Your "fertile window" is the 5 days leading up to ovulation, plus the day of ovulation itself. This is the time during your cycle when pregnancy is most likely to occur.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-text">Privacy First</h2>
-            <p className="mt-2 text-sm text-muted leading-relaxed">
-              Health data is incredibly sensitive. Unlike many period tracking apps that upload your cycle data to the cloud, this calculator runs <strong>100% locally in your browser</strong>. We do not store, track, or harvest any information about your menstrual cycle.
-            </p>
-          </div>
-          <div className="pt-4 border-t border-border">
-            <h2 className="text-xl font-bold text-text">Related Health Tools</h2>
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-4 border-t border-border mt-12">
+            <h2>Related Health Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/pregnancy-due-date-calculator" className="text-brand underline">Pregnancy Due Date Calculator</Link></li>
               <li><Link href="/tdee-calculator" className="text-brand underline">TDEE & Macro Calculator</Link></li>

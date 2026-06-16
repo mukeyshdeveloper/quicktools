@@ -85,6 +85,7 @@ Last Updated: June 2026
 - **Roman Numeral Converter**
 - **Morse Code Translator**
 - **Leet Speak Converter**
+- **Video & Audio Converter (WASM)** (MOV to MP4, MP3 to WAV)
 
 ### Advanced Developer
 - **OpenAPI / Swagger YAML Validator**

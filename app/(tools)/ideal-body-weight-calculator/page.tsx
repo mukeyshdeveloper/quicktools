@@ -4,6 +4,7 @@ import { meta } from '@/tools/ideal-body-weight-calculator/meta';
 import IdealBodyWeightCalculator from '@/tools/ideal-body-weight-calculator/IdealBodyWeightCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -62,7 +63,9 @@ export default function IdealBodyWeightPage() {
             Never use IBW in isolation. Combine it with body composition (body fat %, waist circumference), energy levels, strength, blood markers, and how your clothes fit.
           </p>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-4 border-t border-border mt-12">
             <h2>Related Health &amp; Fitness Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/body-fat-percentage-calculator" className="text-brand underline">Body Fat Percentage Calculator</Link></li>

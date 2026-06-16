@@ -4,6 +4,7 @@ import { meta } from '@/tools/code-minifier/meta';
 import CodeMinifier from '@/tools/code-minifier/CodeMinifier';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
@@ -107,23 +108,7 @@ export default function CodeMinifierPage() {
             </p>
           </div>
 
-          <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
-            <div className="mt-3 space-y-4">
-              <div>
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Will minification break my JavaScript code?</h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  No. Our minifier runs careful state tracking that preserves all string literals, template literals, and regex statements exactly as written. However, we always recommend keeping a backup of your original, highly formatted source code for future editing, as minified code is intentionally difficult to read.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">Is this minification process secure?</h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  Absolutely. Unlike other online minification web apps that transmit your code to a remote server, QuickUtils processes all minification completely locally on your machine using client-side JavaScript. Your code never leaves your computer, ensuring total privacy.
-                </p>
-              </div>
-            </div>
-          </div>
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Developer Utilities</h2>

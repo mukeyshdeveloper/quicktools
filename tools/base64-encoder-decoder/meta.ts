@@ -24,5 +24,9 @@ export const meta: ToolMeta = {
       question: 'Can I encode files to Base64?',
       answer: 'Yes. You can upload small files and get their Base64 representation directly in the browser.',
     },
+    {
+      question: 'Is my data secure?',
+      answer: 'Yes. This tool runs 100% locally in your browser. Your input text and files are never sent to a server. We use the browser\'s native btoa() and atob() functions, meaning your sensitive API keys, passwords, and data stay completely private.',
+    },
   ],
 };

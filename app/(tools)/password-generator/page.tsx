@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateToolSchema } from '@/lib/schema';
 import PasswordGenerator from '@/tools/password-generator/PasswordGenerator';
 import { meta } from '@/tools/password-generator/meta';
+import FAQSection from '@/components/ui/FAQSection';
 import { absoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -46,26 +47,22 @@ export default function PasswordGeneratorPage() {
 
         <PasswordGenerator />
 
-        <section className="prose-section mt-12">
+        <section className="prose-section mt-12 max-w-3xl">
           <h2>How to Use the Password Generator</h2>
           <p>
             Choose length and character types, then generate. The strength meter updates live. All generation happens locally in your browser.
           </p>
 
-          <h2>Frequently Asked Questions</h2>
-          {meta.faqs?.map((faq, i) => (
-            <div key={i}>
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
-          ))}
+          <FAQSection faqs={meta.faqs} />
 
-          <h2>Related Tools</h2>
+          <div className="pt-8 border-t border-border mt-12">
+            <h2>Related Tools</h2>
           <ul className="list-disc pl-5">
             <li><Link href="/hash-generator">Hash Generator</Link></li>
             <li><Link href="/qr-code-generator">QR Code Generator</Link></li>
             <li><Link href="/uuid-generator">UUID Generator</Link></li>
           </ul>
+          </div>
         </section>
       </>
     );

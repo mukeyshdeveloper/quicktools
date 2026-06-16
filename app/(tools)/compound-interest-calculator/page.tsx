@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { generateToolSchema } from '@/lib/schema';
 import CompoundInterestCalculator from '@/tools/compound-interest/CompoundInterestCalculator';
 import { meta } from '@/tools/compound-interest/meta';
+import FAQSection from '@/components/ui/FAQSection';
 
 import { absoluteUrl } from '@/lib/site';
 
@@ -31,21 +32,21 @@ export default function CompoundInterestPage() {
         <p className="mt-3 text-sm leading-6 text-muted sm:text-base">{meta.description}</p>
       </div>
         <CompoundInterestCalculator />
-        <section className="prose-section mt-12">
+        <section className="prose-section mt-12 max-w-3xl">
           <h2>How to Use the Compound Interest Calculator</h2>
           <p>Enter your initial investment, annual interest rate, and the number of years you plan to invest. Optionally add a recurring monthly contribution and choose how often interest compounds — yearly, quarterly, monthly, or daily. The tool instantly shows you the future value of your investment, total contributions, and the total interest earned.</p>
           <p>The year-by-year growth table lets you track exactly how your wealth grows over time. This is invaluable for retirement planning, education savings, or comparing fixed deposit offers from different banks.</p>
-          <h2>Frequently Asked Questions</h2>
-          <h3>What is compound interest?</h3>
-          <p>Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest, compound interest grows exponentially, making it one of the most powerful wealth-building concepts in finance.</p>
-          <h3>How often should interest compound?</h3>
-          <p>The more frequently interest compounds, the more you earn. Daily compounding yields slightly more than monthly, which yields more than yearly. Most savings accounts and fixed deposits compound monthly or quarterly.</p>
-          <h2>Related Tools</h2>
-          <ul>
-            <li><Link href="/emi-calculator">EMI Calculator</Link></li>
-            <li><Link href="/sip-calculator">SIP Calculator</Link></li>
-            <li><Link href="/salary-calculator">Salary Calculator</Link></li>
-          </ul>
+          
+          <FAQSection faqs={meta.faqs} />
+          
+          <div className="pt-8 mt-12 border-t border-border">
+            <h2>Related Finance Tools</h2>
+            <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
+              <li><Link href="/emi-calculator" className="text-brand underline">EMI Calculator</Link></li>
+              <li><Link href="/sip-calculator" className="text-brand underline">SIP Calculator</Link></li>
+              <li><Link href="/salary-calculator" className="text-brand underline">Salary Calculator</Link></li>
+            </ul>
+          </div>
         </section>
       </>
     );

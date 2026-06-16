@@ -4,6 +4,7 @@ import { meta } from '@/tools/color-contrast-checker/meta';
 import ColorContrastChecker from '@/tools/color-contrast-checker/ColorContrastChecker';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -54,7 +55,9 @@ export default function ColorContrastCheckerPage() {
             <li>Use the suggestion button when a pair is close but not quite there.</li>
           </ul>
 
-          <div className="pt-4 border-t border-border">
+          <FAQSection faqs={meta.faqs} />
+
+          <div className="pt-8 mt-12 border-t border-border">
             <h2>Related Developer Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">
               <li><Link href="/hash-generator" className="text-brand underline">Hash Generator</Link></li>

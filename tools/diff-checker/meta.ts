@@ -24,5 +24,9 @@ export const meta: ToolMeta = {
       question: 'Can it compare code files?',
       answer: 'Yes. It works great for comparing code, JSON, configs, and any text-based files.',
     },
+    {
+      question: 'Is my data private and secure?',
+      answer: 'Yes. Our diff checker runs entirely locally in your browser. Your sensitive documents, code, and data never leave your device.',
+    },
   ],
 };
