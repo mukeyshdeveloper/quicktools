@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { DM_Mono, DM_Sans } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import './globals.css';
 import {
   SITE_URL,
@@ -116,6 +117,7 @@ export default function RootLayout({
 
         {/* PWA Service Worker registration (client-only) */}
         <PwaRegistration />
+        <SpeedInsights />
       </body>
     </html>
   );
