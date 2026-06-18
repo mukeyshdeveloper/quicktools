@@ -4,6 +4,7 @@ import { meta } from '@/tools/sleep-debt-calculator/meta';
 import SleepDebtCalculator from '@/tools/sleep-debt-calculator/SleepDebtCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -52,6 +53,8 @@ export default function SleepDebtCalculatorPage() {
             <li>See your total debt and average nightly sleep.</li>
             <li>Follow the personalized recovery suggestion.</li>
           </ol>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Health Tools</h2>

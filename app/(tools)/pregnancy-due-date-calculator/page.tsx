@@ -4,6 +4,7 @@ import { meta } from '@/tools/pregnancy-due-date-calculator/meta';
 import PregnancyCalculator from '@/tools/pregnancy-due-date-calculator/PregnancyCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -56,6 +57,9 @@ export default function PregnancyCalculatorPage() {
               Your healthcare provider may adjust the due date after the first ultrasound if the measurements differ significantly from the LMP-based calculation.
             </p>
           </div>
+
+          <FAQSection faqs={meta.faqs} />
+
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Health Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">

@@ -27,6 +27,10 @@ export const meta: ToolMeta = {
       question: 'Do I need to know my exact variable cost per unit?',
       answer: 'Yes for accuracy. If you sell multiple products, use a weighted average contribution margin.',
     },
+    {
+      question: 'Is my business financial data secure?',
+      answer: 'Yes. All profit, cost, and revenue calculations are computed locally inside your web browser. No business financial figures or calculations are ever uploaded, saved on our servers, or shared.',
+    },
   ],
   whatIs: 'A simple yet powerful calculator that helps entrepreneurs and managers determine the minimum sales needed to cover all costs and start turning a profit.',
 };

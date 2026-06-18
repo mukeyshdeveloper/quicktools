@@ -4,6 +4,7 @@ import { meta } from '@/tools/break-even-calculator/meta';
 import BreakEvenCalculator from '@/tools/break-even-calculator/BreakEvenCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -33,12 +34,7 @@ export default function BreakEvenCalculatorPage() {
           </h1>
           <p className="mt-3 text-sm leading-6 text-muted max-w-2xl">{meta.description}</p>
         </div>
-
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_TOP!} className="mb-8" />
-
         <BreakEvenCalculator />
-
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_BOTTOM!} className="mt-12" />
 
         <section className="prose-section mt-16 max-w-3xl">
           <h2>Understanding Your Break-Even Point</h2>
@@ -58,6 +54,8 @@ export default function BreakEvenCalculatorPage() {
           <p>
             The contribution margin is what each sale contributes toward covering fixed costs and then generating profit. A low margin means you need to sell a lot more volume to break even. Use this calculator to experiment with pricing and cost reduction scenarios before making real business decisions.
           </p>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Business Tools</h2>

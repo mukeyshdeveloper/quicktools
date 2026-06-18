@@ -24,5 +24,9 @@ export const meta: ToolMeta = {
       question: 'Why are 90-minute cycles important?',
       answer: 'A full sleep cycle (light → deep → REM) lasts about 90 minutes. Waking up at the end of a cycle leaves you feeling more alert than waking in the middle of deep sleep.',
     },
+    {
+      question: 'Is my sleep data secure?',
+      answer: 'Yes. All calculations are performed entirely on your device. We do not store, track, or transmit any of your personal sleep schedules or data to external servers.',
+    },
   ],
 };

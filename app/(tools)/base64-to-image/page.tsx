@@ -4,6 +4,7 @@ import { meta } from '@/tools/base64-to-image/meta';
 import Base64ToImage from '@/tools/base64-to-image/Base64ToImage';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -50,6 +51,9 @@ export default function Base64ToImagePage() {
               This decoder automatically handles strings whether they include the Data URI scheme prefix (e.g., <code>data:image/png;base64,</code>) or if they are just the raw, raw Base64-encoded bytes. If the prefix is missing, it will attempt to decode it as a standard PNG.
             </p>
           </div>
+
+          <FAQSection faqs={meta.faqs} />
+
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">

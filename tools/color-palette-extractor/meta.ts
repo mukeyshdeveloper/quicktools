@@ -28,5 +28,9 @@ export const meta: ToolMeta = {
       question: 'How many colors are extracted?',
       answer: 'You can choose between 3 and 12. The tool uses smart quantization and removes near-duplicates for a clean, useful palette.',
     },
+    {
+      question: 'Is my uploaded image sent to any server?',
+      answer: 'No. All image processing is performed entirely inside your browser using the Canvas API. Your images never leave your device.',
+    },
   ],
 };

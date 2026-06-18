@@ -30,6 +30,10 @@ export const meta: ToolMeta = {
       question: 'Do I need to know my exact TDEE?',
       answer: 'A good estimate is enough to start. Track your actual weight trend for 2–3 weeks and adjust calories up or down by 100–200 kcal based on real results.',
     },
+    {
+      question: 'Is my weight planning data private?',
+      answer: 'Yes. All calculations, timelines, and goal progress are calculated entirely inside your web browser. No personal weight logs, targets, or information are uploaded or stored externally.',
+    },
   ],
   whatIs: 'A calorie deficit occurs when you consume fewer calories than you burn. The difference is supplied by your body’s energy stores (primarily fat). A well-planned deficit produces steady fat loss while preserving muscle and energy.',
 };

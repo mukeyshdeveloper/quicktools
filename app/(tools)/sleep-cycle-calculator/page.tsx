@@ -4,6 +4,7 @@ import { meta } from '@/tools/sleep-cycle-calculator/meta';
 import SleepCycleCalculator from '@/tools/sleep-cycle-calculator/SleepCycleCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -58,6 +59,9 @@ export default function SleepCycleCalculatorPage() {
               <li><strong>4 Cycles (6 hours):</strong> The minimum threshold for a functional day.</li>
             </ul>
           </div>
+
+          <FAQSection faqs={meta.faqs} />
+
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Health Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">

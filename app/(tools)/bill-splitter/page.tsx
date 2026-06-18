@@ -4,6 +4,7 @@ import { meta } from '@/tools/bill-splitter/meta';
 import BillSplitter from '@/tools/bill-splitter/BillSplitter';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -60,6 +61,8 @@ export default function BillSplitterPage() {
           <p>
             After adding everyone and all bills, use “Copy Nice Summary” for a clean WhatsApp message or “Copy Shareable Link”. The link encodes the entire state — when your friends open it they see the exact same numbers and recommended payments. No sign-up required.
           </p>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Tools</h2>

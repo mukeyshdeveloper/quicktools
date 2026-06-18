@@ -37,5 +37,10 @@ export const meta: ToolMeta = {
       answer:
         'Yes. The calculation uses precise day counts and handles leap years correctly when computing total days and next birthday.',
     },
+    {
+      question: 'Is my birthdate data secure?',
+      answer:
+        'Yes. All calculations are performed entirely locally within your browser. No personal birthdate or tracking data is uploaded, stored, or processed on external servers.',
+    },
   ],
 };

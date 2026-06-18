@@ -4,6 +4,7 @@ import { meta } from '@/tools/calorie-deficit-planner/meta';
 import CalorieDeficitPlanner from '@/tools/calorie-deficit-planner/CalorieDeficitPlanner';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -59,6 +60,8 @@ export default function CalorieDeficitPlannerPage() {
             <li>Reassess every 3–4 weeks. As you get lighter your maintenance calories drop.</li>
             <li>Plan diet breaks or maintenance phases every 8–12 weeks if the deficit is long.</li>
           </ul>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Health &amp; Fitness Tools</h2>

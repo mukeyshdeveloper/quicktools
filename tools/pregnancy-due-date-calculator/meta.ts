@@ -23,5 +23,9 @@ export const meta: ToolMeta = {
       question: 'How accurate is the due date calculation?',
       answer: 'It’s an estimate. Only about 5% of babies are born exactly on their due date. Most arrive within a week before or after.',
     },
+    {
+      question: 'Is my pregnancy calculation data private?',
+      answer: 'Yes. All calculations are performed completely in your browser. We do not store, track, or share your cycle dates or pregnancy details with any external databases.',
+    },
   ],
 };

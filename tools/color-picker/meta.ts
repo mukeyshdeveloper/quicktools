@@ -23,5 +23,13 @@ export const meta: ToolMeta = {
       question: 'Can I generate color palettes?',
       answer: 'Yes. After picking a base color you can generate analogous, complementary, triadic, and monochromatic palettes with one click.',
     },
+    {
+      question: 'What color formats are supported?',
+      answer: 'HEX, RGB, HSL, and HSV. You can type in any of these formats and the tool instantly converts to all others.',
+    },
+    {
+      question: 'Is my color data tracked or stored?',
+      answer: 'No. All conversions and palette generations run entirely in your browser. Nothing is sent to or saved on any server.',
+    },
   ],
 }

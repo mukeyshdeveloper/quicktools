@@ -26,6 +26,10 @@ export const meta: ToolMeta = {
       question: 'Can I pay off sleep debt quickly?',
       answer: 'You can recover some with extra sleep on weekends, but chronic debt takes consistent good habits over weeks to fully repay.',
     },
+    {
+      question: 'Is my sleep history data secure?',
+      answer: 'Yes. All data you enter in the sliders remains entirely local in your browser. No personal logs or history are sent to external databases or servers.',
+    },
   ],
   whatIs: 'A practical tool that quantifies your sleep shortfall and gives actionable steps to get back on track.',
 };

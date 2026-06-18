@@ -4,6 +4,7 @@ import { meta } from '@/tools/api-response-mock-generator/meta';
 import ApiResponseMockGenerator from '@/tools/api-response-mock-generator/ApiResponseMockGenerator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -62,6 +63,8 @@ export default function ApiResponseMockGeneratorPage() {
             <li>Test both happy paths and error responses early.</li>
             <li>Seed the random data when writing deterministic tests or Storybook stories.</li>
           </ul>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Developer Tools</h2>

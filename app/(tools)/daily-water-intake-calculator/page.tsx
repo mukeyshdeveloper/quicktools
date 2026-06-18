@@ -4,6 +4,7 @@ import { meta } from '@/tools/daily-water-intake-calculator/meta';
 import WaterIntakeCalculator from '@/tools/daily-water-intake-calculator/WaterIntakeCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -69,6 +70,8 @@ export default function DailyWaterIntakePage() {
             <li>Monitor urine color — pale straw is ideal; dark yellow means drink more.</li>
             <li>Increase intake further during illness, high altitude, or pregnancy (consult your doctor).</li>
           </ul>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Health Tools</h2>

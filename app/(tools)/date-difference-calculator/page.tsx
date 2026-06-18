@@ -4,6 +4,7 @@ import { meta } from '@/tools/date-difference-calculator/meta';
 import DateDiffCalculator from '@/tools/date-difference-calculator/DateDiffCalculator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -44,6 +45,9 @@ export default function DateDifferenceCalculatorPage() {
               This tool automatically accounts for leap years, variations in month length, and timezone offsets to calculate the exact duration between any two dates on the Gregorian calendar. The calculation strips out the time of day, ensuring you receive a clean "midnight-to-midnight" count of the total days.
             </p>
           </div>
+
+          <FAQSection faqs={meta.faqs} />
+
           <div className="pt-4 border-t border-border">
             <h2 className="text-xl font-bold text-text">Related Tools</h2>
             <ul className="list-disc pl-5 mt-2 text-sm text-muted space-y-1">

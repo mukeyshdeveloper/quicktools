@@ -4,6 +4,7 @@ import { meta } from '@/tools/pregnancy-week-tracker/meta';
 import PregnancyWeekTracker from '@/tools/pregnancy-week-tracker/PregnancyWeekTracker';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -53,6 +54,8 @@ export default function PregnancyWeekTrackerPage() {
             <li>Common symptoms you may experience and evidence-based tips.</li>
             <li>Links back to the Due Date Calculator if you need to adjust dates.</li>
           </ul>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Health Tools</h2>

@@ -23,5 +23,9 @@ export const meta: ToolMeta = {
       question: 'What kind of Base64 images can I decode?',
       answer: 'Most common formats: PNG, JPG, GIF, WebP, and SVG Base64 strings work well.',
     },
+    {
+      question: 'Is my decoded image sent to any server?',
+      answer: 'No. The decoding is done completely inside your browser using JavaScript and HTML canvas. Your Base64 strings never leave your device.',
+    },
   ],
 };

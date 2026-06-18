@@ -26,6 +26,10 @@ export const meta: ToolMeta = {
       question: 'Can I use this if I know my exact conception date?',
       answer: 'Yes. The tool adjusts based on your due date. Most due dates are calculated as 40 weeks from LMP.',
     },
+    {
+      question: 'Is my pregnancy tracker data secure?',
+      answer: 'Yes. All inputs, trimester progress, and week logs are computed locally in your browser and saved using browser localStorage. We do not store or transmit any of this information to external servers.',
+    },
   ],
   whatIs: 'An interactive week-by-week pregnancy guide that updates based on your personal due date, giving relevant information for where you are right now.',
 };

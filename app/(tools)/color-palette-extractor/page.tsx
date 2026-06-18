@@ -4,6 +4,7 @@ import { meta } from '@/tools/color-palette-extractor/meta';
 import ColorPaletteExtractor from '@/tools/color-palette-extractor/ColorPaletteExtractor';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.thequickutils.com';
 
@@ -58,6 +59,8 @@ export default function ColorPaletteExtractorPage() {
               <li><strong>CSS Theming:</strong> Copy hex codes directly into your stylesheet or CSS custom properties for pixel-perfect accuracy.</li>
             </ul>
           </div>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Related Design &amp; Image Tools</h2>

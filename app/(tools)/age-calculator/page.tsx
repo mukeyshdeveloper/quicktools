@@ -4,6 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import AgeCalculator from '@/tools/age-calculator/AgeCalculator';
 import { meta } from '@/tools/age-calculator/meta';
 import { absoluteUrl } from '@/lib/site';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -54,13 +55,7 @@ export default function AgeCalculatorPage() {
           next birthday.
         </p>
 
-        <h2>Frequently Asked Questions</h2>
-        {meta.faqs?.map((faq, i) => (
-          <div key={i}>
-            <h3>{faq.question}</h3>
-            <p>{faq.answer}</p>
-          </div>
-        ))}
+        <FAQSection faqs={meta.faqs} />
 
         <h2>Related Tools</h2>
         <ul className="list-disc pl-5">

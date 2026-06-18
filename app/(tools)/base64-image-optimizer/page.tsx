@@ -4,6 +4,7 @@ import { meta } from '@/tools/base64-image-optimizer/meta';
 import Base64ImageOptimizer from '@/tools/base64-image-optimizer/Base64ImageOptimizer';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -61,6 +62,8 @@ export default function Base64ImageOptimizerPage() {
             <li>WebP usually wins on size vs quality for photographic content; test JPEG quality 75-85 first.</li>
             <li>Always compare before/after LCP impact when embedding critical images.</li>
           </ul>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Developer Tools</h2>

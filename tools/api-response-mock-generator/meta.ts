@@ -33,6 +33,10 @@ export const meta: ToolMeta = {
       question: 'Is the mock data consistent across requests?',
       answer: 'By default it is random each time for realism. You can enable "seed" mode for deterministic output useful in tests.',
     },
+    {
+      question: 'Is my schema or data sent to any servers?',
+      answer: 'No. All mock generation logic and random data generation run 100% offline in your web browser. No schema details, names, or mock structures leave your device.',
+    },
   ],
   whatIs:
     'A fast way to create believable API responses without a real backend. Ideal for frontend devs who need to build against contracts, test edge cases, or demo features quickly.',

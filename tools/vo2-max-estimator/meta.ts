@@ -30,6 +30,10 @@ export const meta: ToolMeta = {
       question: 'What is a good VO2 max for my age?',
       answer: 'It varies widely. “Superior” for a 30-year-old male is roughly 55+ ml/kg/min. For a 55-year-old female, 35+ is already excellent. Use the category table shown in the results.',
     },
+    {
+      question: 'Is my personal fitness data secure?',
+      answer: 'Yes. All calculations and results are computed entirely client-side in your browser. None of your inputs (such as weight, age, gender, or heart rate) are sent to or stored on any external servers.',
+    },
   ],
   whatIs: 'VO2 max is the maximum rate at which your body can consume and use oxygen during intense exercise. It is the single best measure of cardiovascular fitness and a strong predictor of longevity and healthspan.',
 };

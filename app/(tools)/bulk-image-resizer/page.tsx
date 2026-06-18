@@ -35,11 +35,7 @@ export default function BulkImageResizerPage() {
           <p className="mt-3 text-sm leading-6 text-muted max-w-2xl">{meta.description}</p>
         </div>
 
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_TOP!} className="mb-8" />
-
         <BulkImageResizer />
-
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT_BOTTOM!} className="mt-12" />
 
         <section className="prose-section mt-16 max-w-3xl">
           <h2>Why Bulk Resize Locally?</h2>

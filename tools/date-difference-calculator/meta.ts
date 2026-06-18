@@ -23,5 +23,9 @@ export const meta: ToolMeta = {
       question: 'Does it count leap years correctly?',
       answer: 'Yes. The calculator accounts for leap years when computing the exact number of days.',
     },
+    {
+      question: 'Are my date inputs stored or sent to any server?',
+      answer: 'No. All calculations are run 100% locally in your web browser. No dates or calculation history are ever uploaded or transmitted.',
+    },
   ],
 };

@@ -4,6 +4,7 @@ import { meta } from '@/tools/vo2-max-estimator/meta';
 import Vo2MaxEstimator from '@/tools/vo2-max-estimator/Vo2MaxEstimator';
 import AdBanner from '@/components/layout/AdBanner';
 import { generateToolSchema } from '@/lib/schema';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -58,6 +59,8 @@ export default function Vo2MaxEstimatorPage() {
             <li>Strength training and losing excess body fat also move the needle.</li>
             <li>Expect 10–20% improvement in 3–6 months with smart training if you are currently untrained.</li>
           </ul>
+
+          <FAQSection faqs={meta.faqs} />
 
           <div className="pt-4 border-t border-border">
             <h2>Related Health &amp; Fitness Tools</h2>

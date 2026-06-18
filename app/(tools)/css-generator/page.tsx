@@ -4,6 +4,7 @@ import { generateToolSchema } from '@/lib/schema';
 import CssGenerator from '@/tools/css-generator/CssGenerator';
 import { meta } from '@/tools/css-generator/meta';
 import { absoluteUrl } from '@/lib/site';
+import FAQSection from '@/components/ui/FAQSection';
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -58,9 +59,12 @@ export default function CssGeneratorPage() {
             gradient from scratch. Adjust the angle and color stop positions with precision sliders.
           </p>
 
+          <FAQSection faqs={meta.faqs} />
+
           <h2>Related Tools</h2>
           <ul>
             <li><Link href="/color-picker">Color Picker</Link></li>
+            <li><Link href="/color-palette-extractor">Color Palette Extractor</Link></li>
             <li><Link href="/regex-tester">Regex Tester</Link></li>
             <li><Link href="/base64-encoder-decoder">Base64 Encoder / Decoder</Link></li>
           </ul>
