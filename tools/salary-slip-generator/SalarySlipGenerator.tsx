@@ -62,13 +62,13 @@ function RowEditor({ rows, onChange, accentClass }: {
   return (
     <div className="space-y-2">
       {rows.map((r, i) => (
-        <div key={i} className="flex gap-2 items-center">
+        <div key={i} className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center">
           <input value={r.label} placeholder="Component name"
             onChange={e => update(i, 'label', e.target.value)}
-            className={`${inp} flex-1`} />
+            className={`${inp} min-w-0`} />
           <input value={r.amount || ''} type="number" placeholder="0"
             onChange={e => update(i, 'amount', e.target.value)}
-            className={`${inp} w-28 text-right`} />
+            className={`${inp} min-w-0 text-right`} />
           <button onClick={() => remove(i)} className="text-red-400 hover:text-red-600 shrink-0">
             <Trash2 size={15} />
           </button>
@@ -343,7 +343,7 @@ export default function SalarySlipGenerator() {
 
           {/* Earnings */}
           <Section title="Earnings" icon={<Briefcase size={16} className="text-green-500" />}>
-            <div className="grid grid-cols-[1fr_7rem_1.5rem] gap-2 mb-1">
+            <div className="grid grid-cols-[1fr_1fr_auto] gap-2 mb-1">
               <span className="text-xs text-gray-400 font-semibold">Component</span>
               <span className="text-xs text-gray-400 font-semibold text-right">Amount (₹)</span>
               <span />
@@ -353,7 +353,7 @@ export default function SalarySlipGenerator() {
 
           {/* Deductions */}
           <Section title="Deductions" icon={<Calendar size={16} className="text-red-500" />}>
-            <div className="grid grid-cols-[1fr_7rem_1.5rem] gap-2 mb-1">
+            <div className="grid grid-cols-[1fr_1fr_auto] gap-2 mb-1">
               <span className="text-xs text-gray-400 font-semibold">Component</span>
               <span className="text-xs text-gray-400 font-semibold text-right">Amount (₹)</span>
               <span />
