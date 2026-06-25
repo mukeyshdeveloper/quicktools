@@ -264,9 +264,9 @@ const ModernTemplate = ({ data, skillsList, themeColor, fontFamily, spacing }: T
   const themeHex = getThemeColorHex(themeColor);
 
   return (
-    <div style={{ fontFamily: getFontFamilyStyle(fontFamily), display: 'flex', minHeight: '1056px', fontSize: s.fontSize, lineHeight: s.lineHeight }} className="bg-white -m-10 md:-m-14 print:m-0 h-full border border-gray-100">
+    <div style={{ fontFamily: getFontFamilyStyle(fontFamily), display: 'flex', minHeight: '1056px', fontSize: s.fontSize, lineHeight: s.lineHeight }} className="bg-white h-full border border-gray-100 print:border-none">
       {/* Sidebar (Left 35%) */}
-      <div style={{ width: '35%', backgroundColor: '#1e293b', color: '#f8fafc', padding: s.padding }} className="flex flex-col gap-6">
+      <div style={{ width: '35%', backgroundColor: '#1e293b', color: '#f8fafc', padding: s.padding, WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }} className="flex flex-col gap-6">
         <div>
           <h1 style={{ fontSize: '26px', fontWeight: '900', lineHeight: '1.1', marginBottom: '8px' }} className="tracking-tight text-white">{data.fullName || 'Your Name'}</h1>
           <p style={{ fontSize: '14px', color: themeHex, fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px' }}>{data.jobTitle || 'Job Title'}</p>
@@ -653,8 +653,8 @@ const BoldTemplate = ({ data, skillsList, themeColor, fontFamily, spacing }: Tem
   const themeHex = getThemeColorHex(themeColor);
 
   return (
-    <div style={{ fontFamily: getFontFamilyStyle(fontFamily), color: '#374151', fontSize: s.fontSize, lineHeight: s.lineHeight }} className="h-full bg-white -m-10 md:-m-14 print:m-0 border border-gray-100">
-      <div style={{ backgroundColor: themeHex, padding: s.padding }} className="text-white">
+    <div style={{ fontFamily: getFontFamilyStyle(fontFamily), color: '#374151', fontSize: s.fontSize, lineHeight: s.lineHeight }} className="h-full bg-white border border-gray-100 print:border-none">
+      <div style={{ backgroundColor: themeHex, padding: s.padding, WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }} className="text-white">
         <h1 className="text-4xl font-extrabold tracking-tight uppercase leading-none mb-1">{data.fullName || 'Your Name'}</h1>
         <p className="text-lg font-semibold tracking-wider uppercase opacity-90 mb-4">{data.jobTitle || 'Job Title'}</p>
         <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs opacity-80 pt-2 border-t border-white/20">
@@ -713,7 +713,7 @@ const BoldTemplate = ({ data, skillsList, themeColor, fontFamily, spacing }: Tem
         )}
 
         {/* Education & Certs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {data.education.some(edu => edu.institution || edu.degree) && (
             <section>
               <h2 style={{ color: themeHex }} className="text-base font-black uppercase tracking-wider mb-3">Education</h2>
@@ -745,7 +745,7 @@ const BoldTemplate = ({ data, skillsList, themeColor, fontFamily, spacing }: Tem
         </div>
 
         {/* Skills & Languages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-100">
+        <div className="grid grid-cols-2 gap-6 pt-4 border-t border-gray-100">
           {skillsList.length > 0 && (
             <section>
               <h2 style={{ color: themeHex }} className="text-base font-black uppercase tracking-wider mb-2">Skills</h2>
@@ -800,7 +800,7 @@ const CreativeTemplate = ({ data, skillsList, themeColor, fontFamily, spacing }:
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 pl-6">
+      <div className="grid grid-cols-3 gap-6 relative z-10 pl-6">
         {/* Left column (1/3) */}
         <div className="space-y-6">
           {skillsList.length > 0 && (
@@ -844,7 +844,7 @@ const CreativeTemplate = ({ data, skillsList, themeColor, fontFamily, spacing }:
         </div>
 
         {/* Right column (2/3) */}
-        <div className="md:col-span-2 space-y-6">
+        <div className="col-span-2 space-y-6">
           {data.summary && (
             <div>
               <h2 style={{ color: themeHex }} className="text-xs font-bold uppercase tracking-widest mb-2 border-b border-gray-100 pb-1">Profile</h2>

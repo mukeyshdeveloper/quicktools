@@ -172,6 +172,14 @@ export default function ResumeBuilder() {
           Professional Resume Builder
         </h2>
         <div className="flex flex-wrap justify-center gap-3 mb-4">
+          <button onClick={() => setIsFullscreen(true)} className="px-6 py-2.5 text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-lg shadow-indigo-500/30 transition-all flex items-center gap-2 hover:-translate-y-0.5">
+            <Maximize2 size={16} /> Preview Resume
+          </button>
+          <button onClick={handlePrint} className="px-6 py-2.5 text-sm font-bold bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl shadow-lg shadow-emerald-500/30 transition-all flex items-center gap-2 hover:-translate-y-0.5">
+            <Download size={16} /> Download PDF
+          </button>
+        </div>
+        <div className="flex flex-wrap justify-center gap-3 mb-4">
           <button onClick={loadSample} className="px-4 py-2 text-sm font-medium bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition flex items-center gap-2">
             <RefreshCw size={14} /> Load Sample Data
           </button>
@@ -188,9 +196,9 @@ export default function ResumeBuilder() {
         </div>
       </div>
 
-      <div className="flex flex-col xl:flex-row gap-8 items-start">
+      <div className="max-w-4xl mx-auto items-start">
         {/* Editor Pane */}
-        <div className="w-full xl:w-[400px] 2xl:w-[450px] flex-shrink-0 bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl border border-white/40 dark:border-gray-800 shadow-2xl p-6 md:p-8 print:hidden transition-all h-[900px] overflow-hidden flex flex-col">
+        <div className="w-full bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl border border-white/40 dark:border-gray-800 shadow-2xl p-6 md:p-8 print:hidden transition-all flex flex-col">
           {/* Tabs */}
           <div className="flex gap-2 border-b border-gray-200 dark:border-gray-800 mb-6 shrink-0">
             <button
@@ -207,7 +215,24 @@ export default function ResumeBuilder() {
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 pb-10 space-y-10">
+          {/* Inline Indicator/Tip for preview */}
+          <div className="bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100/50 dark:border-indigo-900/30 px-4 py-3 rounded-2xl flex items-center justify-between gap-3 text-xs text-gray-600 dark:text-gray-300 shadow-sm">
+            <div className="flex items-center gap-2">
+              <span className="flex h-2.5 w-2.5 rounded-full bg-indigo-500 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500"></span>
+              </span>
+              <span>Need to check formatting? Try the Full Screen Preview!</span>
+            </div>
+            <button 
+              onClick={() => setIsFullscreen(true)}
+              className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 hover:underline font-bold flex items-center gap-1.5 shrink-0 transition-colors"
+            >
+              Preview Now <Maximize2 size={12} />
+            </button>
+          </div>
+
+          <div className="pb-10 space-y-10 mt-6">
             {activeTab === 'design' ? (
               <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <section className="space-y-4">
@@ -468,60 +493,52 @@ export default function ResumeBuilder() {
           </div>
         </div>
 
-        {/* Live Preview / Print Area */}
-        <div className="w-full xl:flex-1 sticky top-8 print:w-full print:static print:h-auto">
-          {/* Action Bar */}
-          <div className="flex items-center justify-between bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-3 mb-4 print:hidden shadow-sm">
-            <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2 px-2">
-              <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span></span>
-              Live Preview
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setIsFullscreen(true)}
-                className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold text-sm rounded-xl transition-all"
-              >
-                <Maximize2 size={16} /> Full Screen
-              </button>
-              <button
-                onClick={handlePrint}
-                className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-xl shadow-lg shadow-indigo-500/30 transition-all hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <Download size={16} /> Download PDF
-              </button>
-            </div>
-          </div>
+        {/* Hidden Print Container */}
+        <div className="hidden print:block w-full" style={{ WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}>
+          {renderTemplate(template, { data, skillsList, themeColor, fontFamily, spacing })}
+        </div>
 
-          <div id="resume-preview" className="bg-white text-gray-900 shadow-2xl ring-1 ring-gray-900/5 sm:rounded-xl print:shadow-none print:ring-0 print:rounded-none overflow-hidden print:w-full transition-all w-full relative mx-auto max-w-[850px] min-h-[1100px]">
-            {renderTemplate(template, { data, skillsList, themeColor, fontFamily, spacing })}
-          </div>
-
-          {isFullscreen && (
-            <div className="fixed inset-0 z-50 bg-gray-900/80 backdrop-blur-sm flex items-start justify-center overflow-y-auto p-4 sm:p-8 print:hidden">
-              <div className="w-full max-w-[900px] relative animate-in fade-in zoom-in-95 duration-200">
-                <div className="flex justify-between items-center mb-4 sticky top-4 z-10 bg-gray-900/90 p-4 rounded-2xl backdrop-blur-md border border-gray-700 shadow-2xl">
-                   <span className="text-white font-bold">Full Screen Preview</span>
-                   <div className="flex gap-2">
-                     <button
-                       onClick={handlePrint}
-                       className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-lg shadow-lg"
-                     >
-                       <Download size={16} /> PDF
-                     </button>
-                     <button
-                       onClick={() => setIsFullscreen(false)}
-                       className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white font-bold text-sm rounded-lg"
-                     >
-                       <X size={16} /> Close
-                     </button>
-                   </div>
-                </div>
-                <div className="bg-white text-gray-900 shadow-2xl ring-1 ring-gray-900/5 rounded-xl overflow-hidden w-full relative mx-auto min-h-[1100px]">
-                  {renderTemplate(template, { data, skillsList, themeColor, fontFamily, spacing })}
-                </div>
+        {/* Full Screen Preview Modal */}
+        {isFullscreen && (
+          <div className="fixed inset-0 z-50 bg-gray-900/80 backdrop-blur-sm flex items-start justify-center overflow-y-auto p-4 sm:p-8 print:hidden">
+            <div className="w-full max-w-[900px] relative animate-in fade-in zoom-in-95 duration-200">
+              <div className="flex justify-between items-center mb-4 sticky top-4 z-10 bg-gray-900/90 p-4 rounded-2xl backdrop-blur-md border border-gray-700 shadow-2xl">
+                 <span className="text-white font-bold">Full Screen Preview</span>
+                 <div className="flex gap-2">
+                   <button
+                     onClick={handlePrint}
+                     className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm rounded-lg shadow-lg"
+                   >
+                     <Download size={16} /> PDF
+                   </button>
+                   <button
+                     onClick={() => setIsFullscreen(false)}
+                     className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white font-bold text-sm rounded-lg"
+                   >
+                     <X size={16} /> Close
+                   </button>
+                 </div>
+              </div>
+              <div className="bg-white text-gray-900 shadow-2xl ring-1 ring-gray-900/5 rounded-xl overflow-hidden w-full relative mx-auto min-h-[1100px]">
+                {renderTemplate(template, { data, skillsList, themeColor, fontFamily, spacing })}
               </div>
             </div>
-          )}
+          </div>
+        )}
+
+        {/* Floating Preview Button */}
+        <div className="fixed bottom-6 right-6 z-40 print:hidden">
+          <button
+            onClick={() => setIsFullscreen(true)}
+            className="flex items-center gap-2 px-5 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-2xl font-bold transition-all transform hover:scale-105 active:scale-95 group relative border border-indigo-500/30"
+          >
+            <span className="absolute -top-1 -right-1 flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
+            </span>
+            <Maximize2 size={16} className="group-hover:rotate-12 transition-transform" />
+            <span className="text-sm">Preview Resume</span>
+          </button>
         </div>
       </div>
     </div>
