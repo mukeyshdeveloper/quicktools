@@ -510,3 +510,13 @@ body {
     width: 100% !important;
   }
 }
+
+/* Visiting card A4 sheet — off-screen on screen, never use opacity (breaks print) */
+.visiting-card-sheet-screen-hide {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+}

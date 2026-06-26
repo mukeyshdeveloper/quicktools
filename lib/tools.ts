@@ -101,6 +101,7 @@ import { meta as licenseMeta } from '@/tools/license-generator/meta';
 import { meta as pregWeekMeta } from '@/tools/pregnancy-week-tracker/meta';
 import { meta as sleepDebtMeta } from '@/tools/sleep-debt-calculator/meta';
 import { meta as pdfToImageMeta } from '@/tools/pdf-to-image/meta';
+import { meta as visitingCardGeneratorMeta } from '@/tools/visiting-card-generator/meta';
 
 export const tools: ToolMeta[] = [
   // Originals
@@ -199,6 +200,7 @@ export const tools: ToolMeta[] = [
   pregWeekMeta,
   sleepDebtMeta,
   pdfToImageMeta,
+  visitingCardGeneratorMeta,
 ];
 
 export async function getAllTools(): Promise<ToolMeta[]> {
